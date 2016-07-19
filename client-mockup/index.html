@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ReelTime</title>
+  
+  <link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <div class="video-container">
+    <div class="video-border"></div>
+    <video class="video" controls autoplay>
+      <source src="sample.mp4" type="video/mp4">
+    </video>
+    <div class="video-border"></div>
+  </div>
+  <div class="chat-space">
+    <div class="chat-container">
+      <ul>
+        <li class="other">Oh my god I love this part!</li>
+        <li class="me">HAHAHA</li>
+        <li class="me">He's the best</li>
+        <li class="other">Wait, gonna get some food</li>
+        <li class="other">Pause for a sec</li>
+        <li class="me">K</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatSpace = document.querySelector('.chat-space');
+      
+      // Show the chat area for a few seconds to let the user know about it, then fade away
+      setTimeout(() => {
+        chatSpace.style.width = '0px';
+
+        document.addEventListener('mousemove', function(e) {
+          if (e.pageX >= window.innerWidth - 300) {
+            chatSpace.style.width = '300px';
+          } else {
+            chatSpace.style.width = '0px';
+          }
+        });
+      }, 3000);
+
+      // Begin animating the video when it starts playing
+      const video = document.querySelector('video');
+      video.addEventListener('canplay', function(e) {
+        video.className += ' video-reveal', 800;
+        setTimeout(() => video.className = 'video', 2000);
+      });
+    });
+  </script>
+</body>
+</html>
