@@ -65,7 +65,23 @@ html, body {
   float: right;
   background: rgba(255,255,255,0.2);
 }
-
+form { 
+  background: #000;
+  padding: 3px;
+  position: fixed;
+  bottom: 0; width: 35%; 
+}
+form input { 
+  border: 0;
+  padding: 10px;
+  width: 40%;
+  margin-right: .5%;
+}
+form button { 
+  width: 9%;
+  background: rgb(130, 224, 255);
+  border: none; padding: 10px;
+}
 
 @keyframes fadeIn {
   from {
