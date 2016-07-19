@@ -24,12 +24,12 @@ io.on('connection', function(socket) {
 
 	socket.on('chat message', function(msg) {
 		console.log(msg);
-		io.emit('chat message', msg);
+		socket.broadcast.emit('chat message', msg);
 	});
 });
 
 
-
-server.listen(3000); //, function() {
-	console.log('Listening on port 3000');
+var port = 5002
+server.listen(process.env.PORT || port); //, function() {
+console.log('Listening on port 3000');
 // });

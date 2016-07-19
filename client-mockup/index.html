@@ -76,7 +76,8 @@
       });
 
       socket.on('chat message', function(msg) {
-        $('#messages').append($('<li>').text(msg).addClass('other'));
+        console.log('Recieved message from server: ', msg)
+        $('.chat-container ul').append($('<li>').text(msg).addClass('other'));
       });
 
     });
