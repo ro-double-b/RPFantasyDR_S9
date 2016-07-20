@@ -31,5 +31,5 @@ io.on('connection', function(socket) {
 
 var port = 5002
 server.listen(process.env.PORT || port); //, function() {
-console.log('Listening on port 3000');
+console.log('Listening on port 5002');
 // });
