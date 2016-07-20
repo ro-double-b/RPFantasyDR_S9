@@ -2,6 +2,7 @@
 // WebRTC Connection //
 //*******************//
 
+var conn
 var peer = new Peer({key: 'db4iiswfn8doyldi'})
 
 // generates a unique id for each user
@@ -20,13 +21,20 @@ peer.on('stream', function(stream) {
 })
 
 // function for what happens on establishment of connection
-function connect(conn) {
+function connect(c) {
+  // connects the webRTC connection
+  conn = c
   console.log('Connection established with user: ', conn.peer)
-  $('#guest_id').val(conn.peer);
+  $('#guest_id').val(c.peer);
+  // recieve data over connection
+  conn.on('data', function(data) {
+    $('#sendData').val($('#sendData').val()+data)
+  })
 };
 
-// jQuery event that established connection
+
 $().ready(function() {
+  // establishes a connection
   $('#connect').click(function() {
     console.log('Establishing connection with uesr: ', $('#guest_id').val())
     var c = peer.connect($('#guest_id').val())
@@ -34,12 +42,12 @@ $().ready(function() {
       connect(c)
     });
   });
-  $('#connect').click(function() {
-    console.log('Establishing a video connection with user :', $('#guest_id').val())
-    console.log(window.stream)
-    peer.call($('#guest_id').val(), hello)
+  // sends data over that connection
+  $('#send').click(function() {
+    conn.send($('#sendData').val())
   })
-});
+
+});  
 
 
 //*******************//
