@@ -6,4 +6,4 @@ import App from './components/App.jsx';
 ReactDOM.render(
 	<App hello="hello" />,
 	document.getElementById('app')
-)
+);
