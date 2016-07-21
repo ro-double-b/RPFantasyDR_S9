@@ -47,13 +47,13 @@ $().ready(function() {
   // sends user stream
   $('#sendVideo').click(function() {
     console.log('step 1')
-    console.log('peer: ', peer.call($('#guest_id').val(), localStream))
-    var call = peer.call($('#guest_id').val(), localStream)
-    // call.on('stream', function(stream) {
-    //   console.log('step 2')
-    //   console.log(stream)
-    //   $('remoteVideo').prop('src', URL.createObjectURL(stream))
-    // })
+    console.log('peer: ', peer.call($('#guest_id').val(), window.stream))
+    var call = peer.call($('#guest_id').val(), window.stream)
+    call.on('stream', function(stream) {
+      console.log('step 2')
+      console.log(stream)
+      $('remoteVideo').prop('src', URL.createObjectURL(stream))
+    })
   })
 
 });  
