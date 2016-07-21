@@ -7,7 +7,7 @@ var path = require('path');
 var io = require('socket.io').listen(server);
 
 
-app.use(express.static(__dirname + "/../client-mockup"))
+app.use(express.static(__dirname + "/../client"))
 
 // app.get('/', function(req, res) {
 // })

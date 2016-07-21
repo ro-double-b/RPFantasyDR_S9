@@ -6,17 +6,17 @@ TODO: VIDEO STREAM ARCHITECTURE
 */
 class Video extends React.Component {
 	constructor (props) {
-		super(props)
+		super(props);	
 	}
 
 	render() {
 		return (
-			<div class="video-container">
-		    <div class="video-border"></div>
-		    <video class="video" controls autoplay>
-		      <source src="" type="video/mp4">
+			<div className="video-container">
+		    <div className="video-border"></div>
+		    <video className="video" controls autoPlay>
+		      <source src="" type="video/mp4"></source>
 		    </video>
-		    <div class="video-border"></div>
+		    <div className="video-border"></div>
 		  </div>
 		)
 	}
