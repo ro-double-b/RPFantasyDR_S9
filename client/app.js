@@ -13,12 +13,9 @@ peer.on('open', function(id) {
 peer.on('connection', connect);
 
 peer.on('call', function(call) {
-  console.log('inside call function')
-  call.answer(mediaStream)
-  call.on('stream', function(stream) {
-    console.log(stream)
-  })
-})
+  console.log('test this out man')
+  call.answer(video)
+});
 
 // function for what happens on establishment of connection
 function connect(c) {
@@ -47,7 +44,17 @@ $().ready(function() {
   $('#send').click(function() {
     conn.send($('#sendData').val())
   })
-
+  // sends user stream
+  $('#sendVideo').click(function() {
+    console.log('step 1')
+    console.log('peer: ', peer.call($('#guest_id').val(), localStream))
+    var call = peer.call($('#guest_id').val(), localStream)
+    // call.on('stream', function(stream) {
+    //   console.log('step 2')
+    //   console.log(stream)
+    //   $('remoteVideo').prop('src', URL.createObjectURL(stream))
+    // })
+  })
 
 });  
 
@@ -78,6 +85,7 @@ function errorCallback(error) {
   console.log('navigator.getUserMedia error: ', error);
 }
 
-navigator.getUserMedia(constraints, successCallback, errorCallback);
+var localStream = navigator.getUserMedia(constraints, successCallback, errorCallback);
+
 
 
