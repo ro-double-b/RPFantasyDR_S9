@@ -17,10 +17,12 @@ app.use(express.static(`${__dirname}/../client`));
 
 // Socket.io
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('A user connected with socket id', socket.id);
+
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    console.log('A user disconnected with socket id', socket.id);
   });
+
 
   socket.on('chat message', (msg) => {
     console.log(msg);
