@@ -9,30 +9,27 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// document.addEventListener('DOMContentLoaded', function() {
-      const chatSpace = document.querySelector('.chat-space');
-      
-      // Show the chat area for a few seconds to let the user know about it, then fade away
-      setTimeout(() => {
-        chatSpace.style.width = '0px';
+    const chatSpace = document.querySelector('.chat-space');
 
-        document.addEventListener('mousemove', function(e) {
-          if (e.pageX >= window.innerWidth - 300) {
-            chatSpace.style.width = '300px';
-          } else {
-            chatSpace.style.width = '0px';
-          }
-        });
-      }, 3000);
+    // Show the chat area for a few seconds to let the user know about it, then fade away
+    setTimeout(() => {
+      chatSpace.style.width = '0px';
 
-      // Begin animating the video when it starts playing
-      const video = document.querySelector('video');
-      video.addEventListener('canplay', function(e) {
-        video.className += ' video-reveal', 800;
-        setTimeout(() => video.className = 'video', 2000);
+      document.addEventListener('mousemove', function(e) {
+        if (e.pageX >= window.innerWidth - 300) {
+          chatSpace.style.width = '300px';
+        } else {
+          chatSpace.style.width = '0px';
+        }
       });
-      
-    // });
+    }, 3000);
+
+    // Begin animating the video when it starts playing
+    const video = document.querySelector('video');
+    video.addEventListener('canplay', function(e) {
+      video.className += ' video-reveal', 800;
+      setTimeout(() => video.className = 'video', 2000);
+    });
 	}
 
 	render() {
