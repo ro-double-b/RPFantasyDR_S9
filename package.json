@@ -1,0 +1,33 @@
+{
+  "name": "relltime",
+  "version": "1.0.0",
+  "description": "but a test to see hook up socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grrman93/ReelTime.git"
+  },
+  "author": "groche",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/grrman93/ReelTime/issues"
+  },
+  "homepage": "https://github.com/grrman93/ReelTime#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.1"
+  }
+}
