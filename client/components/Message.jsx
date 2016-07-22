@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default (props) => (
-	<li className={this.message.className}>{ this.message.text }</li>
+export default ({ message }) => (
+	<li className={ message.className }>{ message.text }</li>
 );
