@@ -9,6 +9,15 @@ class Video extends React.Component {
 		super(props);	
 	}
 
+	componentDidMount() {
+    // Begin animating the video when it starts playing
+    const video = document.querySelector('video');
+    video.addEventListener('canplay', function(e) {
+      video.className += ' video-reveal', 800;
+      setTimeout(() => video.className = 'video', 2000);
+    });
+	}
+
 	render() {
 		return (
 			<div className="video-container">
