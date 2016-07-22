@@ -24,6 +24,23 @@ class ChatSpace extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    const chatSpace = document.querySelector('.chat-space');
+
+    // Show the chat area for a few seconds to let the user know about it, then fade away
+    setTimeout(() => {
+      chatSpace.style.width = '0px';
+
+      document.addEventListener('mousemove', function(e) {
+        if (e.pageX >= window.innerWidth - 300) {
+          chatSpace.style.width = '300px';
+        } else {
+          chatSpace.style.width = '0px';
+        }
+      });
+    }, 3000);
+  }
+
   handleChange(event) {
     console.log(event.target.value);
     this.setState({
@@ -37,7 +54,7 @@ class ChatSpace extends React.Component {
 
     console.log(this.state.message);
     this.props.socket.emit('chat message', this.state.message);
-    
+
     this.setState({
       messages: this.state.messages.concat({ className: 'me', text: this.state.message }),
       message: '',
