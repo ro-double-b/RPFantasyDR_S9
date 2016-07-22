@@ -1,22 +1,19 @@
 import React from 'react';
 import Message from './Message.jsx';
-import io from 'socket.io-client';
 
 class ChatSpace extends React.Component {
   constructor(props) {
     super(props);
-    const socket = io();
 
     this.state = {
       message: "",
       messages: [
         { className: "other", text: "Oh my god I love this part!" },
         { className: "me", text: "HAHAHA" },
-      ],
-      socket,
+      ]
     };
 
-    socket.on('chat message', (msg) => {
+    this.props.socket.on('chat message', (msg) => {
       console.log('Recieved message from server: ', msg);
       this.setState({
         messages: this.state.messages.concat({ className: "other", text: msg }),
@@ -39,7 +36,8 @@ class ChatSpace extends React.Component {
     event.stopPropagation();
 
     console.log(this.state.message);
-    this.state.socket.emit('chat message', this.state.message);
+    this.props.socket.emit('chat message', this.state.message);
+    
     this.setState({
       messages: this.state.messages.concat({ className: 'me', text: this.state.message }),
       message: '',
