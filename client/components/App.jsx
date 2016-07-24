@@ -33,7 +33,9 @@ class App extends React.Component {
 
         // link page
         <div id='link'>
-          YAY
+          <div id='link-message'>
+            YAY
+          </div>
         </div>
 
 

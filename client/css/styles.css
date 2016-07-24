@@ -46,7 +46,6 @@ html, body, #app, .wrapper {
   padding: 0px;
 }
 
-
 .chat-container li {
   margin: 0 0 4px;
   border-radius: 4px;
@@ -182,13 +181,24 @@ form button {
 /*  Link Page   */
 /* ============ */
 
-#link {
+#link { 
+  width: 100vw;
+  height: 100vh;
+}
+
+#link-message {
   width: 250px;
   height: 250px;
-  margin: 0 auto;
   background-color: green;
+  margin: 0 auto;
+  display: inline;
   position: absolute;
-  z-index: 15;
+}
+
+
+
+#link-message {
+  font-size: 2vw;
 }
 
 

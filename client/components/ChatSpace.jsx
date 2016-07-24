@@ -70,8 +70,8 @@ class ChatSpace extends React.Component {
           </ul>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" id="m" value={this.state.message} autoComplete="off" onChange={this.handleChange} placeholder="Send a message..." />
-          <input type="submit" value="Submit" />
+          <input type="text" id="m" className="chat-input" value={this.state.message} autoComplete="off" onChange={this.handleChange} placeholder="Send a message..." />
+          <input type="submit" className="chat-input" value="Submit" />
         </form>
       </div>
     );
