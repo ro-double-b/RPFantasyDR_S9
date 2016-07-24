@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ReelTime</title>
+  
+  <link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+  
+  <div class="video-container">
+    <div class="video-border"></div>
+    <video class="video" controls autoplay>
+      <source src="" type="video/mp4">
+    </video>
+    <div class="video-border"></div>
+  </div>
+  <div class="chat-space">
+    <div class="chat-container">
+      <ul>
+        <li class="other">Oh my god I love this part!</li>
+        <li class="me">HAHAHA</li>
+        <li class="me">He's the best</li>
+        <li class="other">Wait, gonna get some food</li>
+        <li class="other">Pause for a sec</li>
+        <li class="me">K</li>
+      </ul>
+    </div>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </div>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatSpace = document.querySelector('.chat-space');
+      
+      // Show the chat area for a few seconds to let the user know about it, then fade away
+      setTimeout(() => {
+        chatSpace.style.width = '0px';
+
+        document.addEventListener('mousemove', function(e) {
+          if (e.pageX >= window.innerWidth - 300) {
+            chatSpace.style.width = '300px';
+          } else {
+            chatSpace.style.width = '0px';
+          }
+        });
+      }, 3000);
+
+      // Begin animating the video when it starts playing
+      const video = document.querySelector('video');
+      video.addEventListener('canplay', function(e) {
+        video.className += ' video-reveal', 800;
+        setTimeout(() => video.className = 'video', 2000);
+      });
+
+      //*********************//
+      //   Socket.io stuff   //
+      //*********************//
+      // instantiate client socket
+      var socket = io();
+      // grab form submission data and emit message to server.
+      // also post locally, and use broadcast tag so you don't pick up your own message
+      $('form').submit(function(e) {
+        //prevent page refresh, returning false wasn't cutting it
+        e.preventDefault();
+        // broadcast tag should emit the message to everyone except the sender
+        console.log($('#m').val())
+        socket.emit('chat message', $('#m').val());
+        $('.chat-container ul').append($('<li>').text($('#m').val()).addClass('me'));
+        $('#m').val('');
+        return false;
+      });
+
+      socket.on('chat message', function(msg) {
+        console.log('Recieved message from server: ', msg)
+        $('.chat-container ul').append($('<li>').text(msg).addClass('other'));
+      });
+
+    });
+  </script>
+</body>
+</html>
