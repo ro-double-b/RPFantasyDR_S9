@@ -1,0 +1,40 @@
+{
+  "name": "ReelTime",
+  "version": "0.0.1",
+  "description": "Watch videos with your friends, in your underwear.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MomentousGeese/ReelTime.git"
+  },
+  "author": "Greg Roche, Robb Marsee, Ryan Hanzawa",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/MomentousGeese/ReelTime/issues"
+  },
+  "homepage": "https://github.com/MomentousGeese/ReelTime#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "peer": "^0.2.8",
+    "peerjs": "^0.3.14",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.11.1",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2",
+    "webpack": "^1.13.1"
+  }
+}
