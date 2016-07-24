@@ -119,7 +119,7 @@ form button {
 /* Landing Page */
 /* ============ */
 
-.landing {
+#landing {
   width: 100%;
   height: 100%;
   /*display: none;*/
@@ -177,3 +177,20 @@ form button {
   height: 100vh;
   color: grey;
 }
+
+/* ============ */
+/*  Link Page   */
+/* ============ */
+
+#link {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  background-color: green;
+  position: absolute;
+  z-index: 15;
+}
+
+
+
+

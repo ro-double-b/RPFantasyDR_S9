@@ -18,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      // landing page
+        // landing page
         <div id='landing'>
           <div className='landing-left'>
             <p className='landing-logo'>ReelTime</p>
@@ -26,10 +26,16 @@ class App extends React.Component {
           </div>
           <div className='landing-right'>
             <div className='landing-top-right '>
-              <input type='file' className='landing-circle' placeholder='drag your files here'></input>
+           <input type="file" id="files" className='landing-circle' name="file" />
             </div>
           </div>
         </div>
+
+        // link page
+        <div id='link'>
+          YAY
+        </div>
+
 
         <div className="wrapper">
           <Video />

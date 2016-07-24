@@ -18,10 +18,13 @@ peer.on('open', (myId) => {
 
   if (params.has('id')) {
     // Connect to existing peer
+    
     const peerId = params.get('id');
     const conn = peer.connect(peerId, { reliable: true });
 
     conn.on('open', () => {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('link').style.display = 'none';
       console.log('RTC data connection established');
     });
 
@@ -34,9 +37,14 @@ peer.on('open', (myId) => {
     });
   } else {
     // Act as source
-    console.log('http://localhost:3000/?id=' + myId);
+    
+    var guestLink = 'http://localhost:3000/?id=' + myId 
+    console.log(guestLink);
+    var linkDiv = document.getElementById('link')
+    linkDiv.innerHTML = '<span>Send your friend the following link : ' + guestLink + '</span>'
     peer.on('connection', (conn) => {
       sourceConn = conn;
+    document.getElementById('link').style.display = 'none';
     });
   }
 });
