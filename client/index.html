@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ReelTime</title>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.min.js'></script> -->
-  <script src="peer.js"></script>
+	<title>React Mock-Up</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 <body>
-  <h1>PeerJS Test Setup</h1>
-  
-  <div>
-    <p>Your PeerJS id is: <span id="host_id"></span></p>
-    <p>Connect to: <input type="text" id="guest_id" placeholder="Enter user Id">
-    <input type="button" value="Connect" id="connect">
-  </div>
-
-
-  <input type="text" id="sendData">
-  <input type="button" value="Send" id="send">
-
-  <video id="localVideo" autoplay></video>
-  <video id="remoteVideo" autoplay></video>
-  <input type="button" value="SendVideo" id="sendVideo">
-
-  <script src="app.js"></script>
+	<div id="app"></div>
+	<script src="./client.min.js"></script>
 </body>
 </html>
