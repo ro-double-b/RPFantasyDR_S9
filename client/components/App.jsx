@@ -93,7 +93,7 @@ class App extends React.Component {
         {this.state.showLink ? <Link myId={this.state.myId} /> : null}
         <div className="wrapper">
           <Video socket={this.props.socket} />
-          <ChatSpace socket={this.props.socket} />
+          <ChatSpace socket={this.props.socket} peerId={this.state.peerId} myId={this.state.myId} />
         </div>
       </div>
     );
