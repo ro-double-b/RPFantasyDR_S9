@@ -25,6 +25,7 @@ peer.on('open', (myId) => {
     conn.on('open', () => {
       document.getElementById('landing').style.display = 'none';
       document.getElementById('link').style.display = 'none';
+
       console.log('RTC data connection established');
     });
 
@@ -37,14 +38,14 @@ peer.on('open', (myId) => {
     });
   } else {
     // Act as source
-    
-    var guestLink = 'http://localhost:3000/?id=' + myId 
+    var guestLink = 'http://localhost:3000/?id=' + myId
     console.log(guestLink);
     var linkDiv = document.getElementById('link')
-    linkDiv.innerHTML = '<span>Send your friend the following link : ' + guestLink + '</span>'
+    linkDiv.innerHTML = '<span id="link-message">Send your friend the following link : ' + guestLink + '</span>'
+
     peer.on('connection', (conn) => {
       sourceConn = conn;
-    document.getElementById('link').style.display = 'none';
+      document.getElementById('link').style.display = 'none';
     });
   }
 });
