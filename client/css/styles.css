@@ -40,6 +40,19 @@ html, body, #app, .wrapper {
   flex: 0 0 auto;
 }
 
+.local-video {
+  background: #333;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 80px;
+}
+
+.remote-video {
+  background: #333;
+  width: 300px;
+}
+
 .chat-container {
   width: 260px;
   color: #ccc;
