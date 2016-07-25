@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Message from './Message.jsx';
+import VideoChat from './VideoChat.jsx';
 
 class ChatSpace extends React.Component {
   constructor(props) {
@@ -64,6 +66,7 @@ class ChatSpace extends React.Component {
   render() {
     return (
       <div className="chat-space">
+        <VideoChat isSource={this.props.isSource} peerId={this.props.peerId} />
         <div className="chat-container">
           <ul>
             {this.state.messages.map((message, i) => <Message message={message} key={i} />)}
@@ -80,6 +83,8 @@ class ChatSpace extends React.Component {
 
 ChatSpace.propTypes = {
   socket: React.PropTypes.object.isRequired,
+  isSource: React.PropTypes.bool.isRequired,
+  peerId: React.PropTypes.string,
 };
 
 export default ChatSpace;
