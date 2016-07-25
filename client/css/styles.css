@@ -12,6 +12,7 @@ html, body, #app, .wrapper {
   flex-direction: row;  
 }
 
+
 .video-container {
   flex: 1;
   display: flex;
@@ -179,9 +180,14 @@ form button {
 /*  Link Page   */
 /* ============ */
 
-#link { 
-  width: 100vw;
-  height: 100vh;
+
+#link {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  background-color: green;
+  position: absolute;
+  z-index: 15;
 }
 
 #link-message {

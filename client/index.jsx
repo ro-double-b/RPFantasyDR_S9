@@ -18,6 +18,7 @@ peer.on('open', (myId) => {
 
   if (params.has('id')) {
     // Connect to existing peer
+    
     const peerId = params.get('id');
     const conn = peer.connect(peerId, { reliable: true });
 

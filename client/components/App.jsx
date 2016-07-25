@@ -37,7 +37,6 @@ class App extends React.Component {
             YAY
           </div>
         </div>
-
         <div className="wrapper">
           <Video />
           <ChatSpace socket={this.props.socket} />
