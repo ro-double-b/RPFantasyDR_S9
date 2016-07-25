@@ -23,10 +23,17 @@ io.on('connection', (socket) => {
     console.log('A user disconnected with socket id', socket.id);
   });
 
+  socket.on('room', function(room) {
+    socket.join(room);
+  });
+
   // Chat messaging events
-  socket.on('chat message', (msg) => {
-    console.log(msg);
-    socket.broadcast.emit('chat message', msg);
+  socket.on('chat message', (msg, roomId) => {
+    console.log('MSG: ', msg);
+    console.log('RoomID: ', roomId);
+
+    socket.to(roomId).broadcast.emit('chat message', msg);
+    // socket.broadcast.emit('chat message', msg);
   });
 
   // Video sync events
