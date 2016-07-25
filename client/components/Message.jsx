@@ -1,5 +1,11 @@
 import React from 'react';
 
-export default ({ message }) => (
-	<li className={ message.className }>{ message.text }</li>
+const Message = (props) => (
+  <li className={props.message.className}>{props.message.text}</li>
 );
+
+Message.propTypes = {
+  message: React.PropTypes.object.isRequired,
+};
+
+export default Message;
