@@ -1,11 +1,13 @@
 import React from 'react';
 import Message from './Message.jsx';
+import { getMyId, establishPeerConnection } from '../lib/webrtc';
 
 class ChatSpace extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      roomId: this.props.peerId,
       message: "",
       messages: [
         { className: "other", text: "Oh my god I love this part!" },
@@ -13,8 +15,19 @@ class ChatSpace extends React.Component {
       ],
     };
 
+    // if source, create room using myid
+    if(this.props.peerId === null) {
+      getMyId().then((myId) => {
+        this.props.socket.emit('room', myId);
+        this.setState({
+          roomId: myId,
+        });
+      });
+    } else { // if reciever, join room using peerid
+      this.props.socket.emit('room', this.props.peerId);
+    }
+
     this.props.socket.on('chat message', (msg) => {
-      console.log('Recieved message from server: ', msg);
       this.setState({
         messages: this.state.messages.concat({ className: "other", text: msg }),
       });
@@ -42,7 +55,6 @@ class ChatSpace extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target.value);
     this.setState({
       message: event.target.value,
     });
@@ -52,8 +64,7 @@ class ChatSpace extends React.Component {
     event.preventDefault();
     event.stopPropagation();
 
-    console.log(this.state.message);
-    this.props.socket.emit('chat message', this.state.message);
+    this.props.socket.emit('chat message', this.state.message, this.state.roomId);
 
     this.setState({
       messages: this.state.messages.concat({ className: 'me', text: this.state.message }),
