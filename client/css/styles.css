@@ -146,8 +146,9 @@ form button {
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 59%;
-  background-color: green;
+  background-color: rgba(224,122,122,0.2);
   position: fixed;
+  color: #ccc;
 }
 
 .drop-box {
@@ -220,9 +221,10 @@ form button {
 #link-message {
   width: 250px;
   height: 250px;
-  background-color: green;
+  background-color: rgba(224,122,122,0.2);
   margin: 0 auto;
   display: table;
   font-size: 25px;
   margin-top: 20vh;
+  color: #ccc;
 }
