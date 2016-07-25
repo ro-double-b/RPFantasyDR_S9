@@ -3,12 +3,16 @@ import React from 'react';
 const Landing = (props) => (
   <div id="landing">
     <div className="landing-left">
-      <p className="landing-logo">ReelTime</p>
-      <p className="landing-logo small">Watch tv with your friends in your underwear</p>
+      <p>
+        <span className="landing-title">ReelTime</span><br />
+        <span className="landing-blank">Watch Video with Friends in your Underwear</span><br />
+        <span className="landing-description">DESCRIPTION GOES HERE</span>
+      </p>
     </div>
     <div className="landing-right">
       <div className="landing-top-right ">
-        <input type="file" id="files" className="landing-circle" name="file" onChange={props.setFile} />
+        <p className="landing-drop-text landing-circle">Drop Files Here</p>
+        <input type="file" id="files" className="landing-circle drop-box" name="file" onChange={props.setFile} />
       </div>
     </div>
   </div>
