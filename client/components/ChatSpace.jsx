@@ -10,7 +10,7 @@ class ChatSpace extends React.Component {
       messages: [
         { className: "other", text: "Oh my god I love this part!" },
         { className: "me", text: "HAHAHA" },
-      ]
+      ],
     };
 
     this.props.socket.on('chat message', (msg) => {
@@ -77,5 +77,9 @@ class ChatSpace extends React.Component {
     );
   }
 }
+
+ChatSpace.propTypes = {
+  socket: React.PropTypes.object.isRequired,
+};
 
 export default ChatSpace;
