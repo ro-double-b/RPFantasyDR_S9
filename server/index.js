@@ -31,10 +31,7 @@ io.on('connection', (socket) => {
   socket.on('chat message', (msg, roomId) => {
     console.log('MSG: ', msg);
     console.log('RoomID: ', roomId);
-    if(msg === 'show rooms') {
-      console.log('Rooms:');
-      console.log(socket.rooms);
-    }
+
     socket.to(roomId).broadcast.emit('chat message', msg);
     // socket.broadcast.emit('chat message', msg);
   });
