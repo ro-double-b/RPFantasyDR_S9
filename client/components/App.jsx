@@ -6,17 +6,6 @@ import Video from "./Video.jsx";
 import ChatSpace from "./ChatSpace.jsx";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    const input = document.querySelector("input");
-    input.onchange = function(e) {
-      document.getElementById("landing").style.display = "none";
-    };
-  }
-
   render() {
     return (
       <div>
