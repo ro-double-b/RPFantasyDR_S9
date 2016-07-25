@@ -2,6 +2,7 @@ import React from "react";
 
 import Video from "./Video.jsx";
 import ChatSpace from "./ChatSpace.jsx";
+import Landing from './Landing';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,31 +10,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const input = document.querySelector('input')
+    const input = document.querySelector("input");
     input.onchange = function(e) {
-      document.getElementById('landing').style.display = 'none';
-    }
+      document.getElementById("landing").style.display = "none";
+    };
   }
 
   render() {
     return (
       <div>
-        // landing page
-        <div id='landing'>
-          <div className='landing-left'>
-            <p className='landing-logo'>ReelTime</p>
-            <p className='landing-logo small'>Watch tv with your friends in your underwear</p>
-          </div>
-          <div className='landing-right'>
-            <div className='landing-top-right '>
-           <input type="file" id="files" className='landing-circle' name="file" />
-            </div>
-          </div>
-        </div>
+        <Landing />
 
         // link page
-        <div id='link'>
-          <div id='link-message'>
+        <div id="link">
+          <div id="link-message">
             YAY
           </div>
         </div>
