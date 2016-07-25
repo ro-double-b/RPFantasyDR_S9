@@ -147,6 +147,11 @@ form button {
   -webkit-border-radius: 50px;
   border-radius: 59%;
   background-color: green;
+  position: fixed;
+}
+
+.drop-box {
+  opacity: 0;
 }
 
 .landing-left {
@@ -176,6 +181,26 @@ form button {
 .landing-bottom-right {
   height: 100vh;
   color: grey;
+}
+
+.landing-drop-text {
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80vh;
+  font-size: 5vh;
+}
+
+.landing-title {
+  font-size: 10vh;
+}
+
+.landing-blank {
+  font-size: 4vh;
+}
+
+.landing-description {
+  font-size: 2vh;
 }
 
 /* ============ */
