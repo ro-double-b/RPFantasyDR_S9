@@ -17,13 +17,14 @@ class ChatSpace extends React.Component {
     };
 
     // If source, create room using myId
-    if (this.props.peerId === null) {
+    if (!this.props.peerId) {
       getMyId().then((myId) => {
         this.props.socket.emit('room', myId);
         this.setState({
           roomId: myId,
         });
-      });
+      })
+      .catch(console.error.bind(console));
     } else {
       // If reciever, join room using peerId
       this.props.socket.emit('room', this.props.peerId);
