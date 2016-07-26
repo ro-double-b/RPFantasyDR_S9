@@ -30,8 +30,6 @@ class VideoChat extends React.Component {
 
     establishPeerCall(localStream, this.props.isSource ? null : this.props.peerId)
       .then((remoteStream) => {
-        console.log(remoteStream);
-
         const remoteVideo = document.querySelector('.remote-video');
         remoteVideo.srcObject = remoteStream;
       })

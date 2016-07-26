@@ -4,8 +4,14 @@ const peer = new Peer({ key: 'dyf2h2fyul2nvcxr' });
 
 // Returns a Promise that is resolved with this peer's ID, assigned by the signaling server.
 const getMyId = () => new Promise((resolve, reject) => {
-  peer.on('open', resolve);
-  peer.on('error', reject);
+  if (!peer.id) {
+    // ID not received yet. Listen for open event.
+    peer.on('open', resolve);
+    peer.on('error', reject);
+  } else {
+    // ID already exists; resolve.
+    resolve(peer.id);
+  }
 });
 
 // Returns a Promise that is resolved with an active peer.js DataConnection.
@@ -53,7 +59,7 @@ const establishPeerConnection = (sourceId) => new Promise((resolve, reject) => {
 const establishPeerCall = (mediaStream, sourceId) => new Promise((resolve, reject) => {
   const connect = () => {
     if (sourceId) {
-      const call = peer.call(sourceId, mediaStream); ////////////////////////////
+      const call = peer.call(sourceId, mediaStream);
 
       call.on('stream', (stream) => {
         console.log('RTC call established - acting as receiver');
@@ -65,7 +71,7 @@ const establishPeerCall = (mediaStream, sourceId) => new Promise((resolve, rejec
       });
     } else {
       peer.on('call', (call) => {
-        call.answer(mediaStream); /////////////////////////////
+        call.answer(mediaStream);
         call.on('stream', (stream) => {
           console.log('RTC call established - acting as source');
           resolve(stream);
