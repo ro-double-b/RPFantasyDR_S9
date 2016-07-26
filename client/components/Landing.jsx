@@ -33,7 +33,7 @@ const Landing = (props) => (
           <div className="col-md-4">
             <span className="fa-stack fa-4x">
               <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+              <i className="fa fa-users fa-stack-1x fa-inverse"></i>
             </span>
             <h4 className="service-heading">Peer-to-peer</h4>
             <p className="text-muted">No need for a centralized, bandwidth-heavy, insecure server. ReelTime uses direct peer-to-peer connections, sending video directly from one client to another.</p>
