@@ -24,6 +24,7 @@ class App extends React.Component {
       peerId: params.get('id'),
       showLanding: isSource,
       showLink: isSource,
+      showBody: false,
     };
   }
 
@@ -39,6 +40,7 @@ class App extends React.Component {
     this.setState({
       file: e.target.files[0],
       showLanding: false,
+      showBody: true,
     });
   }
 
@@ -91,10 +93,10 @@ class App extends React.Component {
       <div>
         {this.state.showLanding ? <Landing setFile={this.setFile} /> : null}
         {this.state.showLink ? <Link myId={this.state.myId} /> : null}
-        <div className="wrapper">
+        {this.state.showBody ? <div className="wrapper">
           <Video socket={this.props.socket} />
           <ChatSpace socket={this.props.socket} isSource={this.state.isSource} peerId={this.state.peerId} />
-        </div>
+        </div> : null}
       </div>
     );
   }
