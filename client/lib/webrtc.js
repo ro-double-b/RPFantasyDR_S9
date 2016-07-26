@@ -57,7 +57,7 @@ const establishPeerConnection = (sourceId) => new Promise((resolve, reject) => {
 const establishPeerCall = (mediaStream, sourceId) => new Promise((resolve, reject) => {
   const connect = () => {
     if (sourceId) {
-      const call = peer.call(sourceId, mediaStream); ////////////////////////////
+      const call = peer.call(sourceId, mediaStream);
 
       call.on('stream', (stream) => {
         console.log('RTC call established - acting as receiver');
@@ -69,7 +69,7 @@ const establishPeerCall = (mediaStream, sourceId) => new Promise((resolve, rejec
       });
     } else {
       peer.on('call', (call) => {
-        call.answer(mediaStream); /////////////////////////////
+        call.answer(mediaStream);
         call.on('stream', (stream) => {
           console.log('RTC call established - acting as source');
           resolve(stream);
