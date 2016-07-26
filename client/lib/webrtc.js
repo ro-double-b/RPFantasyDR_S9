@@ -4,8 +4,12 @@ const peer = new Peer({ key: 'dyf2h2fyul2nvcxr' });
 
 // Returns a Promise that is resolved with this peer's ID, assigned by the signaling server.
 const getMyId = () => new Promise((resolve, reject) => {
-  peer.on('open', resolve);
-  peer.on('error', reject);
+  if (peer.disconnected) {
+    peer.on('open', resolve);
+    peer.on('error', reject);
+  } else {
+    resolve(peer.id);
+  }
 });
 
 // Returns a Promise that is resolved with an active peer.js DataConnection.
