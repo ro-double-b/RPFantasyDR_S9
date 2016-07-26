@@ -25,8 +25,8 @@ const Landing = (props) => (
       <div className="container">
         <div className="row">
           <div className="col-lg-12 text-center">
-            <h2 className="section-heading">Services</h2>
-            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 className="section-heading">About ReelTime</h2>
+            <h3 className="section-subheading text-muted">The best video watching experience... in your underwear.</h3>
           </div>
         </div>
         <div className="row text-center">
@@ -35,24 +35,24 @@ const Landing = (props) => (
               <i className="fa fa-circle fa-stack-2x text-primary"></i>
               <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 className="service-heading">E-Commerce</h4>
-            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 className="service-heading">Peer-to-peer</h4>
+            <p className="text-muted">No need for a centralized, bandwidth-heavy, insecure server. ReelTime uses direct peer-to-peer connections, sending video directly from one client to another.</p>
           </div>
           <div className="col-md-4">
             <span className="fa-stack fa-4x">
               <i className="fa fa-circle fa-stack-2x text-primary"></i>
               <i className="fa fa-laptop fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 className="service-heading">Responsive Design</h4>
-            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 className="service-heading">Watch with friends</h4>
+            <p className="text-muted">Enjoy your favorite (legally-acquired) shows and movies with your friends, over video and text chat.</p>
           </div>
           <div className="col-md-4">
             <span className="fa-stack fa-4x">
               <i className="fa fa-circle fa-stack-2x text-primary"></i>
               <i className="fa fa-lock fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 className="service-heading">Web Security</h4>
-            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 className="service-heading">No logging</h4>
+            <p className="text-muted">We do not log the videos, filenames, or chats that you send over our service.</p>
           </div>
         </div>
       </div>
@@ -68,7 +68,8 @@ const Landing = (props) => (
 
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2 text-center">
-            <p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            <p className="large text-muted">We are a group of developers from Silicon Valley. We were lonely and wanted to watch TV with each other, but didn’t want to leave our beds. Thus, ReelTime was born. Now we can stay in our underwear while we watch our favorite shows together.</p>
+            <p className="large text-muted">In order to facilitate serverless, decentralized, peer-to-peer video streaming and video chat, we are using the library Peer.js, an abstraction layer on top of WebRTC, along with adapter.js, a shim to insulate WebRTC apps from different environments. WebRTC signaling is performed through WebSockets over the peerjs.com server, and Google STUN servers are used to enable NAT traversal. Socket.io was used for the text chat, as well as for low-latency video playback sync. ReelTime is built on React, Node, and Express.</p>
           </div>
         </div>
       </div>

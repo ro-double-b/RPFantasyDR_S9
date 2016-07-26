@@ -12,8 +12,7 @@ class ChatSpace extends React.Component {
       roomId: this.props.peerId,
       message: "",
       messages: [
-        { className: "other", text: "Oh my god I love this part!" },
-        { className: "me", text: "HAHAHA" },
+        { className: "other", text: "Begin chatting here." },
       ],
     };
 
@@ -85,7 +84,7 @@ class ChatSpace extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" id="m" className="chat-input" value={this.state.message} autoComplete="off" onChange={this.handleChange} placeholder="Send a message..." />
-          <input type="submit" className="chat-input" value="Submit" />
+          <input type="submit" className="chat-submit" value="Submit" />
         </form>
       </div>
     );

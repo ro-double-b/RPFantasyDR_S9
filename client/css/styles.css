@@ -82,18 +82,18 @@ form {
   background: #000;
   padding: 3px;
   position: fixed;
-  bottom: 0; width: 35%; 
+  bottom: 0;
+  width: 300px;
 }
-form input { 
+.chat-input { 
   border: 0;
   padding: 10px;
-  width: 40%;
-  margin-right: .5%;
+  width: 300px;
+  background-color: #777;
+  color: #ddd;
 }
-form button { 
-  width: 9%;
-  background: rgb(130, 224, 255);
-  border: none; padding: 10px;
+.chat-submit { 
+  display: none;
 }
 
 @keyframes fadeIn {
@@ -139,15 +139,22 @@ form button {
   background-color: black;
   position: fixed;
   z-index: 1;
+  line-height: 30px;
 }
 
 #link-message {
-  width: 250px;
-  height: 250px;
+  width: 700px;
+  height: 150px;
   background-color: rgba(224,122,122,0.2);
   margin: 0 auto;
   display: table;
   font-size: 25px;
   margin-top: 20vh;
   color: #ccc;
+  padding: 50px;
+  font-weight: 200;
+}
+
+#link-url {
+  font-weight: 400;
 }

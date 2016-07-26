@@ -24,7 +24,7 @@ class App extends React.Component {
       peerId: params.get('id'),
       showLanding: isSource,
       showLink: isSource,
-      showBody: false,
+      showBody: !isSource,
     };
   }
 
