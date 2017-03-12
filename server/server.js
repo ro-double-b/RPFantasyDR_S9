@@ -3,11 +3,11 @@ var app = express()
 
 var port = process.env.PORT || 8080;
 
-// app.use(express.static(__dirname + './../client'))
+app.use(express.static(__dirname + './../client'))
 
 app.get('/', function(req, res) {
 
-    res.send('HELLO WORLD');
+    res.send('./../client');
 });
 
 app.listen(3000, function () {
