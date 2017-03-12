@@ -681,6 +681,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform: translate3d(0, 0, 0);
 }
 
+.scroll-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.scroll-group > .row > .col-md-2 {
+  display: inline-block;
+  float: none;
+}
+
 /* Testimonials Section
 --------------------------------*/
 #testimonials {
