@@ -1,0 +1,101 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'bugs',
+1 verbose cli   'fantasy-drag-race' ]
+2 info using npm@3.9.5
+3 info using node@v6.2.2
+4 silly fetchPackageMetaData fantasy-drag-race
+5 silly fetchNamedPackageData fantasy-drag-race
+6 silly mapToRegistry name fantasy-drag-race
+7 silly mapToRegistry using default registry
+8 silly mapToRegistry registry https://registry.npmjs.org/
+9 silly mapToRegistry data Result {
+9 silly mapToRegistry   raw: 'fantasy-drag-race',
+9 silly mapToRegistry   scope: null,
+9 silly mapToRegistry   name: 'fantasy-drag-race',
+9 silly mapToRegistry   rawSpec: '',
+9 silly mapToRegistry   spec: 'latest',
+9 silly mapToRegistry   type: 'tag' }
+10 silly mapToRegistry uri https://registry.npmjs.org/fantasy-drag-race
+11 verbose request uri https://registry.npmjs.org/fantasy-drag-race
+12 verbose request no auth needed
+13 info attempt registry request try #1 at 9:20:42 PM
+14 verbose request id 63ee0113598f1989
+15 http request GET https://registry.npmjs.org/fantasy-drag-race
+16 http 404 https://registry.npmjs.org/fantasy-drag-race
+17 verbose headers { 'content-type': 'application/json',
+17 verbose headers   'cache-control': 'max-age=0',
+17 verbose headers   'content-length': '2',
+17 verbose headers   'accept-ranges': 'bytes',
+17 verbose headers   date: 'Sun, 12 Mar 2017 05:20:43 GMT',
+17 verbose headers   via: '1.1 varnish',
+17 verbose headers   age: '0',
+17 verbose headers   connection: 'keep-alive',
+17 verbose headers   'x-served-by': 'cache-sjc3133-SJC',
+17 verbose headers   'x-cache': 'MISS',
+17 verbose headers   'x-cache-hits': '0',
+17 verbose headers   'x-timer': 'S1489296042.815399,VS0,VE489',
+17 verbose headers   vary: 'Accept-Encoding' }
+18 silly get cb [ 404,
+18 silly get   { 'content-type': 'application/json',
+18 silly get     'cache-control': 'max-age=0',
+18 silly get     'content-length': '2',
+18 silly get     'accept-ranges': 'bytes',
+18 silly get     date: 'Sun, 12 Mar 2017 05:20:43 GMT',
+18 silly get     via: '1.1 varnish',
+18 silly get     age: '0',
+18 silly get     connection: 'keep-alive',
+18 silly get     'x-served-by': 'cache-sjc3133-SJC',
+18 silly get     'x-cache': 'MISS',
+18 silly get     'x-cache-hits': '0',
+18 silly get     'x-timer': 'S1489296042.815399,VS0,VE489',
+18 silly get     vary: 'Accept-Encoding' } ]
+19 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/fantasy-drag-race
+19 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+19 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+19 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+19 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+19 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+19 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+19 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+19 silly fetchPackageMetaData     at emitOne (events.js:101:20)
+19 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+19 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+19 silly fetchPackageMetaData  error for fantasy-drag-race { Error: Registry returned 404 for GET on https://registry.npmjs.org/fantasy-drag-race
+19 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+19 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+19 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+19 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+19 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+19 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+19 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+19 silly fetchPackageMetaData     at emitOne (events.js:101:20)
+19 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+19 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12) pkgid: 'fantasy-drag-race', statusCode: 404, code: 'E404' }
+20 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/fantasy-drag-race
+20 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+20 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+20 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+20 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+20 verbose stack     at emitTwo (events.js:106:13)
+20 verbose stack     at Request.emit (events.js:191:7)
+20 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+20 verbose stack     at emitOne (events.js:101:20)
+20 verbose stack     at Request.emit (events.js:188:7)
+20 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+21 verbose statusCode 404
+22 verbose pkgid fantasy-drag-race
+23 verbose cwd /Users/robbmarsee/Desktop/RPFantasyDR_S9
+24 error Darwin 15.6.0
+25 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "bugs" "fantasy-drag-race"
+26 error node v6.2.2
+27 error npm  v3.9.5
+28 error code E404
+29 error 404 Registry returned 404 for GET on https://registry.npmjs.org/fantasy-drag-race
+30 error 404
+31 error 404 'fantasy-drag-race' is not in the npm registry.
+32 error 404 You should bug the author to publish it (or use the name yourself!)
+33 error 404 Note that you can also install from a
+34 error 404 tarball, folder, http url, or git url.
+35 verbose exit [ 1, true ]
