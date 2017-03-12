@@ -18,6 +18,6 @@
   "homepage": "https://github.com/ro-double-b/RPFantasyDR_S9#readme",
   "devDependencies": {
     "angular": "^1.6.3",
-    "angular-route": "^1.6.3"
+    "angular-route": "^1.6.3",
   }
 }
