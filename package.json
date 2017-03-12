@@ -2,7 +2,7 @@
   "name": "fantasy-drag-race",
   "version": "1.0.0",
   "engines": {
-    "node": "6.9.4"
+    "node": "6.2.2"
   },
   "description": "a fantasy football style game for the 9th season of rupaul's drag race",
   "main": "server.js",
