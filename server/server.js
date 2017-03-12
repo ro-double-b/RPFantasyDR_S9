@@ -4,6 +4,7 @@ var app = express()
 var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + './../client'))
+app.use('/scripts', express.static(__dirname + './../node_modules'))
 
 app.get('/', function(req, res) {
 
