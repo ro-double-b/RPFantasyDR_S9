@@ -7,7 +7,7 @@ app.use(express.static(__dirname + './../client'))
 
 app.get('/', function(req, res) {
 
-    res.render('./../index.html');
+    res.send('HELLO WORLD');
 });
 
 app.listen(3000, function () {
