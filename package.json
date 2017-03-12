@@ -1,0 +1,28 @@
+{
+  "name": "fantasy-drag-race",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.9.4"
+  },
+  "description": "a fantasy football style game for the 9th season of rupaul's drag race",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ro-double-b/RPFantasyDR_S9.git"
+  },
+  "author": "ro_double_b",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ro-double-b/RPFantasyDR_S9/issues"
+  },
+  "homepage": "https://github.com/ro-double-b/RPFantasyDR_S9#readme",
+  "devDependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "express": "^4.15.2"
+  }
+}
