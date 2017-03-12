@@ -19,5 +19,5 @@
   "devDependencies": {
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
-  }
+  },
 }
