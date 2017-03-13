@@ -1,40 +1,37 @@
-var routerApp = angular.module('fantasyDragRace', [
+angular.module('fantasyDragRace', [
   'ui.router',
-  // 'fantasyDragRace.auth',
-  // 'fantasyDragRace.selection',
-  // 'fantasyDragRace.results'
-  ]);
+])
 
-routerApp.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/home');
-  $stateProvider  
+  .config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/home');
+    $stateProvider
     .state('home', {
       url: '/home',
       views: {
-        '': { templateUrl: './app/views/home.html' 
+        '': { templateUrl: './app/views/home.html',
       },
-        'landing@home': { 
-          templateUrl: './app/partials/landing.html' 
+        'landing@home': {
+          templateUrl: './app/partials/landing.html',
         },
-        'navbar@home': { 
-          templateUrl: './app/partials/navbar.html' 
+        'navbar@home': {
+          templateUrl: './app/partials/navbar.html',
         },
-        'about@home': { 
-          templateUrl: './app/partials/about.html' 
+        'about@home': {
+          templateUrl: './app/partials/about.html',
         },
-        'rules@home': { 
-          templateUrl: './app/partials/rules.html' 
+        'rules@home': {
+          templateUrl: './app/partials/rules.html',
         },
-        'selection@home': { 
-          templateUrl: './app/partials/selection.html'
-          
+        'selection@home': {
+          templateUrl: './app/partials/selection.html',
+          controller: 'SelectionController',
         },
-        'rankings@home': { 
-          templateUrl: './app/partials/rankings.html' 
+        'rankings@home': {
+          templateUrl: './app/partials/rankings.html',
         },
-        'aboutme@home': { 
-          templateUrl: './app/partials/aboutme.html' 
+        'aboutme@home': {
+          templateUrl: './app/partials/aboutme.html',
         },
-      }   
+      },
     });
-});
+  });

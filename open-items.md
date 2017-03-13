@@ -15,3 +15,5 @@ Minor updates
 [ ] update content for About Me
 [ ] go through and refactor to ES6 where necessary
 [ ] update for ESLint
+[ ] refactor css document to match actual content
+[ ] move heroku address to actual domain
