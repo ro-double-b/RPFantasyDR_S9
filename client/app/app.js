@@ -1,5 +1,8 @@
 var routerApp = angular.module('fantasyDragRace', [
-  'ui.router'
+  'ui.router',
+  // 'fantasyDragRace.auth',
+  // 'fantasyDragRace.selection',
+  // 'fantasyDragRace.results'
   ]);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
