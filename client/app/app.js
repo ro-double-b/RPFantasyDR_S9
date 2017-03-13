@@ -1,7 +1,6 @@
 angular.module('fantasyDragRace', [
   'ui.router',
 ])
-
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     $stateProvider
@@ -34,4 +33,4 @@ angular.module('fantasyDragRace', [
         },
       },
     });
-  });
+  })
