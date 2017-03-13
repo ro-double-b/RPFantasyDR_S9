@@ -23,6 +23,7 @@
   "devDependencies": {
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
     "express": "^4.15.2"
   },
   "dependencies": {
