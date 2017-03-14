@@ -1,4 +1,19 @@
 const db = require('../database/db.js');
+const bcrypt = require('bcrypt');
+
+const salt = 10;
+
+function hashPassword(password) {
+  return new Promise((resolve, reject) => {
+    bcrypt.hash(password, salt, (err, hash) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(hash);
+      }
+    });
+  });
+}
 
 function createUser(name, username, password, email) {
   return db.User.create({
@@ -21,8 +36,11 @@ function signup(req, res) {
   getUser(req.body.username)
   .then((user) => {
     if (user === null) { // username not taken
-      createUser(req.body.name, req.body.username, req.body.password, req.body.email);
-      // login and create a session
+      hashPassword(req.body.password)
+      .then((hash) => {
+        createUser(req.body.name, req.body.username, hash, req.body.email);
+        // login and create a session
+      });
       res.send('correct');
     } else { // username is taken
       res.send('incorrect');
