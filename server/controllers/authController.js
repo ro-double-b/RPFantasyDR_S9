@@ -32,10 +32,11 @@ function hasSession(req) {
 }
 
 function checkUser(req, res) {
+  console.log('req');
   if (!hasSession(req)) {
     res.redirect('/');
   } else {
-    res.redirect('/home');
+    res.redirect('/');
   }
 }
 

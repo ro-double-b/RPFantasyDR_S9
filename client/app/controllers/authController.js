@@ -8,48 +8,27 @@ angular.module('fantasyDragRace')
   };
 })
 
-.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal) {
-  $scope.cancel = function() {
-    $modalInstance.dismiss('cancel');
-  };
-  $scope.invalidLogin = function(type) {
-    $modal.open({
-      templateUrl: `./app/partials/modals/${type}.html`,
-      controller: 'InvalidLogin',
-    });
+.service('Authorization', function($state) {
+
+  this.authorized = false,
+  this.memorizedState = null;
+
+  var
+  clear = function() {
+    this.authorized = false;
+    this.memorizedState = null;
+  },
+
+  go = function(fallback) {
+    this.authorized = true;
+    var targetState = this.memorizedState ? this.memorizedState : fallback;
+    $state.go(targetState);
   };
 
-  $scope.login = function(user) {
-    return $http({
-      method: 'POST',
-      url: 'api/login',
-      type: 'application/json',
-      data: user,
-    }).then((res) => {
-      $modalInstance.close();
-      if (res.data === "incorrect") {
-        // $scope.invalidLogin('invalidLogin');
-      }
-    });
-  };
-  $scope.signup = function(user) {
-    console.log(user)
-    return $http({
-      method: 'POST',
-      url: 'api/signup',
-      type: 'application/json',
-      data: user,
-    }).then((res) => {
-      $modalInstance.close();
-      if (res.data === 'incorrect') {
-        // $scope.invalidLogin('invalidSignup');
-      }
-    });
-  };
-})
-
-.controller('InvalidLogin', function($scope, $modalInstance) {
-  $scope.close = function() {
-    $modalInstance.dismiss('cancel');
+  return {
+    authorized: this.authorized,
+    memorizedState: this.memorizedState,
+    clear: clear,
+    go: go
   };
 });
