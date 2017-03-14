@@ -1,8 +1,9 @@
 angular.module('fantasyDragRace')
-.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Authorization) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Authorization, $state) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
+
   $scope.invalidLogin = function(type) {
     $modal.open({
       templateUrl: `./app/partials/modals/${type}.html`,
@@ -21,12 +22,13 @@ angular.module('fantasyDragRace')
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
+        console.log(Authorization)
+        $scope.authorized = true;
         Authorization.go('private');
       }
     });
   };
   $scope.signup = function(user) {
-    console.log(user)
     return $http({
       method: 'POST',
       url: 'api/signup',
@@ -40,31 +42,5 @@ angular.module('fantasyDragRace')
         Authorization.go('private');
       }
     });
-  };
-})
-
-
-.service('Authorization', function($state) {
-
-  this.authorized = false,
-  this.memorizedState = null;
-
-  var
-  clear = function() {
-    this.authorized = false;
-    this.memorizedState = null;
-  },
-
-  go = function(fallback) {
-    this.authorized = true;
-    var targetState = this.memorizedState ? this.memorizedState : fallback;
-    $state.go(targetState);
-  };
-
-  return {
-    authorized: this.authorized,
-    memorizedState: this.memorizedState,
-    clear: clear,
-    go: go
   };
 });

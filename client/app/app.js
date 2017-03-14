@@ -38,10 +38,6 @@ angular.module('fantasyDragRace', [
     })
     .state('private', {
       url: '/home',
-      data: {
-        redirectTo: '/',
-        authorization: true,
-      },
       views: {
         '': { templateUrl: './app/views/index.html',
       },
@@ -70,4 +66,16 @@ angular.module('fantasyDragRace', [
         },
       },
     })
+  })
+
+  .run(function($rootScope, $state, $location, Authorization) {
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+      if(Authorization.authorized) {
+        return;
+      } else {
+        $state.go('login');
+        event.preventDefault();
+        return
+      }
+    });
   });
