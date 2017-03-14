@@ -14,7 +14,7 @@ app.use(express.static(`${__dirname}./../client`));
 // app.use('/scripts', express.static(`${__dirname}./../node_modules`));
 
 // app.get('/', (req, res) => {
-//   res.send('./../client');
+  // res.send('./../client');
 // });
 
 app.post('/login', controllers.login);

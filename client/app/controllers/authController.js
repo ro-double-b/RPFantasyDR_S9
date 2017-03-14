@@ -20,7 +20,7 @@ angular.module('fantasyDragRace')
       data: user,
     }).then(
     $modalInstance.close('close')
-    )
+    );
   };
   $scope.signup = function(user) {
     return $http({
@@ -30,6 +30,6 @@ angular.module('fantasyDragRace')
       data: user,
     }).then(
     $modalInstance.close('close')
-    )
+    );
   };
 });
