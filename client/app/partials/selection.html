@@ -1,3 +1,4 @@
+
 <section id="subscribe">
   <div class="container wow fadeInUp">
 
@@ -31,21 +32,6 @@
   </div>
 </section>
     
-
-<!-- 
-      <div ng-init='links = ["img/aja.jpg", "img/alexis_michelle.jpg"]'>
-        <div ng-repeat='queenName in links'> <div class="row">
-        <div class="col-md-2">
-          <a class="portfolio-item" style="background-image: url({{queenName}});" href="">
-            <div class="details">
-              <h4>Portfolio 1</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
- -->
-
 <section id="portfolio">
   <div class="container wow fadeInUp scroll-group">
     <div class="row">
@@ -55,123 +41,19 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/aja.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 1</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
+    <div class="">
+      <div ng-repeat="queen in queens" class="col-md-2">
+        <div class="row">
+            <a class="portfolio-item" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+              <div class="details">
+                <h4>{{queen.name}}</h4>
+                <span>{{queen.hometown}}</span>
+                <span>{{queen.age}}</span>
+                <span>"{{queen.entrance}}"</span>
+              </div>
+            </a>
+        </div>
       </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/alexis.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 2</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/charlie.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 3</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/eureka.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 4</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/farrah.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 5</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/james.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 6</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/kimora.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 7</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/nina.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/peppermint.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/sasha.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/shea.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/trinity.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-2">
-        <a class="portfolio-item" style="background-image: url(img/valentina.jpg);" href="">
-          <div class="details">
-            <h4>Portfolio 8</h4>
-            <span>Alored dono par</span>
-          </div>
-        </a>
-      </div>
-      
     </div>
   </div>
 </section>
