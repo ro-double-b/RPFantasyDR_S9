@@ -8,19 +8,29 @@ angular.module('fantasyDragRace')
   };
 })
 
-.controller('ModalInstanceController', function($scope, $modalInstance, $http) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
+  $scope.invalidLogin = function(type) {
+    $modal.open({
+      templateUrl: `./app/partials/${type}.html`,
+      controller: 'InvalidLogin',
+    });
+  };
+
   $scope.login = function(user) {
     return $http({
       method: 'POST',
       url: 'api/login',
       type: 'application/json',
       data: user,
-    }).then(
-    $modalInstance.close('close')
-    );
+    }).then((res) => {
+      $modalInstance.close('close');
+      if (res.data === "incorrect") {
+        $scope.invalidLogin('invalidLogin');
+      }
+    });
   };
   $scope.signup = function(user) {
     return $http({
@@ -28,8 +38,17 @@ angular.module('fantasyDragRace')
       url: 'api/signup',
       type: 'application/json',
       data: user,
-    }).then(
-    $modalInstance.close('close')
-    );
+    }).then((res) => {
+      $modalInstance.close('close');
+      if (res.data === 'incorrect') {
+        $scope.invalidLogin('invalidSignup');
+      }
+    });
+  };
+})
+
+.controller('InvalidLogin', function($scope, $modalInstance) {
+  $scope.close = function() {
+    $modalInstance.dismiss('cancel');
   };
 });
