@@ -1,0 +1,6 @@
+{
+  "migrations-path": "/server/db",
+  "config-path": "/server/db",
+  "models-path": "/server/db",
+  "seeders-path": "/server/db"
+}
