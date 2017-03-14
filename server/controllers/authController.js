@@ -20,6 +20,25 @@ function getUser(username) {
   });
 }
 
+function createSession(req, res, user) {
+  return req.session.regenerate(() => {
+    req.session.user = user;
+    res.send('/home');
+  });
+}
+
+function hasSession(req) {
+  return req.session ? !req.session.user : false;
+}
+
+function checkUser(req, res) {
+  if (!hasSession(req)) {
+    res.redirect('/');
+  } else {
+    res.redirect('/home');
+  }
+}
+
 function signup(req, res) {
   getUser(req.body.username)
   .then((user) => {
@@ -28,7 +47,10 @@ function signup(req, res) {
         if (err) {
           throw err;
         } else {
-          createUser(req.body.name, req.body.username, hash, req.body.email);
+          createUser(req.body.name, req.body.username, hash, req.body.email)
+          .then((userObj) => {
+            createSession(req, res, userObj);
+          });
         }
       });
       res.send('correct');
@@ -46,18 +68,26 @@ function login(req, res) {
         if (err) {
           throw err;
         } else if (result) {
-          res.send('correct');
+          createSession(req, res, user);
         } else {
           res.send('incorrect');
         }
-      })
+      });
     } else { // username is not in database
       res.send('incorrect');
     }
   });
 }
 
+function logout(req, res) {
+  req.session.regenerate((err) => {
+    res.send('/');
+  });
+}
+
 module.exports = {
   signup,
   login,
+  checkUser,
+  logout,
 };
