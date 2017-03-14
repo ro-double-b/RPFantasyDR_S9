@@ -15,6 +15,18 @@ function hashPassword(password) {
   });
 }
 
+function checkPassword(inputPassword, dbPassword) {
+  return new Promise((resolve, reject) => {
+    bcrypt.compare(inputPassword, dbPassword, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
+  });
+}
+
 function createUser(name, username, password, email) {
   return db.User.create({
     name,
@@ -52,12 +64,14 @@ function login(req, res) {
   getUser(req.body.username)
   .then((user) => {
     if (user !== null) { // user is in database
-      if (user.dataValues.password === req.body.password) { // password matches
-        // login and create a session
-        res.send('correct');
-      } else { // password does not match
-        res.send('incorrect');
-      }
+      checkPassword(req.body.password, user.password)
+      .then((result) => {
+        if (result) {
+          // login and create a session
+        } else { // password does not match
+          res.send('correct');
+        }
+      });
     } else { // username is not in database
       res.send('incorrect');
     }
