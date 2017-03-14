@@ -1,7 +1,7 @@
 <div class="modal-header">
   <h3>Create A New Account!</h3>
 </div>
-<form name="form.userForm">
+<form name="form.userForm" ng-submit="signup()">
   <div class="modal-body">
 
     <div class="form-group">
@@ -19,9 +19,14 @@
       <input type="email" name="email" class="form-control" ng-model="email">
     </div>
 
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" ng-model="password">
+    </div>
+
   </div>
   <div class="modal-footer">
     <button type="submit" class="btn btn-get-started">OK</button>
-    <button class="btn btn-get-started">Cancel</button>
+    <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
 </form>

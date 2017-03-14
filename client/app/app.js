@@ -12,7 +12,7 @@ angular.module('fantasyDragRace', [
       },
         'landing@home': {
           templateUrl: './app/partials/landing.html',
-          controller: 'ModalController',
+          controller: 'AuthController',
         },
         'navbar@home': {
           templateUrl: './app/partials/navbar.html',
