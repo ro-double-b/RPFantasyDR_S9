@@ -1,31 +1,7 @@
 const db = require('../database/db.js');
 const bcrypt = require('bcrypt');
 
-const salt = 10;
-
-function hashPassword(password) {
-  return new Promise((resolve, reject) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(hash);
-      }
-    });
-  });
-}
-
-function checkPassword(inputPassword, dbPassword) {
-  return new Promise((resolve, reject) => {
-    bcrypt.compare(inputPassword, dbPassword, (err, res) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(res);
-      }
-    });
-  });
-}
+const saltRounds = 10;
 
 function createUser(name, username, password, email) {
   return db.User.create({
@@ -48,10 +24,12 @@ function signup(req, res) {
   getUser(req.body.username)
   .then((user) => {
     if (user === null) { // username not taken
-      hashPassword(req.body.password)
-      .then((hash) => {
-        createUser(req.body.name, req.body.username, hash, req.body.email);
-        // login and create a session
+      bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+        if (err) {
+          throw err;
+        } else {
+          createUser(req.body.name, req.body.username, hash, req.body.email);
+        }
       });
       res.send('correct');
     } else { // username is taken
@@ -64,14 +42,15 @@ function login(req, res) {
   getUser(req.body.username)
   .then((user) => {
     if (user !== null) { // user is in database
-      checkPassword(req.body.password, user.password)
-      .then((result) => {
-        if (result) {
-          // login and create a session
-        } else { // password does not match
+      bcrypt.compare(req.body.password, user.password, (err, result) => {
+        if (err) {
+          throw err;
+        } else if (result) {
           res.send('correct');
+        } else {
+          res.send('incorrect');
         }
-      });
+      })
     } else { // username is not in database
       res.send('incorrect');
     }

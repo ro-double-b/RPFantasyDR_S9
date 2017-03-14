@@ -12,7 +12,7 @@ db.authenticate().then((err) => {
   console.log('Postgres connection has been established');
 }).catch((err) => {
   console.log('undable to connect to the database', err);
-})
+});
 
 const User = db.define('user', {
   name: Sequelize.STRING,

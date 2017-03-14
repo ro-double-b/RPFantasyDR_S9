@@ -12,13 +12,13 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-// app.use('/scripts', express.static(`${__dirname}./../node_modules`));
-
-// app.get('/', (req, res) => {
-  // res.send('./../client');
-// });
 app.use('/', router);
 
 app.listen(port);
 console.log(`Listening on port ${port}`);
 
+// app.use('/scripts', express.static(`${__dirname}./../node_modules`));
+
+// app.get('/', (req, res) => {
+  // res.send('./../client');
+// });
