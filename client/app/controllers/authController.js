@@ -2,7 +2,7 @@ angular.module('fantasyDragRace')
 .controller('AuthController', function($scope, $modal) {
   $scope.showForm = function(type) {
     const modalInstance = $modal.open({
-      templateUrl: `./app/partials/${type}.html`,
+      templateUrl: `./app/partials/modals/${type}.html`,
       controller: 'ModalInstanceController',
     });
   };
@@ -14,7 +14,7 @@ angular.module('fantasyDragRace')
   };
   $scope.invalidLogin = function(type) {
     $modal.open({
-      templateUrl: `./app/partials/${type}.html`,
+      templateUrl: `./app/partials/modals/${type}.html`,
       controller: 'InvalidLogin',
     });
   };
@@ -26,22 +26,23 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
-      $modalInstance.close('close');
+      $modalInstance.close();
       if (res.data === "incorrect") {
-        $scope.invalidLogin('invalidLogin');
+        // $scope.invalidLogin('invalidLogin');
       }
     });
   };
   $scope.signup = function(user) {
+    console.log(user)
     return $http({
       method: 'POST',
       url: 'api/signup',
       type: 'application/json',
       data: user,
     }).then((res) => {
-      $modalInstance.close('close');
+      $modalInstance.close();
       if (res.data === 'incorrect') {
-        $scope.invalidLogin('invalidSignup');
+        // $scope.invalidLogin('invalidSignup');
       }
     });
   };

@@ -1,7 +1,7 @@
 <div class="modal-header">
   <h3>Log In!</h3>
 </div>
-<form name="form.userForm" ng-submit="login(user)">
+<form name="form.userForm" >
   <div class="modal-body">
 
     <div class="form-group">
@@ -16,7 +16,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-get-started">OK</button>
+    <button type="submit" class="btn btn-get-started" ng-click="login(user)">OK</button>
     <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
 </form>
