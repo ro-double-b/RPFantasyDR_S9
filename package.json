@@ -24,12 +24,13 @@
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-ui-router": "^0.4.2",
-    "express": "^4.15.2",
+    "body-parser": "^1.17.1",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^1.5.5",
-    "eslint-plugin-react": "^5.2.2"
+    "eslint-plugin-react": "^5.2.2",
+    "express": "^4.15.2"
   },
   "dependencies": {
     "express": "4.15.2"
