@@ -1,6 +1,10 @@
 const express = require('express');
+// const router = express.Router();
 const app = express();
 const bodyParser = require('body-parser');
+const pg = require('pg');
+const path = require('path');
+const connectionString = process.env.DATABASE_URL || 'postgress://localhost5432';
 
 const controllers = require('./controllers.js');
 
