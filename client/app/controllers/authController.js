@@ -15,7 +15,7 @@ angular.module('fantasyDragRace')
   $scope.login = function(user) {
     return $http({
       method: 'POST',
-      url: 'login',
+      url: 'api/login',
       type: 'application/json',
       data: user,
     }).then(
@@ -25,7 +25,7 @@ angular.module('fantasyDragRace')
   $scope.signup = function(user) {
     return $http({
       method: 'POST',
-      url: 'login',
+      url: 'api/signup',
       type: 'application/json',
       data: user,
     }).then(

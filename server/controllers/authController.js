@@ -10,11 +10,11 @@ function createUser(name, username, password, email) {
 }
 
 function signup(req, res) {
-  console.log(req.body)
+  const user = req.body;
+  createUser(user.name, user.username, user.password, user.email);
 }
 
 function login(req, res) {
-  console.log(req.body)
 }
 
 module.exports = {
