@@ -8,14 +8,28 @@ angular.module('fantasyDragRace')
   };
 })
 
-.controller('ModalInstanceController', function($scope, $modalInstance) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
-  $scope.signup = function() {
-    $modalInstance.close('close');
+  $scope.login = function(user) {
+    return $http({
+      method: 'POST',
+      url: 'login',
+      type: 'application/json',
+      data: user,
+    }).then(
+    $modalInstance.close('close')
+    );
   };
-  $scope.login = function() {
-    $modalInstance.close('close');
+  $scope.signup = function(user) {
+    return $http({
+      method: 'POST',
+      url: 'login',
+      type: 'application/json',
+      data: user,
+    }).then(
+    $modalInstance.close('close')
+    );
   };
 });
