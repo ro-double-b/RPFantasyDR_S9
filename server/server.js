@@ -1,19 +1,15 @@
 const express = require('express');
-// const router = express.Router();
-const app = express();
 const bodyParser = require('body-parser');
-const pg = require('pg');
-const path = require('path');
-const connectionString = process.env.DATABASE_URL || 'postgress://localhost5432';
-
 const controllers = require('./controllers.js');
 
+const app = express();
 const port = process.env.PORT || 8080;
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
-app.use(bodyParser.json());
+
 app.use(express.static(`${__dirname}./../client`));
 // app.use('/scripts', express.static(`${__dirname}./../node_modules`));
 
