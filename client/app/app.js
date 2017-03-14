@@ -1,5 +1,6 @@
 angular.module('fantasyDragRace', [
   'ui.router',
+  'ui.bootstrap',
 ])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -11,6 +12,7 @@ angular.module('fantasyDragRace', [
       },
         'landing@home': {
           templateUrl: './app/partials/landing.html',
+          controller: 'ModalController',
         },
         'navbar@home': {
           templateUrl: './app/partials/navbar.html',
@@ -33,4 +35,4 @@ angular.module('fantasyDragRace', [
         },
       },
     });
-  })
+  });
