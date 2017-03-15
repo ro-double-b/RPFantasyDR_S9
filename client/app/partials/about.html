@@ -1,4 +1,24 @@
-<section id="about">
+
+<ul ng-repeat="group in groups"
+    class="groups"
+    dnd-list="group.items">
+  <li class="title">{{group.name}}</li>
+  <li ng-repeat="item in group.items">{{ item.name }}</li>
+</ul>
+
+<ul class="items">
+  <li class="item"
+      ng-repeat="item in items"
+      dnd-draggable="item"
+      dnd-moved="items.splice($index, 1)"
+      dnd-effect-allowed="move">
+    {{item.name}}
+  </li>
+</ul>
+    
+
+    
+<!-- <section id="about">
   <div class="container wow fadeInUp">
     <div class="row">
       <div class="col-md-12">
@@ -22,3 +42,4 @@
     </div>
   </div>
 </section>
+ -->

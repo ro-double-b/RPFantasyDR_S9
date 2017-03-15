@@ -899,3 +899,52 @@ body.mobile-nav-active #mobile-nav-toggle {
     width:100%;
     padding: 0 15px;
 }
+/*::LSKJF:LSDKJF:*/
+
+ul[dnd-list] {
+  min-height: 150px;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  width: 30%;
+  margin-right: 5%;
+}
+
+ul[dnd-list]:nth-child(3n + 3) {
+  margin-right: 0;
+}
+
+.items {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.groups .title {
+  padding: 10px;
+  background: #ccc;
+}
+
+.groups .dndPlaceholder {
+  background: #f4f4f4;
+  margin: 10px;
+  padding: 20px;
+}
+
+.dndDraggingSource {
+  display: none;
+}
+
+ul[dnd-list], ul[dnd-list] > li {
+    position: relative;
+}
