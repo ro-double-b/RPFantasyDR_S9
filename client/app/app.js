@@ -8,6 +8,9 @@ angular.module('fantasyDragRace', [
 
     .state('login', {
       url: '/',
+      data: {
+        requireLogin: false,
+      },
       views: {
         '': { templateUrl: './app/views/index.html',
       },
@@ -38,6 +41,9 @@ angular.module('fantasyDragRace', [
     })
     .state('private', {
       url: '/home',
+      data: {
+        requireLogin: true,
+      },
       views: {
         '': { templateUrl: './app/views/index.html',
       },
@@ -65,17 +71,37 @@ angular.module('fantasyDragRace', [
           templateUrl: './app/partials/aboutme.html',
         },
       },
-    })
+    });
   })
 
-  .run(function($rootScope, $state, $location, Authorization) {
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
-      if(Authorization.authorized) {
-        return;
-      } else {
+.factory('Auth', function() {
+  return {
+    isLoggedIn: false,
+  }; })
+.controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
+  $scope.auth = Auth;
+}])
+
+  .run(function ($rootScope, $state, $location, Auth) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+      // not logged in yet
+      const shouldLogin = toState.data !== undefined
+        && toState.data.requireLogin
+        && !Auth.isLoggedIn;
+      if (shouldLogin) {
         $state.go('login');
         event.preventDefault();
-        return
+        return;
+      }
+      // logged in
+      if (Auth.isLoggedIn) {
+        const shouldGoToMain = fromState.name === ""
+          && toState.name === "private";
+        if (shouldGoToMain) {
+          $state.go('private');
+          event.preventDefault();
+        }
+        return;
       }
     });
   });

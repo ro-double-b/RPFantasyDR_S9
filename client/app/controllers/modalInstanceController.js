@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Authorization, $state) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Auth, Authorization, $state) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
@@ -22,7 +22,7 @@ angular.module('fantasyDragRace')
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
-        console.log(Authorization)
+        Auth.isLoggedIn = true;
         $scope.authorized = true;
         Authorization.go('private');
       }
@@ -39,6 +39,7 @@ angular.module('fantasyDragRace')
       if (res.data === 'incorrect') {
         $scope.invalidLogin('invalidSignup');
       } else {
+        Auth.isLoggedIn = true;
         Authorization.go('private');
       }
     });
