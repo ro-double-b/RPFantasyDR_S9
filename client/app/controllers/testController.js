@@ -1,33 +1,21 @@
 angular
   .module('fantasyDragRace')
-.controller('TestController', function($scope) {
-  $scope.groups = [
-    {
-      name: 'Group 1',
-      items: []
-    },
-    {
-      name: 'Group 2',
-      items: []
-    },
-    {
-      name: 'Group 3',
-      items: []
+.controller("TestController", function($scope) {
+
+    $scope.models = {
+        selected: null,
+        lists: {"Winner": [], "Runner-Up": [], "Bottom": [], "Eliminated": [], "Queens": []}
+    };
+
+    // Generate initial model
+    for (var i = 1; i <= 3; ++i) {
+        $scope.models.lists.Queens.push({label: "Item A" + i});
+        
     }
-  ];
-  
-  $scope.items = [
-    {
-      id: 1,
-      name: 'Item 1'
-    },
-    {
-      id: 2,
-      name: 'Item 3'
-    },
-    {
-      id: 3,
-      name: 'Item 4'
-    }
-  ];
+    console.log($scope.models)
+    // Model to JSON for demo purpose
+    $scope.$watch('models', function(model) {
+        $scope.modelAsJson = angular.toJson(model, true);
+    }, true);
+
 });
