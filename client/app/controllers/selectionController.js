@@ -1,6 +1,6 @@
 angular.module('fantasyDragRace')
 .controller('SelectionController', function($scope, $window) {
-
+  $scope.names = ["Emil", "Tobias", "Linus"];
   $scope.queens = [
     { name: "Aja",
       entrance: "Your edges are officially snatched",

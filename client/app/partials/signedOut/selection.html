@@ -10,18 +10,22 @@
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Winner</p>
+        <select ng-model="winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Runner-Up</p>
+      <select ng-model="runnerup" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Bottom</p>
+        <select ng-model="bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Eliminated</p>
+        <select ng-model="eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-12 subscribe-btn-container">
@@ -32,7 +36,7 @@
   </div>
 </section>
     
-<section id="portfolio">
+<!-- <section id="portfolio">
   <div class="container wow fadeInUp scroll-group">
     <div class="row">
       <div class="col-md-12">
@@ -57,3 +61,4 @@
     </div>
   </div>
 </section>
+ -->
