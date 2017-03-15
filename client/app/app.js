@@ -77,7 +77,8 @@ angular.module('fantasyDragRace', [
 .factory('Auth', function() {
   return {
     isLoggedIn: false,
-  }; })
+  };
+})
 .controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
   $scope.auth = Auth;
 }])
