@@ -20,32 +20,33 @@ function createResult(weekID, winnerID, runnerUpID, bottomID, eliminatedID) {
 }
 
 function createTotal(username, totalArr) {
-  return db.Total.create({
+  return db.Totals.create({
     username,
     totals: totalArr,
   });
 }
 
 function getUsers() {
-  return db.Selection.findAll();
+  return db.User.findAll({
+  })
 }
 
-function getUserSelection(user) {
+function getUserSelection(username) {
   return db.Selection.findAll({
     where: {
-      user,
+      username,
     },
   });
 }
 
 function getResults() {
-  return db.Selection.findAll();
+  return db.Results.findAll();
 }
 
-function getTotal(user) {
+function getTotal(username) {
   return db.Totals.findOne({
     where: {
-      user,
+      username,
     },
   });
 }
@@ -55,8 +56,7 @@ function updateTotals() {
   .then((results) => {
     getUsers() // get every user
     .then((users) => {
-      users.forEach((user) => { // iterate over each user
-        console.log(user.dataValues)
+      users.forEach((user, index) => { // iterate over each user
         const userValue = user.dataValues.username;
         const total = [];
         getUserSelection(userValue)
@@ -82,10 +82,10 @@ function updateTotals() {
             });
           });
         });
-        getTotal()
+        getTotal(userValue)
         .then((entry) => {
           if (entry === null) {
-            createTotal(user, total);
+            createTotal(userValue, total);
           } else {
             entry.updateAttributes({
               totals: total,

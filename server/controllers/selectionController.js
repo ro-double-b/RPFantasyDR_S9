@@ -14,6 +14,7 @@ function getSubmission(username) {
 function createSubmission(username, winnerID, runnerUpID, bottomID, eliminatedID) {
   return db.Selection.create({
     username,
+    weekID,
     winnerID,
     runnerUpID,
     bottomID,
