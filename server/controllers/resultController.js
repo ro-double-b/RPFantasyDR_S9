@@ -43,13 +43,12 @@ function getResults() {
 }
 
 function getTotal(user) {
-  return db.Total.findOne({
+  return db.Totals.findOne({
     where: {
       user,
     },
   });
 }
-
 
 function updateTotals() {
   getResults()
@@ -57,23 +56,25 @@ function updateTotals() {
     getUsers() // get every user
     .then((users) => {
       users.forEach((user) => { // iterate over each user
+        console.log(user.dataValues)
+        const userValue = user.dataValues.username;
         const total = [];
-        getUserSelection(user)
+        getUserSelection(userValue)
         .then((selections) => {
           results.forEach((weekResult) => {
             selections.forEach((weekUserSelection) => {
-              if (weekResult.weekID === weekUserSelection.weekID) {
+              if (weekResult.dataValues.weekID === weekUserSelection.dataValues.weekID) {
                 let weeklyTotal = 0;
-                if (weekResult.winnerID === weekUserSelection.winnerID) {
+                if (weekResult.dataValues.winnerID === weekUserSelection.dataValues.winnerID) {
                   weeklyTotal = weeklyTotal + points;
                 }
-                if (weekResult.runnerUpID === weekUserSelection.runnerUpID) {
+                if (weekResult.dataValues.runnerUpID === weekUserSelection.dataValues.runnerUpID) {
                   weeklyTotal = weeklyTotal + points;
                 }
-                if (weekResult.bottomID === weekUserSelection.bottomID) {
+                if (weekResult.dataValues.bottomID === weekUserSelection.dataValues.bottomID) {
                   weeklyTotal = weeklyTotal + points;
                 }
-                if (weekResult.eliminatedID === weekUserSelection.eliminatedID) {
+                if (weekResult.dataValues.eliminatedID === weekUserSelection.dataValues.eliminatedID) {
                   weeklyTotal = weeklyTotal + points;
                 }
                 total.push(weeklyTotal);
