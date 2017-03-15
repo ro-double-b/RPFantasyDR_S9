@@ -41,7 +41,7 @@ const Results = db.define('results', {
 const Totals = db.define('totals', {
   username: Sequelize.STRING,
   totals: Sequelize.ARRAY(Sequelize.INTEGER),
-})
+});
 
 User.sync();
 Selection.sync();

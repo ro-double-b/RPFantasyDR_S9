@@ -9,7 +9,6 @@ angular.module('fantasyDragRace')
       bottomID: resultObj.bottom.queenID,
       eliminatedID: resultObj.eliminated.queenID,
     };
-    console.log(selection)
     return $http({
       method: 'POST',
       url: 'api/resultSubmission',
