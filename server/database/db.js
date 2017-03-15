@@ -1,8 +1,28 @@
-const pg = require('pg');
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+const Sequelize = require('sequelize');
+const config = require('./config');
+const db = new Sequelize(config.database, config.username, config.password, {
+  protocol: 'postgres',
+  dialect: 'postgres',
+  host: config.host,
+  logging: false,
+});
 
-const client = new pg.Client(connectionString);
-client.connect();
-const query = client.query(
-  'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-query.on('end', () => { client.end(); });
+// uncomment below to test the connection
+db.authenticate().then((err) => {
+  console.log('Postgres connection has been established');
+}).catch((err) => {
+  console.log('undable to connect to the database', err);
+});
+
+const User = db.define('user', {
+  name: Sequelize.STRING,
+  username: Sequelize.STRING,
+  email: Sequelize.STRING,
+  password: Sequelize.STRING,
+});
+
+User.sync();
+
+module.exports = {
+  User,
+};
