@@ -8,14 +8,14 @@ angular.module('fantasyDragRace')
       runnerUpID: resultObj.runnerUp.queenID,
       bottomID: resultObj.bottom.queenID,
       eliminatedID: resultObj.eliminated.queenID,
-    }
+    };
     return $http({
       method: 'POST',
       url: 'api/resultSubmission',
       type: 'application/json',
       data: selection,
-    })
-  }
+    });
+  };
 
   $scope.queens = [
       { queenID: 1,
@@ -96,6 +96,5 @@ angular.module('fantasyDragRace')
         age: 25,
         hometown: "Los Angeles",
       },
-    ];
-
-})
+  ];
+});

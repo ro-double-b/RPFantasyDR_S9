@@ -6,36 +6,17 @@
 
     <div class="form-group">
       <label>Week</label>
-      <input type="text" name="username" class="form-control" ng-model="result.week">
+      <input type="text" name="username" class="form-control" ng-model="user.username">
     </div>
-  </div>
-    <div class="row">
 
-
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Winner</p>
-        <select ng-model="result.winner" ng-options='queen.name for queen in queens'></select>
-      </div>
-
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Runner-Up</p>
-      <select ng-model="result.runnerUp" ng-options='queen.name for queen in queens'></select>
-      </div>
-
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Bottom</p>
-        <select ng-model="result.bottom" ng-options='queen.name for queen in queens'></select>
-      </div>
-
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Eliminated</p>
-        <select ng-model="result.eliminated" ng-options='queen.name for queen in queens'></select>
-      </div>
-
+    <div class="form-group">
+      <label>WHO</label>
+      <input type="password" name="password" class="form-control" ng-model="user.password">
     </div>
+
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-get-started" ng-click="submitResult(result)">OK</button>
-    
+    <button type="submit" class="btn btn-get-started" ng-click="login(user)">OK</button>
+    <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
 </form>
