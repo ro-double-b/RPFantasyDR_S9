@@ -10,26 +10,26 @@
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Winner</p>
-        <select ng-model="winner" ng-options='queen.name for queen in queens'></select>
+        <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Runner-Up</p>
-      <select ng-model="runnerup" ng-options='queen.name for queen in queens'></select>
+      <select ng-model="selection.runnerup" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Bottom</p>
-        <select ng-model="bottom" ng-options='queen.name for queen in queens'></select>
+        <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         <p class="subscribe-btn" href="#">Eliminated</p>
-        <select ng-model="eliminated" ng-options='queen.name for queen in queens'></select>
+        <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-12 subscribe-btn-container">
-        <a class="subscribe-btn" href="#">Submit</a>
+        <a class="subscribe-btn" href="#" ng-click="submitSelection(selection)">Submit</a>
       </div>
 
     </div>

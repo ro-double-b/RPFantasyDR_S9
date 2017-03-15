@@ -21,8 +21,27 @@ const User = db.define('user', {
   password: Sequelize.STRING,
 });
 
+const Selection = db.define('selection', {
+  username: Sequelize.STRING,
+  weekID: Sequelize.INTEGER,
+  winnerID: Sequelize.INTEGER,
+  runnerUpID: Sequelize.INTEGER,
+  bottomID: Sequelize.INTEGER,
+  eliminatedID: Sequelize.INTEGER,
+});
+
+const Results = db.define('results', {
+  weekID: Sequelize.INTEGER,
+  winnerID: Sequelize.INTEGER,
+  runnerUpID: Sequelize.INTEGER,
+  bottomID: Sequelize.INTEGER,
+  eliminatedID: Sequelize.INTEGER,
+});
+
 User.sync();
 
 module.exports = {
   User,
+  Selection,
+  Results,
 };

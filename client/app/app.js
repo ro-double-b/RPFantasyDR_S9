@@ -24,7 +24,6 @@ angular.module('fantasyDragRace', [
         },
         'about@login': {
           templateUrl: './app/partials/about.html',
-          controller: 'TestController',
         },
         'rules@login': {
           templateUrl: './app/partials/rules.html',
