@@ -1,6 +1,7 @@
 angular.module('fantasyDragRace', [
   'ui.router',
   'ui.bootstrap',
+  'dndLists',
 ])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
@@ -77,7 +78,8 @@ angular.module('fantasyDragRace', [
 .factory('Auth', function() {
   return {
     isLoggedIn: false,
-  }; })
+  };
+})
 .controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
   $scope.auth = Auth;
 }])
@@ -105,3 +107,4 @@ angular.module('fantasyDragRace', [
       }
     });
   });
+

@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Auth, Authorization, $state) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Auth, Authorization, $state, $rootScope) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
@@ -25,6 +25,7 @@ angular.module('fantasyDragRace')
         Auth.isLoggedIn = true;
         $scope.authorized = true;
         Authorization.go('private');
+        $rootScope.user = user.username;
       }
     });
   };
@@ -41,6 +42,7 @@ angular.module('fantasyDragRace')
       } else {
         Auth.isLoggedIn = true;
         Authorization.go('private');
+        $rootScope.user = user.username;
       }
     });
   };

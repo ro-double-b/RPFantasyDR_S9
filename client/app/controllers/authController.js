@@ -9,26 +9,20 @@ angular.module('fantasyDragRace')
 })
 
 .service('Authorization', function($state) {
+  this.authorized = false;
 
-  this.authorized = false,
-  this.memorizedState = null;
-
-  var
-  clear = function() {
+  const clear = () => {
     this.authorized = false;
-    this.memorizedState = null;
-  },
+  };
 
-  go = function(fallback) {
+  const go = (fallback) => {
     this.authorized = true;
-    var targetState = this.memorizedState ? this.memorizedState : fallback;
-    $state.go(targetState);
+    $state.go(fallback);
   };
 
   return {
     authorized: this.authorized,
-    memorizedState: this.memorizedState,
-    clear: clear,
-    go: go
+    clear,
+    go,
   };
 });
