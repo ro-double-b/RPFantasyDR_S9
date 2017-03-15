@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h3>Results Entry</h3>
+</div>
+<form >
+  <div class=>
+
+    <div class="form-group">
+      <label>Week</label>
+      <input type="text" name="username" class="form-control" ng-model="result.week">
+    </div>
+  </div>
+    <div class="row">
+
+
+      <div class="col-md-3 subscribe-btn-container">
+        <p class="subscribe-btn" href="#">Winner</p>
+        <select ng-model="result.winner" ng-options='queen.name for queen in queens'></select>
+      </div>
+
+      <div class="col-md-3 subscribe-btn-container">
+        <p class="subscribe-btn" href="#">Runner-Up</p>
+      <select ng-model="result.runnerUp" ng-options='queen.name for queen in queens'></select>
+      </div>
+
+      <div class="col-md-3 subscribe-btn-container">
+        <p class="subscribe-btn" href="#">Bottom</p>
+        <select ng-model="result.bottom" ng-options='queen.name for queen in queens'></select>
+      </div>
+
+      <div class="col-md-3 subscribe-btn-container">
+        <p class="subscribe-btn" href="#">Eliminated</p>
+        <select ng-model="result.eliminated" ng-options='queen.name for queen in queens'></select>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-get-started" ng-click="submitResult(result)">OK</button>
+    
+  </div>
+</form>

@@ -1,7 +1,6 @@
 angular.module('fantasyDragRace', [
   'ui.router',
   'ui.bootstrap',
-  'dndLists',
 ])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
@@ -70,6 +69,20 @@ angular.module('fantasyDragRace', [
         },
         'aboutme@private': {
           templateUrl: './app/partials/aboutme.html',
+        },
+      },
+    })
+    .state('results', {
+      url: '/results',
+      data: {
+        requireLogin: false,
+      },
+      views: {
+        '': { templateUrl: './app/views/index.html',
+      },
+        'resultForm@results': {
+          templateUrl: './app/partials/resultForm.html',
+          controller: 'ResultsController',
         },
       },
     });
