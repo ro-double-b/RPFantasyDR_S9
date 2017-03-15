@@ -38,10 +38,19 @@ const Results = db.define('results', {
   eliminatedID: Sequelize.INTEGER,
 });
 
+const Totals = db.define('totals', {
+  username: Sequelize.STRING,
+
+})
+
 User.sync();
+Selection.sync();
+Results.sync();
+Totals.sync();
 
 module.exports = {
   User,
   Selection,
   Results,
+  Totals,
 };
