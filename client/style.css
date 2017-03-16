@@ -964,9 +964,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .dropBox {
   height: 100px;
-  background-color: green;  
+  background-color: gray;  
 }
 
 .modal-center {
   text-align: center;
+}
+
+.selected-drag-drop {
+  
+  width: 100%;
 }

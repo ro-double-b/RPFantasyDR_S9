@@ -1,13 +1,24 @@
 <script>
   $(() => {
-    $(".draggable").draggable();
+    $("div.droptrue").sortable({
+      connectWith: "div",
+    });
+
+  });
+  $(() => {
+    $(".draggable").draggable({
+     });
     $(".droppable").droppable({
       drop: (event, ui) => {
-        $(this)
-        .addClass("col-md-1")
-        .removeClass("col-md-12")
-        .find("p")
-          .html("Dropped!");
+        console.log(ui.draggable);
+        ui.draggable.removeClass('col-md-2');
+        ui.draggable.addClass('selected-drag-drop');
+      },
+    });
+    $(".droppableHolder").droppable({
+      drop: (event, ui) => {
+        ui.draggable.addClass('col-md-2');
+        ui.draggable.removeClass('selected-drag-drop');
       },
     });
   });
@@ -27,39 +38,37 @@
         <p class="section-description">Drag your selections to each catageory and then submit before the episode airs!</p>
       </div>
 
-      <div class="col-md-3 subscribe-btn-container">
-        
+      
+
+      <div class="col-md-3  subscribe-btn-container">
         <p href="#">Winner</p>
-        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
+        <div class="dropBox droptrue droppable portfolio-item "></div>
         <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
-      <div class="col-md-3 subscribe-btn-container">
-        
+      <div class="col-md-3  subscribe-btn-container">
         <p href="#">Runner-Up</p>
-        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
+        <div class="dropBox droptrue droppable portfolio-item "></div>
       <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select>
       </div>
 
-      <div class="col-md-3 subscribe-btn-container">
-        
+      <div class="col-md-3  subscribe-btn-container">
         <p href="#">Bottom</p>
-        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
+        <div class="dropBox droptrue droppable portfolio-item "></div>
         <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        
         <p href="#">Eliminated</p>
-        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
+        <div class="dropBox droptrue droppable portfolio-item "></div>
         <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
-    </div>
 
-</ul>
 
-    <ul class="horizontal-slide droptrue draggable">
-      <li ng-repeat="queen in queens track by $index" class="col-md-2 item">
+</div>
+
+    <div class="horizontal-slide droptrue droppableHolder draggable">
+      <div ng-repeat="queen in queens track by $index" class="col-md-2 item">
       
           <a draggable="true" class="portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
             <div class="details">
@@ -68,8 +77,8 @@
               <span>{{queen.age}}</span>
             </div>
           </a>
-      </li>
-    </ul>
+      </div>
+    </div>
     
     <div class="col-md-12 subscribe-btn-container">
       <a  href="#" ng-click="submitSelection(selection)">Submit</a>
