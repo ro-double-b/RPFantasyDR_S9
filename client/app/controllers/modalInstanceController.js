@@ -1,5 +1,6 @@
 angular.module('fantasyDragRace')
 .controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Auth, Authorization, $state, $rootScope) {
+  $scope.selectedLanguages = [];
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };

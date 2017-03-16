@@ -2,34 +2,45 @@ Sprints
 [x] refactor to Angular
 [x] add authentication
 [x] add basic DB for auth
-[ ] add selection drag/drop/submit
 [x] update DB for user's selection
 [x] add functionality for results
+[ ] add selection drag/drop/submit
 
 Minor updates
-[ ] navbar not staying at top
+// additional features
 [x] update the about content
-[x] add rules of game
 [x] get selection and queens to be aligned
-[ ] add buttions for scroll of queens
-[ ] update content for About Me
-[ ] go through and refactor to ES6 where necessary
-[ ] update for ESLint
-[ ] refactor css document to match actual content
-[ ] move heroku address to actual domain
-[ ] logout functionality not working
-[ ] express session is not working currently
-[ ] nav bar not working at all
-[ ] fill out words on website
+[x] add rules of game
 [ ] form validation
 [ ] error when autopopulate starts
-[ ] get tagline to move again
-[ ] add name after logged in
+[ ] update content for About Me
+[ ] fill out words on website
+[ ] express session is not working currently
+[ ] logout functionality not working
+[ ] dont log out when you submit
+[ ] nav bar not working
+[ ] update the links to switch between login/signup are working
 [ ] filter features on ranking
 [ ] show how you rank with others on ranking
-[ ] links in my profile are currently not working
 [ ] limit how many rankings are shown on screen
+[ ] deploy
+[ ] move heroku address to actual domain
+[ ] add name after logged in
 [ ] reformat the background to be better!
-[ ] update the links to switch between login/signup are working
-[ ] dont log out when you submit
+[ ] add buttions for scroll of queens
+[ ] navbar not staying at top
+
+// stretch features
+[ ] advanced form validation
+[ ] have profile of who you picked and how they did
 [ ] update for toot and boot additional points
+[ ] pick top three when signup
+[ ] change top three after first three episodes
+[ ] user profiles
+
+// refactoring
+[ ] update for ESLint
+[ ] go through and refactor to ES6 where necessary
+[ ] refactor css document to match actual content
+[ ] break out auth factory and controller in app.js
+[ ] update controller names to fit descriptions
