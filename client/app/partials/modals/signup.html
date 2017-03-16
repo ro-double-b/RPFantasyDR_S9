@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div id="signup" class="modal-header">
   <h3>Create A New Account!</h3>
 </div>
 <form name="form.userForm">
@@ -25,8 +25,10 @@
     </div>
 
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer modal-center">
     <button type="submit" class="btn btn-get-started" ng-click="signup(user)">OK</button>
     <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
+
+  <p class="modal-center">Already a user? <a ng-href="login">Login In</a></p>
 </form>

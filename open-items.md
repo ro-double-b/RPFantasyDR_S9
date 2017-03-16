@@ -30,3 +30,6 @@ Minor updates
 [ ] links in my profile are currently not working
 [ ] limit how many rankings are shown on screen
 [ ] reformat the background to be better!
+[ ] update the links to switch between login/signup are working
+[ ] dont log out when you submit
+[ ] update for toot and boot additional points

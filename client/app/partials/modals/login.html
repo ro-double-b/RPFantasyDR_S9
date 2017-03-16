@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div id="login" class="modal-header">
   <h3>Log In!</h3>
 </div>
 <form name="form.userForm" >
@@ -15,8 +15,9 @@
     </div>
 
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer modal-center">
     <button type="submit" class="btn btn-get-started" ng-click="login(user)">OK</button>
     <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
+    <p class="modal-center">Don't have an account? <a ng-href="#signup">Create Your Account</a></p>
 </form>
