@@ -11,9 +11,9 @@ Minor updates
 [x] update the about content
 [x] get selection and queens to be aligned
 [x] add rules of game
-[ ] form validation
-[ ] error when autopopulate starts
-[ ] update content for About Me
+[x] form validation
+[x] error when autopopulate starts
+[x] update content for About Me
 [ ] fill out words on website
 [ ] express session is not working currently
 [ ] logout functionality not working
@@ -21,6 +21,8 @@ Minor updates
 [ ] nav bar not working
 [ ] update the links to switch between login/signup are working
 [ ] filter features on ranking
+[ ] contact icons do not link to external sites
+[ ] add the email to list of contact
 [ ] show how you rank with others on ranking
 [ ] limit how many rankings are shown on screen
 [ ] deploy
@@ -29,6 +31,10 @@ Minor updates
 [ ] reformat the background to be better!
 [ ] add buttions for scroll of queens
 [ ] navbar not staying at top
+[ ] error when autopopulate starts, still getting errors but wont time out
+[ ] change bootstrap based on various size windows
+[ ] test out on mobile phone
+[ ] back to top does not work
 
 // stretch features
 [ ] advanced form validation
