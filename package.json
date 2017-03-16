@@ -8,7 +8,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,15 +24,25 @@
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-ui-router": "^0.4.2",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^1.5.5",
     "eslint-plugin-react": "^5.2.2",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "nodemon": "^1.11.0",
+    "pg": "^6.1.4",
+    "sequelize-cli": "^2.5.1"
   },
   "dependencies": {
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.12.2",
+    "sequelize-cli": "^2.1.0",
+    "sqlite3": "^3.1.8"
   }
 }

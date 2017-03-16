@@ -15,39 +15,62 @@
   <link href="style.css" rel="stylesheet">
 
   <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"
-  integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"i ntegrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
   <!-- Angular/Angular-UI -->
   <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
   <script src="app/app.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+  <!-- <script src="lib/angular-drag-and-drop-lists.min.js"></script> -->
   <script src='app/controllers/authController.js'></script>
-  <script src='app/controllers/resultsController.js'></script>
+  <script src='app/controllers/modalInstanceController.js'></script>
+  <script src='app/controllers/invalidLoginController.js'></script>
   <script src='app/controllers/selectionController.js'></script>
+  <script src='app/controllers/resultsController.js'></script>
+  <script src='app/controllers/rankingController.js'></script>
 
   <!-- Other JavaScript -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-      <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
   <script src="lib/superfish/hoverIntent.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/morphext/morphext.min.js"></script>
   <script src="lib/stickyjs/sticky.js"></script>
   <script src="lib/easing/easing.js"></script>
   <script src="animation.js"></script>
+
 </head>
 
 
 <body ng-app="fantasyDragRace">
 
+<header id="header">
+  <div class="container">
+  
+    <div id="logo" class="pull-left">
+      <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
+    </div>
+      
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li class="menu-active"><a href="#hero">Home</a></li>
+        <!-- <li><a href="#about">About</a></li> -->
+        <li><a href="#services">Rules</a></li>
+        <li><a href="#portfolio">Select Your Queens</a></li>
+        <li><a href="#team"=>Rankings</a></li>
+        <li><a href="#testimonials">About Me</a></li>
+        <!-- <li><a href="#about">Logout</a></li> -->
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
   <div ui-view></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
 </body>
 </html>

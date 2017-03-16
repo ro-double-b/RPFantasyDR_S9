@@ -1,0 +1,95 @@
+<script>  
+
+
+$(() => {
+  $("div.droptrue").sortable({
+    connectWith: "div",
+  });
+  $(".draggable").draggable({
+   });
+  $(".droppable").droppable({
+    drop: (event, ui) => {
+      if ($(event.target).attr('class').split(' ')[6] === 'taken') {
+        const innerHtml = ui.draggable.html();
+        ui.draggable.remove();
+        const fullHtml = '<div ng-repeat="queen in queens track by $index" class="col-md-3 item ng-scope ui-sortable-handle">' + innerHtml + '</div>';
+        $('#repeatQueen').append(fullHtml);
+        $(ui.draggable).parent().removeClass('taken');
+      };
+      $(event.target).addClass('taken');
+      ui.draggable.removeClass('col-md-3');
+      ui.draggable.addClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+    },
+  });
+  $(".droppableHolder").droppable({
+    drop: (event, ui) => {
+      ui.draggable.addClass('col-md-3');
+      ui.draggable.removeClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+    },
+  });
+});
+
+</script>
+
+
+<section id="portfolio">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div>
+        <h3 class="section-title">Select your Queens</h3>
+        <div class="section-title-divider"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="section-description">Drag your selections to each catageory and then submit before the episode airs!</p>
+      </div>
+
+      
+      <div class='test'>
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Winner</h3>
+        <div id="winner"  class="dropBox droptrue droppable portfolio-item "></div>
+      </div>
+
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Runner-Up</h3>
+        <div id="runnerUp" class="dropBox droptrue droppable portfolio-item "></div>
+      </div>
+
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Bottom</h3>
+        <div id="bottom" class="dropBox droptrue droppable portfolio-item "></div>
+      </div>
+
+      <div class="col-md-3 subscribe-btn-container">
+        <h3>Eliminated</h3>
+        <div id="eliminated" class="dropBox droptrue droppable portfolio-item" ng-model='selection.yes'></div>
+      </div>
+      </div>
+
+</div>
+
+    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
+      <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
+      
+          <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+            <div class="details">
+              <h4>{{queen.name}}</h4>
+              <span>{{queen.hometown}}</span>
+              <span>{{queen.age}}</span>
+            </div>
+          </a>
+      </div>
+    </div>
+    
+    <div class="col-md-12 subscribe-btn-container menu-active">
+      <a href="#hero" class="subscribe-btn" ng-click="">Sign in to Play!</a>
+    </div>
+
+
+  </div>
+</section>

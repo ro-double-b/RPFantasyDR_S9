@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   display: table;
   width: 100%;
   height: 100vh;
-  background: url(http://logoonline.mtvnimages.com/uri/mgid:file:gsp:entertainment-assets:/logo/shows/rupauls_drag_race_s9/key_art/RPDRs9Group-1920x1080.jpg) top center fixed;
+  background: url('../img/cast.jpg') top center fixed;
   background-size: cover;
 }
 
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#hero .btn-services {
+#hero .btn-  {
   border: 2px solid #fff;
   color: #fff;
 }
@@ -476,6 +476,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
 }
 
+.section-text {
+  text-align: center;
+}
+
 /* Get Started Section
 --------------------------------*/
 #about {
@@ -484,7 +488,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-container {
-  background: url(../img/rupaul.jpg);
   background-size:     contain;        
   background-repeat:   no-repeat;
   
@@ -495,25 +498,29 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-title {
-  color: #333;
+  color: #fff;
   font-weight: 700;
   font-size: 28px;
 }
 
 #about .about-text {
   line-height: 26px;
+  text-align: center;
 }
 
 #about .about-text:last-child {
   margin-bottom: 0;
 }
 
+.about-text-detail {
+  text-align: center;
+}
+
 /* Services Section
 --------------------------------*/
 #services {
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("http://logoonline.mtvnimages.com/uri/mgid:file:gsp:entertainment-assets:/logo/shows/rupauls_drag_race_s9/key_art/RPDRs9Group-1920x1080.jpg") fixed center center;
-  background-size: cover;
-  padding: 80px 0 60px 0;
+    background: #fff;
+    padding: 80px 0;
 }
 
 #services .service-item {
@@ -543,7 +550,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .service-title {
-  margin-left: 80px;
+  
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -554,7 +561,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .service-description {
-  margin-left: 80px;
+  
   line-height: 24px;
 }
 
@@ -563,26 +570,26 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 
-#subscribe {
+/*#portfolio {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/judges.jpg);
   background-size: cover;
   padding: 80px 0;
-}
-#subscribe .subscribe-title {
+}*/
+#portfolio .subscribe-title {
   font-size: 32px;
-  color: #fff;
+  /*color: #fff;*/
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
 }
 
-#subscribe .subscribe-text {
+#portfolio .subscribe-text {
   text-align: center;
   margin-bottom: 40px;
   color: #fff;
 }
-
-/*#subscribe .subscribe-title {
+/*
+#subscribe .subscribe-title {
   color: #fff;
 
 }
@@ -591,12 +598,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 */
-#subscribe .subscribe-btn-container {
+#portfolio .subscribe-btn-container {
   text-align: center;
   padding-top: 20px;
 }
 
-#subscribe .subscribe-btn {
+#portfolio .subscribe-btn {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -607,20 +614,25 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 2px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid #fff;
+  border: 2px solid #03C4EB;
   color: #fff;
+  background: #03C4EB;
 }
 
-#subscribe .subscribe-btn:hover {
-  background: #03C4EB;
+#portfolio .subscribe-btn:hover {
+  background: none;
   border: 2px solid #03C4EB;
+  color: #03C4EB;
+
+
 }
 
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  background: #fff;
-  padding: 80px 0;
+background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/cast.jpg) fixed center center;
+    background-size: cover;
+    padding: 80px 0 60px 0;
 }
 
 #portfolio .portfolio-item {
@@ -631,8 +643,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 260px;
   width: 100%;
   display: table;
-  overflow: hidden;
-  margin-bottom: 30px;
+  overflow: none;
+  border-radius: 15px;
 }
 
 #portfolio .portfolio-item .details {
@@ -643,6 +655,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 0;
   transition: 0.3s;
   text-align: center;
+  word-wrap: break-work;
 }
 
 #portfolio .portfolio-item .details h4 {
@@ -681,13 +694,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform: translate3d(0, 0, 0);
 }
 
-.scroll-group > .row {
-  overflow-x: auto;
+.horizontal-slide {
   white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
-.scroll-group > .row > .col-md-2 {
+
+.horizontal-slide .item {
   display: inline-block;
   float: none;
+}
+
+.item { 
+  display: inline-block;
 }
 
 /* Testimonials Section
@@ -898,4 +917,76 @@ body.mobile-nav-active #mobile-nav-toggle {
     height:200px;
     width:100%;
     padding: 0 15px;
+}
+/*DRAG AND */
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.simpleDemo ul[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+.simpleDemo ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+.simpleDemo ul[dnd-list] .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 42px;
+}
+
+.simpleDemo ul[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+/**
+ * Show selected elements in green
+ */
+.simpleDemo ul[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.dropBox {
+  background-color:lightgray;
+   transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, -15px, 0);
+  /*border-radius: 100%; */
+  height: 15em;
+}
+
+.modal-center {
+  text-align: center;
+}
+
+.selected-drag-drop {
+  
+  width: 100%;
+}
+
+.test {
+  margin-right: 15px;
+  margin-left: 15px;
 }

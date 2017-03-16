@@ -1,0 +1,34 @@
+<div id="signup" class="modal-header">
+  <h3>Create A New Account!</h3>
+</div>
+<form name="form.userForm">
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" ng-model="user.name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="username" class="form-control" ng-model="user.username" required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" ng-model="user.email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" ng-model="user.password" required>
+    </div>
+
+  </div>
+  <div class="modal-footer modal-center">
+    <button type="submit" class="btn btn-get-started" ng-click="signup(user)">OK</button>
+    <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
+  </div>
+
+  <p class="modal-center">Already a user? <a ng-href="login">Login In</a></p>
+</form>
