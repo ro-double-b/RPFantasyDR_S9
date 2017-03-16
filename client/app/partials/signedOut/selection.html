@@ -7,10 +7,20 @@
   });
   $(() => {
     $(".draggable").draggable({
+      drop: (event, ui) => {
+        console.log('hiii')
+      }
      });
     $(".droppable").droppable({
       drop: (event, ui) => {
-        console.log(ui.draggable);
+        console.log($(this))
+        if ($(event.target).attr('class').split(' ')[6] === 'taken') {
+          const innerHtml = ui.draggable.html();
+          ui.draggable.remove();
+          const fullHtml = '<div ng-repeat="queen in queens track by $index" class="col-md-2 item ng-scope ui-sortable-handle">' + innerHtml + '</div>';
+          $('#repeatQueen').append(fullHtml);
+        }
+        $(event.target).addClass('taken');
         ui.draggable.removeClass('col-md-2');
         ui.draggable.addClass('selected-drag-drop');
       },
@@ -18,11 +28,25 @@
     $(".droppableHolder").droppable({
       drop: (event, ui) => {
         ui.draggable.addClass('col-md-2');
-        ui.draggable.removeClass('selected-drag-drop');
+        ui.draggable.removeClass('selected-drag-drop')
+        console.log(ui.draggable)
+        $(event.target).removeClass('taken')
       },
     });
   });
 </script>
+
+
+<!-- <div ng-repeat="queen in queens track by $index" class="col-md-2 item ng-scope ui-sortable-handle">
+      
+          <a draggable="true" class="portfolio-item ui-state-default" style="background-image: url(img/Valentina.jpg);" href="">
+            <div class="details">
+              <h4 class="ng-binding">Valentina</h4>
+              <span class="ng-binding">Los Angeles</span>
+              <span class="ng-binding">25</span>
+            </div>
+          </a>
+      </div> -->
 
 <section id="portfolio">
   <div class="container wow fadeInUp">
@@ -67,7 +91,7 @@
 
 </div>
 
-    <div class="horizontal-slide droptrue droppableHolder draggable">
+    <div id="repeatQueen"class="horizontal-slide droptrue droppableHolder draggable">
       <div ng-repeat="queen in queens track by $index" class="col-md-2 item">
       
           <a draggable="true" class="portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
