@@ -1,63 +1,54 @@
-
-<section id="subscribe">
+<section id="portfolio">
   <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Select your Queens</h3>
+        <div class="section-title-divider"></div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h3 class="subscribe-title">Select Your Queens</h3>
-        <p class="subscribe-text">Drag your selections to each catageory and then submit before the episode airs!</p>
+        <p class="section-description">Drag your selections to each catageory and then submit before the episode airs!</p>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Winner</p>
+        <p href="#">Winner</p>
         <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Runner-Up</p>
+        <p href="#">Runner-Up</p>
       <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Bottom</p>
+        <p href="#">Bottom</p>
         <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Eliminated</p>
+        <p href="#">Eliminated</p>
         <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
-
-      <div class="col-md-12 subscribe-btn-container">
-        <a class="subscribe-btn" href="#" ng-click="submitSelection(selection)">Submit</a>
-      </div>
-
     </div>
-  </div>
-</section>
-    
-<section id="portfolio">
-<!--   <div class="container wow fadeInUp">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="section-title">Season 9 Queens</h3>
-        <div class="section-title-divider"></div>
-      </div>
-    </div> -->
 
     <div class="horizontal-slide">
       <div ng-repeat="queen in queens track by $index" class="col-md-2 item">
       
-            <a class="portfolio-item" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
-              <div class="details">
-                <h4>{{queen.name}}</h4>
-                <span>{{queen.hometown}}</span>
-                <span>{{queen.age}}</span>
-                <!-- <span>"{{queen.entrance}}"</span> -->
-              </div>
-            </a>
-    
+          <a class="portfolio-item" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+            <div class="details">
+              <h4>{{queen.name}}</h4>
+              <span>{{queen.hometown}}</span>
+              <span>{{queen.age}}</span>
+            </div>
+          </a>
       </div>
     </div>
+    
+    <div class="col-md-12 subscribe-btn-container">
+      <a  href="#" ng-click="submitSelection(selection)">Submit</a>
+    </div>
+
   </div>
 </section>
