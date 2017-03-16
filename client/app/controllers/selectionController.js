@@ -1,5 +1,12 @@
 angular.module('fantasyDragRace')
-.controller('SelectionController', function($scope, $window, $http, $rootScope) {
+.controller('SelectionController', function($scope, $window, $http, $rootScope, $modal) {
+
+  $scope.successSubmit = function() {
+    $modal.open({
+      templateUrl: `./app/partials/modals/submitSuccess.html`,
+      controller: 'InvalidLogin',
+    });
+  };
   $scope.submitSelection = function(selectionObj) {
     const selection = {
       user: $rootScope.user,
@@ -15,7 +22,7 @@ angular.module('fantasyDragRace')
       data: selection,
     })
     .then((res) => {
-      console.log(res)
+      $scope.successSubmit()
     });
   };
 
