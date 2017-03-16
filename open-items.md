@@ -1,10 +1,10 @@
 Sprints
-[ ] refactor to Angular
-[ ] add authentication
-[ ] add basic DB for auth
+[x] refactor to Angular
+[x] add authentication
+[x] add basic DB for auth
 [ ] add selection drag/drop/submit
-[ ] update DB for user's selection
-[ ] add functionality for results
+[x] update DB for user's selection
+[x] add functionality for results
 
 Minor updates
 [ ] navbar not staying at top
