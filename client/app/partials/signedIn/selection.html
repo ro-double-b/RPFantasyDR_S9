@@ -1,37 +1,106 @@
+<script>  
+window.jsSelection = {
+  winner: null,
+  runnerUp: null,
+  bottom: null,
+  eliminated: null,
+};
 
-<section id="subscribe">
+$(() => {
+  $("div.droptrue").sortable({
+    connectWith: "div",
+  });
+  $(".draggable").draggable({
+   });
+  $(".droppable").droppable({
+    drop: (event, ui) => {
+      if ($(event.target).attr('class').split(' ')[6] === 'taken') {
+        const innerHtml = ui.draggable.html();
+        ui.draggable.remove();
+        const fullHtml = '<div ng-repeat="queen in queens track by $index" class="col-md-3 item ng-scope ui-sortable-handle">' + innerHtml + '</div>';
+        $('#repeatQueen').append(fullHtml);
+        $(ui.draggable).parent().removeClass('taken');
+      };
+      $(event.target).addClass('taken');
+      ui.draggable.removeClass('col-md-3');
+      ui.draggable.addClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+      jsSelection[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
+    },
+  });
+  $(".droppableHolder").droppable({
+    drop: (event, ui) => {
+      ui.draggable.addClass('col-md-3');
+      ui.draggable.removeClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+      jsSelection[event.target.id] = null;
+    },
+  });
+});
+
+</script>
+
+
+<section id="portfolio">
   <div class="container wow fadeInUp">
+    <div class="row">
+      <div>
+        <h3 class="section-title">Select your Queens</h3>
+        <div class="section-title-divider"></div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h3 class="subscribe-title">Select Your Queens</h3>
-        <p class="subscribe-text">Drag your selections to each catageory and then submit before the episode airs!</p>
+        <p class="section-description">Drag your selections to each catageory and then submit before the episode airs!</p>
+      </div>
+
+      
+      <div class='test'>
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Winner</h3>
+        <div id="winner"  class="dropBox droptrue droppable portfolio-item "></div>
+        <!-- <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select> -->
+      </div>
+
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Runner-Up</h3>
+        <div id="runnerUp" class="dropBox droptrue droppable portfolio-item "></div>
+      <!-- <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select> -->
+      </div>
+
+      <div class="col-md-3  subscribe-btn-container">
+        <h3>Bottom</h3>
+        <div id="bottom" class="dropBox droptrue droppable portfolio-item "></div>
+        <!-- <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select> -->
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Winner</p>
-        <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
+        <h3>Eliminated</h3>
+        <div id="eliminated" class="dropBox droptrue droppable portfolio-item" ng-model='selection.yes'></div>
+        <!-- <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select> -->
+      </div>
       </div>
 
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Runner-Up</p>
-      <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select>
-      </div>
+</div>
 
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Bottom</p>
-        <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
+    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
+      <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
+      
+          <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+            <div class="details">
+              <h4>{{queen.name}}</h4>
+              <span>{{queen.hometown}}</span>
+              <span>{{queen.age}}</span>
+            </div>
+          </a>
       </div>
-
-      <div class="col-md-3 subscribe-btn-container">
-        <p class="subscribe-btn" href="#">Eliminated</p>
-        <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
-      </div>
-
-      <div class="col-md-12 subscribe-btn-container">
-        <a class="subscribe-btn" href="#" ng-click="submitSelection(selection)">Submit</a>
-      </div>
-
     </div>
+    
+    <div class="col-md-12 subscribe-btn-container">
+      <a  class="subscribe-btn" ng-click="submitSelection(window.jsSelection)">Submit</a>
+    </div>
+
+
   </div>
 </section>

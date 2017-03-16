@@ -8,7 +8,7 @@ angular.module('fantasyDragRace')
     });
   };
   $scope.submitSelection = function(selectionObj) {
-
+    console.log(selectionObj)
     const selection = {
       user: $rootScope.user,
       winnerID: selectionObj.winner,
@@ -16,6 +16,7 @@ angular.module('fantasyDragRace')
       bottomID: selectionObj.bottom,
       eliminatedID: selectionObj.eliminated,
     };
+    console.log(selection)
     return $http({
       method: 'POST',
       url: 'api/selection',

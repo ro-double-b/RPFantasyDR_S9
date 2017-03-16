@@ -4,7 +4,7 @@ Sprints
 [x] add basic DB for auth
 [x] update DB for user's selection
 [x] add functionality for results
-[ ] add selection drag/drop/submit
+[x] add selection drag/drop/submit
 
 Minor updates
 // additional features
@@ -14,34 +14,35 @@ Minor updates
 [x] form validation
 [x] error when autopopulate starts
 [x] update content for About Me
-[ ] fill out words on website
+[ ] update to send a notification if you have not selected all of the queens - ie you have some sections mission.
+[x] fill out words on website
 [ ] express session is not working currently
 [ ] logout functionality not working
 [ ] dont log out when you submit
-[ ] nav bar not working
+[x] nav bar not working
 [ ] update the links to switch between login/signup are working
 [ ] filter features on ranking
-[ ] contact icons do not link to external sites
+[x] contact icons do not link to external sites
 [ ] add the email to list of contact
 [ ] show how you rank with others on ranking
 [ ] limit how many rankings are shown on screen
 [ ] deploy
 [ ] move heroku address to actual domain
 [ ] add name after logged in
-[ ] reformat the background to be better!
-[ ] update photos to remove backmarks
+[x] reformat the background to be better!
+[x] update photos to remove backmarks
 [ ] add buttions for scroll of queens
-[ ] navbar not staying at top
+[x] navbar not staying at top
 [ ] error when autopopulate starts, still getting errors but wont time out
 [ ] change bootstrap based on various size windows
 [ ] test out on mobile phone
 [ ] back to top does not work
 [ ] rankings scroll feature if window is too small
 [ ] queen pictures need to stay consistent when window is sized down; not based on hover feature
-[ ] size of about me when window is small
+[x] size of about me when window is small
 [ ] add "fantasy" to logo on nav bar
 [ ] update scrolling text on landing page
-[ ] add layers for non-auth views
+[ ] have sign in to play scroll you to top of page!
 
 // stretch features
 [ ] advanced form validation
