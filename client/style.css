@@ -620,14 +620,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio .subscribe-btn:hover {
-  background: #03C4EB;
+  background: black;
   border: 2px solid #03C4EB;
 }
 
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  background: #fff;
+  background: black;
   padding: 80px 0;
 }
 
@@ -650,6 +650,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 0;
   transition: 0.3s;
   text-align: center;
+  
 }
 
 #portfolio .portfolio-item .details h4 {
