@@ -41,6 +41,7 @@ Minor updates
 [ ] size of about me when window is small
 [ ] add "fantasy" to logo on nav bar
 [ ] update scrolling text on landing page
+[ ] add layers for non-auth views
 
 // stretch features
 [ ] advanced form validation

@@ -963,9 +963,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .dropBox {
-    width: 350px;
-    height: 70px;
-    border: 1px solid #aaaaaa;
+  height: 100px;
+  background-color: green;  
 }
 
 .modal-center {

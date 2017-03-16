@@ -1,3 +1,11 @@
+<script>
+  $(() => {
+    $("ul.droptrue").sortable({
+      connectWith: "ul",
+    });
+  });
+</script>
+
 <section id="portfolio">
   <div class="container wow fadeInUp">
     <div class="row">
@@ -15,40 +23,46 @@
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Winner</p>
+        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
         <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Runner-Up</p>
+        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
       <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Bottom</p>
+        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
         <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Eliminated</p>
+        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
         <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
     </div>
 
-    <div class="horizontal-slide">
-      <div ng-repeat="queen in queens track by $index" class="col-md-2 item">
+</ul>
+
+    <ul class="horizontal-slide droptrue">
+      <li ng-repeat="queen in queens track by $index" class="col-md-2 item">
       
-          <a draggable="true" class="portfolio-item" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+          <a draggable="true" class="portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
             <div class="details">
               <h4>{{queen.name}}</h4>
               <span>{{queen.hometown}}</span>
               <span>{{queen.age}}</span>
             </div>
           </a>
-      </div>
-    </div>
+      </li>
+    </ul>
     
     <div class="col-md-12 subscribe-btn-container">
       <a  href="#" ng-click="submitSelection(selection)">Submit</a>

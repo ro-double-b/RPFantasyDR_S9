@@ -9,7 +9,7 @@ jQuery(document).ready(function( $ ) {
   $("#hero .rotating").Morphext({
     animation: "flipInX",
     separator: ",",
-    speed: 3000
+    speed: 3000,
   });
   
   // Initiate the wowjs
@@ -108,16 +108,3 @@ jQuery(document).ready(function( $ ) {
   });
 
 });
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("a", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("a");
-    ev.target.appendChild(document.getElementById(data));
-}
