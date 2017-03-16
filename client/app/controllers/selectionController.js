@@ -99,4 +99,7 @@ angular.module('fantasyDragRace')
       hometown: "Los Angeles",
     },
   ];
-});
+
+})
+
+

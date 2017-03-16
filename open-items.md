@@ -8,9 +8,9 @@ Sprints
 
 Minor updates
 [ ] navbar not staying at top
-[ ] update the about content
-[ ] add rules of game
-[ ] get selection and queens to be aligned
+[x] update the about content
+[x] add rules of game
+[x] get selection and queens to be aligned
 [ ] add buttions for scroll of queens
 [ ] update content for About Me
 [ ] go through and refactor to ES6 where necessary
@@ -29,3 +29,4 @@ Minor updates
 [ ] show how you rank with others on ranking
 [ ] links in my profile are currently not working
 [ ] limit how many rankings are shown on screen
+[ ] reformat the background to be better!

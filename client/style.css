@@ -960,3 +960,9 @@ body.mobile-nav-active #mobile-nav-toggle {
     background-color: #dff0d8;
     color: #3c763d;
 }
+
+.dropBox {
+    width: 350px;
+    height: 70px;
+    border: 1px solid #aaaaaa;
+}
