@@ -1,7 +1,14 @@
 <script>
   $(() => {
-    $("ul.droptrue").sortable({
-      connectWith: "ul",
+    $(".draggable").draggable();
+    $(".droppable").droppable({
+      drop: (event, ui) => {
+        $(this)
+        .addClass("col-md-1")
+        .removeClass("col-md-12")
+        .find("p")
+          .html("Dropped!");
+      },
     });
   });
 </script>
@@ -23,35 +30,35 @@
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Winner</p>
-        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
+        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
         <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Runner-Up</p>
-        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
+        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
       <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Bottom</p>
-        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
+        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
         <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select>
       </div>
 
       <div class="col-md-3 subscribe-btn-container">
         
         <p href="#">Eliminated</p>
-        <ul id="#sortable1" class="dropBox droptrue portfolio-item "></ul>
+        <ul id="#sortable1" class="dropBox droptrue droppable portfolio-item "></ul>
         <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select>
       </div>
     </div>
 
 </ul>
 
-    <ul class="horizontal-slide droptrue">
+    <ul class="horizontal-slide droptrue draggable">
       <li ng-repeat="queen in queens track by $index" class="col-md-2 item">
       
           <a draggable="true" class="portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
