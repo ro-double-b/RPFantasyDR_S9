@@ -29,6 +29,7 @@ Minor updates
 [ ] move heroku address to actual domain
 [ ] add name after logged in
 [ ] reformat the background to be better!
+[ ] update photos to remove backmarks
 [ ] add buttions for scroll of queens
 [ ] navbar not staying at top
 [ ] error when autopopulate starts, still getting errors but wont time out
@@ -45,6 +46,7 @@ Minor updates
 [ ] advanced form validation
 [ ] have profile of who you picked and how they did
 [ ] update for toot and boot additional points
+[ ] display video of toot and boot
 [ ] pick top three when signup
 [ ] change top three after first three episodes
 [ ] user profiles
