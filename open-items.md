@@ -17,3 +17,15 @@ Minor updates
 [ ] update for ESLint
 [ ] refactor css document to match actual content
 [ ] move heroku address to actual domain
+[ ] logout functionality not working
+[ ] express session is not working currently
+[ ] nav bar not working at all
+[ ] fill out words on website
+[ ] form validation
+[ ] error when autopopulate starts
+[ ] get tagline to move again
+[ ] add name after logged in
+[ ] filter features on ranking
+[ ] show how you rank with others on ranking
+[ ] links in my profile are currently not working
+[ ] limit how many rankings are shown on screen

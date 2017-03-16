@@ -36,7 +36,7 @@
   </div>
 </section>
     
-<!-- <section id="portfolio">
+<section id="portfolio">
   <div class="container wow fadeInUp scroll-group">
     <div class="row">
       <div class="col-md-12">
@@ -45,8 +45,8 @@
       </div>
     </div>
 
-    <div class="">
-      <div ng-repeat="queen in queens" class="col-md-2">
+    <div class="horizontal-slide">
+      <div ng-repeat="queen in queens  track by $index" class="col-md-2 item">
         <div class="row">
             <a class="portfolio-item" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
               <div class="details">
@@ -61,4 +61,3 @@
     </div>
   </div>
 </section>
- -->
