@@ -52,6 +52,7 @@ Minor updates
 
 // refactoring
 [ ] update for ESLint
+[ ] remove duplicate script/link files in html index file
 [ ] go through and refactor to ES6 where necessary
 [ ] refactor css document to match actual content
 [ ] break out auth factory and controller in app.js
