@@ -35,6 +35,11 @@ Minor updates
 [ ] change bootstrap based on various size windows
 [ ] test out on mobile phone
 [ ] back to top does not work
+[ ] rankings scroll feature if window is too small
+[ ] queen pictures need to stay consistent when window is sized down; not based on hover feature
+[ ] size of about me when window is small
+[ ] add "fantasy" to logo on nav bar
+[ ] update scrolling text on landing page
 
 // stretch features
 [ ] advanced form validation
@@ -43,6 +48,7 @@ Minor updates
 [ ] pick top three when signup
 [ ] change top three after first three episodes
 [ ] user profiles
+[ ] ability to click on user and see their profile and who they picked
 
 // refactoring
 [ ] update for ESLint
@@ -50,3 +56,4 @@ Minor updates
 [ ] refactor css document to match actual content
 [ ] break out auth factory and controller in app.js
 [ ] update controller names to fit descriptions
+[ ] break out queen into one rootScope instead of having multiple instances
