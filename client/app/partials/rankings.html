@@ -1,4 +1,4 @@
-<section id="team">
+<section id="team" ng-init='init()'>
   <div class="container wow fadeInUp">
     <div class="row">
       <div class="col-md-12">
@@ -11,49 +11,14 @@
     </div>
       <table class="table">
         <tr>
-          <th>Ranking</th>
-          <th>Username</th>
-          <th>Week 1</th>
-          <th>Week 2</th>
-          <th>Week 3</th>
-          <th>Week 4</th>
-          <th>Week 5</th>
-          <th>Week 6</th>
-          <th>Week 7</th>
-          <th>Week 8</th>
-          <th>Week 9</th>
-          <th>Week 10</th>
-          <th>Total Score</th>
+          <th ng-repeat="head in heading">{{head}}</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>test user</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>test user</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>50</td>
+        <tr ng-repeat="userData in ranking">
+          <td>{{$index + 1}}</td>
+          <td>{{userData.username}}</td>
+          <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td>
+          <td >{{userData.sumTotal}}</td>
+          <td 
         </tr>
       </table>
     </div>

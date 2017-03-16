@@ -14,7 +14,7 @@ angular.module('fantasyDragRace')
       url: 'api/resultSubmission',
       type: 'application/json',
       data: selection,
-    });
+    })
   };
 
   $scope.queens = [

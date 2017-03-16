@@ -13,6 +13,9 @@ angular.module('fantasyDragRace')
       url: 'api/selection',
       type: 'application/json',
       data: selection,
+    })
+    .then((res) => {
+      console.log(res)
     });
   };
 

@@ -10,6 +10,6 @@ router.post('/api/selection', selectionController.submitSelection);
 router.post('/api/resultSubmission', resultController.submitResult);
 
 router.get('/home', authController.checkUser);
-
+router.get('/api/ranking', resultController.sendRanking);
 
 module.exports = router;

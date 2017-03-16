@@ -41,6 +41,7 @@ const Results = db.define('results', {
 const Totals = db.define('totals', {
   username: Sequelize.STRING,
   totals: Sequelize.ARRAY(Sequelize.INTEGER),
+  sumTotal: Sequelize.INTEGER,
 });
 
 User.sync();

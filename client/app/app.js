@@ -33,6 +33,7 @@ angular.module('fantasyDragRace', [
         },
         'rankings@login': {
           templateUrl: './app/partials/rankings.html',
+          controller: 'RankingController',
         },
         'aboutme@login': {
           templateUrl: './app/partials/aboutme.html',
@@ -66,6 +67,7 @@ angular.module('fantasyDragRace', [
         },
         'rankings@private': {
           templateUrl: './app/partials/rankings.html',
+          controller: 'RankingController',
         },
         'aboutme@private': {
           templateUrl: './app/partials/aboutme.html',
