@@ -37,6 +37,8 @@ Minor updates
 [ ] filter features on ranking
 [ ] update color and frame for about me section -- results overspilling
 [ ] update header for ranking along with user
+[ ] update results to only show weeks shown!
+[ ] bigger border on bottom
 
 === > FRIDAY
 [ ] limit how many rankings are shown on screen
