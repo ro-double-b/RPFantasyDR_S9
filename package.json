@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "express": "4.15.2",
+    "body-parser": "^1.17.1",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.12.2",
