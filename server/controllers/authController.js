@@ -25,7 +25,7 @@ function getUser(username) {
 //     req.session.user = user;
 //     res.send('/home');
 //   });
-}
+// }
 
 function hasSession(req) {
   return req.session ? !req.session.user : false;
