@@ -20,11 +20,11 @@ function getUser(username) {
   });
 }
 
-function createSession(req, res, user) {
-  return req.session.regenerate(() => {
-    req.session.user = user;
-    res.send('/home');
-  });
+// function createSession(req, res, user) {
+//   return req.session.regenerate(() => {
+//     req.session.user = user;
+//     res.send('/home');
+//   });
 }
 
 function hasSession(req) {
@@ -50,7 +50,7 @@ function signup(req, res) {
         } else {
           createUser(req.body.name, req.body.username, hash, req.body.email)
           .then((userObj) => {
-            createSession(req, res, userObj);
+            // createSession(req, res, userObj);
           });
         }
       });
@@ -69,7 +69,7 @@ function login(req, res) {
         if (err) {
           throw err;
         } else if (result) {
-          createSession(req, res, user);
+          // createSession(req, res, user);
         } else {
           res.send('incorrect');
         }
