@@ -722,7 +722,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 /* Testimonials Section
 --------------------------------*/
 #testimonials {
-  background: #fff;
+  color: rgb(102, 102, 102)
   padding: 80px 0;
 }
 
@@ -785,6 +785,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 #team {
   background: #f6f6f6;
   padding: 80px 0 60px 0;
+
 }
 
 #team .member {
@@ -1002,4 +1003,8 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   line-height: 48px;
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
+}
+
+.aboutMe {
+  background-color: rgb(102, 102, 102)
 }
