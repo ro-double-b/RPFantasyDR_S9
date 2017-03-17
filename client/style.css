@@ -7,6 +7,13 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+html, body{
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+}
 body {
   background: #fff;
   color: #666666;
@@ -625,6 +632,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #03C4EB;
 
 
+
 }
 
 /* Portfolio Section
@@ -681,6 +689,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 }
 
 #portfolio .portfolio-item:hover .details {
+  border-radius: 15px;
   opacity: 0.8;
 }
 
@@ -982,11 +991,14 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 }
 
 .selected-drag-drop {
-  
   width: 100%;
 }
 
-.test {
-  margin-right: 15px;
-  margin-left: 15px;
+.logo {
+  margin-left: -10px;
+  margin-top: -70px;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
 }

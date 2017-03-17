@@ -1,14 +1,14 @@
 angular.module('fantasyDragRace')
 .controller('SelectionController', function($scope, $window, $http, $rootScope, $modal) {
   $scope.window = window;
-  $scope.successSubmit = function() {
+  $scope.submitModal = function(type) {
     $modal.open({
-      templateUrl: `./app/partials/modals/submitSuccess.html`,
+      templateUrl: `./app/partials/modals/${type}.html`,
       controller: 'InvalidLogin',
     });
   };
-  $scope.submitSelection = function(selectionObj) {
 
+  $scope.submitSelection = function(selectionObj) {
     const selection = {
       user: $rootScope.user,
       winnerID: selectionObj.winner,
@@ -16,15 +16,19 @@ angular.module('fantasyDragRace')
       bottomID: selectionObj.bottom,
       eliminatedID: selectionObj.eliminated,
     };
-    return $http({
-      method: 'POST',
-      url: 'api/selection',
-      type: 'application/json',
-      data: selection,
-    })
-    .then((res) => {
-      $scope.successSubmit()
-    });
+    if (selection.winnerID === null || selection.wrunnerUpID === null || selection.bottomID === null || selection.eliminatedID === null) {
+      $scope.submitModal('invalidSubmit');
+    } else {
+      return $http({
+        method: 'POST',
+        url: 'api/selection',
+        type: 'application/json',
+        data: selection,
+      })
+      .then((res) => {
+        $scope.submitModal('submitSuccess');
+      });
+    }
   };
 
   $scope.queens = [

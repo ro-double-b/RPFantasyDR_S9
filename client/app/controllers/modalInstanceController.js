@@ -12,6 +12,13 @@ angular.module('fantasyDragRace')
     });
   };
 
+  $scope.switchModal = function(type) {
+    $modal.open({
+      templateUrl: `./app/partials/modals/${type}.html`,
+      controller: 'ModalInstanceController',
+    });
+  };
+
   $scope.login = function(user) {
     return $http({
       method: 'POST',
@@ -19,6 +26,7 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
+      console.log(res)
       $modalInstance.close();
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
