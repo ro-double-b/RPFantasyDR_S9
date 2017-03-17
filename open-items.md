@@ -17,6 +17,8 @@ Minor updates
 [ ] update to send a notification if you have not selected all of the queens - ie you have some sections mission.
 [x] fill out words on website
 [ ] express session is not working currently
+[ ] rankings is not uploading for new users!
+[x] login error box not populating correctly!
 [ ] logout functionality not working
 [ ] dont log out when you submit
 [x] nav bar not working
