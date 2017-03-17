@@ -13,7 +13,6 @@ angular.module('fantasyDragRace')
   };
 
   $scope.switchModal = function(type) {
-    
     $modal.open({
       templateUrl: `./app/partials/modals/${type}.html`,
       controller: 'ModalInstanceController',
