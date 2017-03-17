@@ -234,6 +234,10 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.85);
 }
 
+.header{
+  padding: 80px 0 60px 0;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -723,7 +727,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 --------------------------------*/
 #testimonials {
   color: rgb(102, 102, 102)
-  padding: 80px 0;
+
 }
 
 #testimonials .profile {
@@ -1008,3 +1012,12 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 .aboutMe {
   background-color: rgb(102, 102, 102)
 }
+
+.table {
+  margin-bottom: 100px;
+}
+
+#testimonials {
+  margin-bottom: 100px;
+}
+

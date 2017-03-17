@@ -23,7 +23,7 @@ function getUser(username) {
 function createSession(req, res, user) {
   return req.session.regenerate(() => {
     req.session.user = user;
-    res.send('/home');
+    res.send(user);
   });
 }
 

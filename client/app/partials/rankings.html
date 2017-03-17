@@ -1,10 +1,10 @@
-<section id=" aboutMe" ng-init='init()'>
+<section id=" aboutMe" class="header" ng-init='init()'>
   <div class="container wow fadeInUp">
     <div class="row">
       <div class="col-md-12">
         <h3 class="section-title">Rankings</h3>
         <div class="section-title-divider"></div>
-        <p class="section-description">Here's how you rank up to other users. Rankings are refreshed once a week after the show airs.</p>
+        <p class="section-description">{{userInfo}}</p>
       </div>
     </div>
 
@@ -23,11 +23,13 @@
       <table class="table results col-md-11">
     
         <tr>
-          <td ng-repeat="head in heading">{{head}}</td>
+          <th ng-repeat="head in heading">
+            {{head}}
+          </th>
             
         </tr>
 
-        <tr ng-repeat="userData in ranking | orderBy:sortType:sortReverse | filter:searchUser">
+        <tr ng-repeat="userData in ranking | orderBy:sortType | filter:searchUser">
           <td>{{$index + 1}}</td>
           <td>{{userData.username}}</td>
           <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td>
@@ -36,6 +38,8 @@
         </tr>
       </table>
     </div>
+
+    <h6>*Rankings are refreshed once a week after the show airs.</h6>
             
   </div>
 </section>
