@@ -30,3 +30,15 @@ console.log(`Listening on port ${port}`);
 // app.get('/', (req, res) => {
   // res.send('./../client');
 // });
+
+var pg = require('pg');
+
+
+pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  //  console.log(err+"!!!!!!!!!!!!!!!");
+  // client.query('SELECT * FROM your_table', function(err, result) {
+  //   done();
+  //   if(err) return console.error(err);
+  //   console.log(result.rows);
+  // });
+});
