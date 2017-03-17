@@ -33,7 +33,6 @@
     "express": "^4.15.2",
     "pg": "^6.1.4",
     "sequelize-cli": "^2.5.1",
-
   },
   "dependencies": {
     "bluebird": "^3.4.1",
@@ -54,6 +53,6 @@
     "shortid": "^2.2.6",
     "socket.io": "^1.4.8",
     "webpack": "^1.13.1",
-    "webrtc-adapter": "^1.4.0"
+    "webrtc-adapter": "^1.4.0",
   }
 }
