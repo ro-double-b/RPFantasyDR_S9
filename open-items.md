@@ -22,7 +22,7 @@ Minor updates
 [ ] logout functionality not working
 [ ] dont log out when you submit
 [x] nav bar not working
-[ ] update the links to switch between login/signup are working
+[x] update the links to switch between login/signup are working
 [ ] filter features on ranking
 [x] contact icons do not link to external sites
 [ ] add the email to list of contact

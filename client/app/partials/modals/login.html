@@ -27,5 +27,5 @@
     <button type="submit" ng-disabled="form.userForm.$invalid" class="btn btn-get-started" ng-click="login(user)">OK</button>
     <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
   </div>
-    <p class="modal-center">Don't have an account? <a ng-href="#signup">Create Your Account</a></p>
 </form>
+    <p class="modal-center">Don't have an account? <a ng-click="switchModal('signup'); cancel()">Create Your Account</a></p>
