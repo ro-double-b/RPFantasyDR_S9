@@ -26,6 +26,7 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
+      console.log(res)
       $modalInstance.close();
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
