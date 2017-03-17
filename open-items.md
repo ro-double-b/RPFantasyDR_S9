@@ -31,6 +31,7 @@ Minor updates
 [x] navbar not staying at top
 [x] rankings is not uploading for new users!
 [x] have a search feature on ranking
+[x] nav bar does not work again
 [ ] fix how the ranking number is on
 [ ] show how you rank with others on ranking
 [ ] filter features on ranking
