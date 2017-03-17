@@ -32,30 +32,31 @@ Minor updates
 [x] rankings is not uploading for new users!
 [x] have a search feature on ranking
 [x] nav bar does not work again
-[ ] fix how the ranking number is on
-[ ] show how you rank with others on ranking
-[ ] filter features on ranking
-[ ] update color and frame for about me section -- results overspilling
-[ ] update header for ranking along with user
-[ ] update results to only show weeks shown!
-[ ] bigger border on bottom
+[x] fix how the ranking number is on
+[x] show how you rank with others on ranking
+[x] update color and frame for about me section -- results overspilling
+[x] add the email to list of contact
 
 === > FRIDAY
-[ ] limit how many rankings are shown on screen
-[ ] deploy
+[x] update header for ranking along with user
+[x] filter features on ranking
+[x] add name after logged in
+[x] bigger border on bottom
+[x] deploy
+[x] get heroku psql server working
 [ ] move heroku address to actual domain
-[ ] add name after logged in
+
 [ ] logout functionality not working
-[ ] get heroku psql server working
 [ ] change bootstrap based on various size windows
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] test out on mobile phone
+[ ] queens not loading after you login
 [ ] express session is not working currently
 [ ] error when autopopulate starts, still getting errors but wont time out
 [ ] have 'sign in to play' scroll you to top of page!
 [ ] rankings scroll feature if window is too small
-[ ] add the email to list of contact
 [ ] add buttions for scroll of queens
+[ ] limit how many rankings are shown on screen
 
 // stretch features
 
