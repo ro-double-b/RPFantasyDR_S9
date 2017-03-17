@@ -56,6 +56,7 @@ Minor updates
 // stretch features
 
 === > SATURDAY
+[ ] restrict various characters in username and password
 [ ] user profiles
 [ ] have profile of who you picked and how they did
 [ ] pick top three when signup
