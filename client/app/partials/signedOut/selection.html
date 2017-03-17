@@ -76,7 +76,7 @@ $(() => {
     <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
       <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
       
-          <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+          <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0].toLowerCase()}}.jpg);" href="">
             <div class="details">
               <h4>{{queen.name}}</h4>
               <span>{{queen.hometown}}</span>
