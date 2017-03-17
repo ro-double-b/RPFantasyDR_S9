@@ -7,39 +7,31 @@
         <p class="section-description">{{userInfo}}</p>
       </div>
     </div>
-
-    <form>
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-          <input type="text" class="form-control" placeholder="Search a user" ng-model="searchUser">
-
-        </div>      
-      </div>
-    </form>
-
-    </div class="results horizontal-slide ">
+    <div class="results horizontal-slide ">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search a user" ng-model="searchUser">
+          </div>      
+        </div>
+      </form>
       <table class="table results col-md-11">
-    
         <tr>
-          <th ng-repeat="head in heading">
-            {{head}}
-          </th>
-            
+        <th></th><th></th>
+        <th colspan='13' align="center">Week:</th>
         </tr>
-
+        <tr>
+          <th ng-repeat="head in heading">{{head}}</th>
+        </tr>
         <tr ng-repeat="userData in ranking | orderBy:sortType | filter:searchUser">
           <td>{{$index + 1}}</td>
           <td>{{userData.username}}</td>
           <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td>
-          <td >{{userData.sumTotal}}</td>
-          <td 
+          <td >{{userData.sumTotal}}</td> 
         </tr>
       </table>
     </div>
-
-    <h6>*Rankings are refreshed once a week after the show airs.</h6>
-            
+    <h6>*Rankings are refreshed once a week after the show airs.</h6  
   </div>
 </section>

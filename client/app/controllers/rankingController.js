@@ -3,9 +3,9 @@ angular.module('fantasyDragRace')
 
   $scope.weeks = 13;
   $scope.createHeading = function() {
-    const heading = ['Ranking', 'Username'];
+    const heading = ['Rank', 'User'];
     for (let i = 1; i <= $scope.weeks; i++) {
-      heading.push(`Week ${i}`);
+      heading.push(`${i}`);
     }
     heading.push('Total');
     return heading;

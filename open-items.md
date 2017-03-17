@@ -45,6 +45,7 @@ Minor updates
 [x] deploy
 [x] get heroku psql server working
 [x] move heroku address to actual domain
+[x] table display properly working
 
 [ ] restrict various characters in username and password
 [ ] logout functionality not working
