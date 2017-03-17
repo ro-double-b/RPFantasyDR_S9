@@ -625,6 +625,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #03C4EB;
 
 
+
 }
 
 /* Portfolio Section
@@ -681,6 +682,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 }
 
 #portfolio .portfolio-item:hover .details {
+  border-radius: 15px;
   opacity: 0.8;
 }
 

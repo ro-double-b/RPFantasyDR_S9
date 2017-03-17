@@ -25,16 +25,15 @@ Minor updates
 [x] update the links to switch between login/signup are working
 [ ] filter features on ranking
 [x] contact icons do not link to external sites
-[ ] add the email to list of contact
 [ ] show how you rank with others on ranking
 [ ] limit how many rankings are shown on screen
 [ ] deploy
+[x] udpate hover for drag and drop
 [ ] move heroku address to actual domain
 [ ] add name after logged in
 [x] reformat the background to be better!
 [x] update photos to remove backmarks
 [ ] get heroku psql server working
-[ ] add buttions for scroll of queens
 [x] navbar not staying at top
 [ ] error when autopopulate starts, still getting errors but wont time out
 [ ] change bootstrap based on various size windows
@@ -43,9 +42,11 @@ Minor updates
 [ ] rankings scroll feature if window is too small
 [ ] queen pictures need to stay consistent when window is sized down; not based on hover feature
 [x] size of about me when window is small
-[ ] add "fantasy" to logo on nav bar
+[x] add "fantasy" to logo on nav bar
 [ ] update scrolling text on landing page
 [ ] have sign in to play scroll you to top of page!
+[ ] add the email to list of contact
+[ ] add buttions for scroll of queens
 
 // stretch features
 [ ] advanced form validation
