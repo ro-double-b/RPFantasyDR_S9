@@ -44,8 +44,9 @@ Minor updates
 [x] bigger border on bottom
 [x] deploy
 [x] get heroku psql server working
-[ ] move heroku address to actual domain
+[x] move heroku address to actual domain
 
+[ ] restrict various characters in username and password
 [ ] logout functionality not working
 [ ] change bootstrap based on various size windows
 [ ] queen pictures need to stay consistent when window is sized down
@@ -57,11 +58,11 @@ Minor updates
 [ ] rankings scroll feature if window is too small
 [ ] add buttions for scroll of queens
 [ ] limit how many rankings are shown on screen
+[ ] update heroku naming
 
 // stretch features
 
 === > SATURDAY
-[ ] restrict various characters in username and password
 [ ] user profiles
 [ ] have profile of who you picked and how they did
 [ ] pick top three when signup
