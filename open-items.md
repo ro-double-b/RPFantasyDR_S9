@@ -31,12 +31,13 @@ Minor updates
 [ ] add name after logged in
 [x] reformat the background to be better!
 [x] update photos to remove backmarks
+[ ] get heroku psql server working
 [ ] add buttions for scroll of queens
 [x] navbar not staying at top
 [ ] error when autopopulate starts, still getting errors but wont time out
 [ ] change bootstrap based on various size windows
 [ ] test out on mobile phone
-[ ] back to top does not work
+[x] back to top does not work
 [ ] rankings scroll feature if window is too small
 [ ] queen pictures need to stay consistent when window is sized down; not based on hover feature
 [x] size of about me when window is small
