@@ -14,38 +14,39 @@ Minor updates
 [x] form validation
 [x] error when autopopulate starts
 [x] update content for About Me
-[ ] update to send a notification if you have not selected all of the queens - ie you have some sections mission.
+[x] update to send a notification if you have not selected all of the queens 
 [x] fill out words on website
-[ ] express session is not working currently
-[ ] login is not working
-[ ] rankings is not uploading for new users!
-[x] login error box not populating correctly!
-[ ] logout functionality not working
-[ ] dont log out when you submit
-[x] nav bar not working
-[x] update the links to switch between login/signup are working
-[ ] filter features on ranking
-[x] contact icons do not link to external sites
-[ ] show how you rank with others on ranking
-[ ] limit how many rankings are shown on screen
-[ ] deploy
-[x] udpate hover for drag and drop
-[ ] move heroku address to actual domain
-[ ] add name after logged in
-[x] reformat the background to be better!
-[x] update photos to remove backmarks
-[ ] get heroku psql server working
-[x] navbar not staying at top
-[ ] error when autopopulate starts, still getting errors but wont time out
-[ ] change bootstrap based on various size windows
-[ ] test out on mobile phone
-[x] back to top does not work
-[ ] rankings scroll feature if window is too small
-[ ] queen pictures need to stay consistent when window is sized down; not based on hover feature
+[x] login is not working
 [x] size of about me when window is small
 [x] add "fantasy" to logo on nav bar
-[ ] update scrolling text on landing page
-[ ] have sign in to play scroll you to top of page!
+[x] back to top does not work
+[x] login error box not populating correctly!
+[x] dont log out when you submit
+[x] nav bar not working
+[x] update the links to switch between login/signup are working
+[x] contact icons do not link to external sites
+[x] udpate hover for drag and drop
+[x] reformat the background to be better!
+[x] update photos to remove backmarks
+[x] navbar not staying at top
+[x] rankings is not uploading for new users!
+[ ] filter features on ranking
+[ ] show how you rank with others on ranking
+[ ] fix how the ranking number is on
+
+[ ] limit how many rankings are shown on screen
+[ ] deploy
+[ ] move heroku address to actual domain
+[ ] add name after logged in
+[ ] logout functionality not working
+[ ] get heroku psql server working
+[ ] change bootstrap based on various size windows
+[ ] queen pictures need to stay consistent when window is sized down
+[ ] test out on mobile phone
+[ ] express session is not working currently
+[ ] error when autopopulate starts, still getting errors but wont time out
+[ ] have 'sign in to play' scroll you to top of page!
+[ ] rankings scroll feature if window is too small
 [ ] add the email to list of contact
 [ ] add buttions for scroll of queens
 
