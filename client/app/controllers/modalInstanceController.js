@@ -35,6 +35,8 @@ angular.module('fantasyDragRace')
         $scope.authorized = true;
         Authorization.go('private');
         $rootScope.user = user.username;
+        $rootScope.userInfo = res.data
+        console.log(res.data)
       }
     });
   };

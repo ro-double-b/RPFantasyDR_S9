@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('AuthController', function($scope, $modal) {
+.controller('AuthController', function($scope, $modal, $rootScope) {
   $scope.selectedLanguages = [];
   $scope.showForm = function(type) {
     const modalInstance = $modal.open({

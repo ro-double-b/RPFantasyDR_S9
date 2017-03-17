@@ -30,10 +30,17 @@ Minor updates
 [x] update photos to remove backmarks
 [x] navbar not staying at top
 [x] rankings is not uploading for new users!
-[ ] filter features on ranking
-[ ] show how you rank with others on ranking
+[x] have a search feature on ranking
+[x] nav bar does not work again
 [ ] fix how the ranking number is on
+[ ] show how you rank with others on ranking
+[ ] filter features on ranking
+[ ] update color and frame for about me section -- results overspilling
+[ ] update header for ranking along with user
+[ ] update results to only show weeks shown!
+[ ] bigger border on bottom
 
+=== > FRIDAY
 [ ] limit how many rankings are shown on screen
 [ ] deploy
 [ ] move heroku address to actual domain
@@ -51,13 +58,16 @@ Minor updates
 [ ] add buttions for scroll of queens
 
 // stretch features
-[ ] advanced form validation
+
+=== > SATURDAY
+[ ] restrict various characters in username and password
+[ ] user profiles
 [ ] have profile of who you picked and how they did
-[ ] update for toot and boot additional points
-[ ] display video of toot and boot
 [ ] pick top three when signup
 [ ] change top three after first three episodes
-[ ] user profiles
+=== > SUNDAY
+[ ] update for toot and boot additional points
+[ ] display video of toot and boot
 [ ] ability to click on user and see their profile and who they picked
 
 // refactoring

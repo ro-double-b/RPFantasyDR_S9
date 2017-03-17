@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('RankingController', function($scope, $window, $http) {
+.controller('RankingController', function($scope, $window, $http, $rootScope) {
 
   $scope.weeks = 13;
   $scope.createHeading = function() {
@@ -19,6 +19,31 @@ angular.module('fantasyDragRace')
     })
     .then((res) => {
       $scope.ranking = res.data;
+      $scope.userRanking = null;
+      $scope.userSumTotal = null;
+      $scope.userInfo = "Sign in to see how you match up against other players.  ";
+
+      if ($rootScope.userInfo !== undefined) {
+        $scope.ranking.forEach((user) => {
+          if ($rootScope.userInfo.username === user.username) {
+            $scope.userSumTotal = user.sumTotal;
+          }
+        });
+        $scope.userRanking = $scope.ranking.reduce((acc, user) => {
+          if (user.sumTotal > $scope.userSumTotal) {
+            return acc + 1;
+          } else {
+            return acc;
+          }
+        }, 0);
+        $scope.userInfo = `Here is how you rank ${$rootScope.userInfo.name}.  
+                           You have earned a total of ${$scope.userSumTotal} 
+                           points and rank ${$scope.userRanking} out of 
+                           ${$scope.ranking.length}.`;
+      }
     });
   };
+  $scope.sortType = '-sumTotal';
+  $scope.serachUser = true;
 });
+
