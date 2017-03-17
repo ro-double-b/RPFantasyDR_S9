@@ -18,7 +18,11 @@ angular.module('fantasyDragRace')
       url: 'api/ranking',
     })
     .then((res) => {
+      console.log(res.data)
       $scope.ranking = res.data;
     });
   };
+  $scope.sortType = 'name';
+  $scope.sortRevers = false;
+  $scope.serachUser = ''
 });

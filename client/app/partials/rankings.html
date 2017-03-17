@@ -8,12 +8,26 @@
       </div>
     </div>
 
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+          <input type="text" class="form-control" placeholder="Search a user" ng-model="searchUser">
+
+        </div>      
+      </div>
+    </form>
+
     </div class="results horizontal-slide ">
       <table class="table results col-md-11">
+    
         <tr>
-          <th ng-repeat="head in heading">{{head}}</th>
+          <td ng-repeat="head in heading">{{head}}</td>
+            
         </tr>
-        <tr ng-repeat="userData in ranking">
+
+        <tr ng-repeat="userData in ranking | orderBy:sortType:sortReverse | filter:searchUser">
           <td>{{$index + 1}}</td>
           <td>{{userData.username}}</td>
           <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td>
