@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 const config = require('./config');
-const db = new Sequelize(config.database, {
+const db = new Sequelize(config.database, config.username, config.password, {
   protocol: 'postgres',
   dialect: 'postgres',
   host: config.host,
   logging: false,
 });
 
-// , config.username, config.password
+// 
 
 // uncomment below to test the connection
 db.authenticate().then((err) => {
@@ -32,6 +32,19 @@ const Selection = db.define('selection', {
   eliminatedID: Sequelize.INTEGER,
 });
 
+const TopThree = db.define('selection', {
+  username: Sequelize.STRING,
+  winnerTopThreeID: Sequelize.INTEGER,
+  runnerUpTopThreeID: Sequelize.INTEGER,
+  topThreeID: Sequelize.INTEGER,
+});
+
+const TootBoot = db.define('selection', {
+  username: Sequelize.STRING,
+  weekID: Sequelize.INTEGER,
+  selection: Sequelize.ARRAY(Sequelize.BOOLEAN),
+});
+
 const Results = db.define('results', {
   weekID: Sequelize.INTEGER,
   winnerID: Sequelize.INTEGER,
@@ -48,12 +61,16 @@ const Totals = db.define('totals', {
 
 User.sync();
 Selection.sync();
+TopThree.sync();
+TootBoot.sync();
 Results.sync();
 Totals.sync();
 
 module.exports = {
   User,
   Selection,
+  TopThree,
+  TootBoot,
   Results,
   Totals,
 };

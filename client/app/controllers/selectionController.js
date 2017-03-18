@@ -8,20 +8,21 @@ angular.module('fantasyDragRace')
     });
   };
 
-  $scope.submitSelection = function(selectionObj) {
+  $scope.submitTopThree = function(selectionObj) {
     const selection = {
       user: $rootScope.user,
-      winnerID: selectionObj.winner,
-      runnerUpID: selectionObj.runnerUp,
-      bottomID: selectionObj.bottom,
-      eliminatedID: selectionObj.eliminated,
+      winnerTopThreeID: selectionObj.winner,
+      runnerUpTopThreeID: selectionObj.runnerUp,
+      topThreeID: selectionObj.topThree,
     };
-    if (selection.winnerID === null || selection.wrunnerUpID === null || selection.bottomID === null || selection.eliminatedID === null) {
+    if (selection.winnerID === null ||
+        selection.runnerUpTopThreeID === null ||
+        selection.topThreeID === null) {
       $scope.submitModal('invalidSubmit');
     } else {
       return $http({
         method: 'POST',
-        url: 'api/selection',
+        url: 'api/topThreeSelection',
         type: 'application/json',
         data: selection,
       })
@@ -31,11 +32,52 @@ angular.module('fantasyDragRace')
     }
   };
 
+  $scope.submitWeeklySelection = function(selectionObj) {
+    const selection = {
+      user: $rootScope.user,
+      winnerID: selectionObj.winner,
+      runnerUpID: selectionObj.runnerUp,
+      bottomID: selectionObj.bottom,
+      eliminatedID: selectionObj.eliminated,
+    };
+    if (selection.winnerID === null ||
+        selection.wrunnerUpID === null ||
+        selection.bottomID === null ||
+        selection.eliminatedID === null) {
+      $scope.submitModal('invalidSubmit');
+    } else {
+      return $http({
+        method: 'POST',
+        url: 'api/weeklySelection',
+        type: 'application/json',
+        data: selection,
+      })
+      .then((res) => {
+        $scope.submitModal('submitSuccess');
+      });
+    }
+  };
+
+  $scope.submitTootBootSelection = function() {
+    const selection = {
+      user: $rootScope.user,
+      selection: $scope.tootBoot,
+    };
+    return $http({
+      method: 'POST',
+      url: 'api/tootBootSelection',
+      type: 'application/json',
+      data: selection,
+    })
+    .then((res) => {
+      $scope.submitModal('submitSuccess');
+    });
+  };
+
   $scope.tootBoot = [true, true, true, true, true, true, true, true, true, true, true, true, true];
   $scope.toggleTootBoot = function(index) {
-    $scope.tootBoot[index] = !$scope.tootBoot[index]
-    // console.log($scope.tootBoot)
-  }
+    $scope.tootBoot[index] = !$scope.tootBoot[index];
+  };
 
   $scope.queens = [
     { queenID: 1,
@@ -117,7 +159,4 @@ angular.module('fantasyDragRace')
       hometown: "Los Angeles",
     },
   ];
-
-})
-
-
+});

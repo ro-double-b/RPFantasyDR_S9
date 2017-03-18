@@ -2,7 +2,7 @@ const db = require('../database/db.js');
 
 const weekID = 1;
 
-function getSubmission(username) {
+function getSubmissionWeekly(username) {
   return db.Selection.findOne({
     where: {
       username,
@@ -11,7 +11,25 @@ function getSubmission(username) {
   });
 }
 
-function createSubmission(username, winnerID, runnerUpID, bottomID, eliminatedID) {
+function getSubmissionTopThree(username) {
+  return db.TopThree.findOne({
+    where: {
+      username,
+      weekID,
+    },
+  });
+}
+
+function getSubmissionTootBoot(username) {
+  return db.TootBoot.findOne({
+    where: {
+      username,
+      weekID,
+    },
+  });
+}
+
+function createWeeklySubmission(username, winnerID, runnerUpID, bottomID, eliminatedID) {
   return db.Selection.create({
     username,
     weekID,
@@ -22,11 +40,29 @@ function createSubmission(username, winnerID, runnerUpID, bottomID, eliminatedID
   });
 }
 
-function submitSelection(req, res) {
-  getSubmission(req.body.user, weekID)
+function createTopThreeSubmission(username, winnerTopThreeID, runnerUpTopThreeID, topThreeID) {
+  return db.Selection.create({
+    username,
+    weekID,
+    winnerTopThreeID,
+    runnerUpTopThreeID,
+    topThreeID,
+  });
+}
+
+function createTootBootSubmission(username, selection) {
+  return db.Selection.create({
+    username,
+    weekID,
+    selection,
+  });
+}
+
+function submitWeeklySelection(req, res) {
+  getSubmissionWeekly(req.body.user, weekID)
   .then((entry) => {
     if (entry === null) { // entry has not been made for that users this week
-      createSubmission(req.body.user, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID);
+      createWeeklySubmission(req.body.user, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID);
     } else { // entry has already been made and will update
       entry.updateAttributes({
         winnerID: req.body.winnerID,
@@ -39,6 +75,39 @@ function submitSelection(req, res) {
   });
 }
 
+function submitTopThreeSelection(req, res) {
+  getSubmissionTopThree(req.body.user, weekID)
+  .then((entry) => {
+    if (entry === null) { // entry has not been made for that users this week
+      createTopThreeSubmission(req.body.user, req.body.winnerTopThreeID, req.body.runnerUpTopThreeID, req.body.TopThreeID);
+    } else { // entry has already been made and will update
+      entry.updateAttributes({
+        winnerTopThreeID: req.body.winnerID,
+        runnerUpTopThreeID: req.body.runnerUpID,
+        TopThreeID: req.body.bottomID,
+      });
+    }
+    res.send('submitted');
+  });
+}
+
+function submitTootBootSelection(req, res) {
+  getSubmissionTootBoot(req.body.user, weekID)
+  .then((entry) => {
+    if (entry === null) { // entry has not been made for that users this week
+      createTootBootSubmission(req.body.user, req.body.selection);
+    } else { // entry has already been made and will update
+      entry.updateAttributes({
+        selection: req.body.seclection,
+      });
+    }
+    res.send('submitted');
+  });
+}
+
 module.exports = {
-  submitSelection,
+  submitWeeklySelection,
+  submitTopThreeSelection,
+  submitTootBootSelection,
+
 };

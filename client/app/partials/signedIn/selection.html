@@ -1,18 +1,26 @@
 <script>  
-window.jsSelection = {
+window.jsSelectionWeekly = {
   winner: null,
   runnerUp: null,
   bottom: null,
   eliminated: null,
 };
 
+window.jsSelectionTopThree = {
+  winner: null,
+  runnerUp: null,
+  topThree: null,
+};
+
 $(() => {
   $("div.droptrue").sortable({
     connectWith: "div",
   });
-  $(".draggable").draggable({
+
+// weekly
+  $(".draggable-weekly").draggable({
    });
-  $(".droppable").droppable({
+  $(".droppable-weekly").droppable({
     drop: (event, ui) => {
       if ($(event.target).attr('class').split(' ')[6] === 'taken') {
         const innerHtml = ui.draggable.html();
@@ -25,81 +33,206 @@ $(() => {
       ui.draggable.removeClass('col-md-3');
       ui.draggable.addClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
-      jsSelection[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
+      jsSelectionWeekly[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
     },
   });
-  $(".droppableHolder").droppable({
+  $(".droppableHolder-weekly").droppable({
     drop: (event, ui) => {
       ui.draggable.addClass('col-md-3');
       ui.draggable.removeClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
-      jsSelection[event.target.id] = null;
+      jsSelectionWeekly[event.target.id] = null;
+    },
+  });
+
+// Top Three
+  $(".draggable-topThree").draggable({
+   });
+  $(".droppable-topThree").droppable({
+    drop: (event, ui) => {
+      if ($(event.target).attr('class').split(' ')[6] === 'taken') {
+        const innerHtml = ui.draggable.html();
+        ui.draggable.remove();
+        const fullHtml = '<div ng-repeat="queen in queens track by $index" class="col-md-3 item ng-scope ui-sortable-handle">' + innerHtml + '</div>';
+        $('#repeatQueen').append(fullHtml);
+        $(ui.draggable).parent().removeClass('taken');
+      };
+      $(event.target).addClass('taken');
+      ui.draggable.removeClass('col-md-3');
+      ui.draggable.addClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+      jsSelectionTopThree[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
+      console.log(jsSelectionTopThree)
+    },
+  });
+  $(".droppableHolder-topThree").droppable({
+    drop: (event, ui) => {
+      ui.draggable.addClass('col-md-3');
+      ui.draggable.removeClass('selected-drag-drop');
+      $(ui.draggable).parent().removeClass('taken');
+      jsSelectionTopThree[event.target.id] = null;
+      console.log(jsSelectionTopThree)
     },
   });
 });
 
 </script>
 
-<header id="header">
-  
-      
-    <nav id="nav-menu-container">
-      <ul ng-init="tab = 1" class="nav-menu">
-        <li ng-class="{active:tab===1}"><a href ng-click="tab = 1">Profile</a></li>
-        <li ng-class="{active:tab===2}"><a href ng-click="tab = 2">Season Winners</a></li>
-        <li ng-class="{active:tab===3}"><a href ng-click="tab = 3">Weekly Winners</a></li>
-        <li ng-class="{active:tab===4}"><a  href ng-click="tab = 4">Toot and Boot</a></li>
-      </ul>
-    </nav>
+  <ul ng-init="tab = 2" class="nav-menu header-profile">
+<!--     <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Profile</a></li> -->
+    <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 2">Season Winners</a></li>
+    <li ng-class="{active:tab===3}" class="profile-click"><a href ng-click="tab = 3">Weekly Winners</a></li>
+    <li ng-class="{active:tab===4}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
+  </ul>
     
-  </div>
-</header>
-
+    
+<header id="header-profile">
 
 <section id="portfolio">
-  <div class="container wow fadeInUp">
-    <div class="row">
-      <div>
-        <h3 class="section-title">Select your Queens</h3>
-        <div class="section-title-divider"></div>
-      </div>
+
+
+
+
+<!-- PROFILE == SECTION ONE -->
+
+
+
+
+<!-- <div ng-show="tab === 1"  class="container wow fadeInRight">
+  <div>
+    <h3 class="section-title">Your Profile</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Check and see how you scored!</p>
+  </div>
+
+  
+
+  <div class="scroll-holder">
+
+  </div>
+
+</div> -->
+
+
+
+
+<!-- SEASON WINNERS == SECTION TWO -->
+
+
+
+
+<div ng-show="tab === 2"  class="container wow fadeInRight">
+  <div>
+    <h3 class="section-title">Select Your Top Three</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Make your selections before the fourth episode airs.</p>
+  </div>
+
+  <section class="row top-three">
+    <div class="col-md-3  subscribe-btn-container">
+      <h3>Winner</h3>
+      <div id="winner"  class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
+    <div class="col-md-3  subscribe-btn-container">
+      <h3>Runner Up</h3>
+      <div id="runnerUp" class="dropBox droptrue droppable-topThree portfolio-item "></div>
+    </div>
+    <div class="col-md-3  subscribe-btn-container">
+      <h3>Top Three</h3>
+      <div id="topThree" class="dropBox droptrue droppable-topThree portfolio-item "></div>
+    </div>
+  </section>
 
-    <div class="row">
-      <div class="col-md-12">
-        <p class="section-description">Drag your selections to each category and then submit before the episode airs!</p>
-      </div>
-
-      
-      <div class='test'>
-      <div class="col-md-3  subscribe-btn-container">
-        <h3>Winner</h3>
-        <div id="winner"  class="dropBox droptrue droppable portfolio-item "></div>
-        <!-- <select ng-model="selection.winner" ng-options='queen.name for queen in queens'></select> -->
-      </div>
-
-      <div class="col-md-3  subscribe-btn-container">
-        <h3>Runner-Up</h3>
-        <div id="runnerUp" class="dropBox droptrue droppable portfolio-item "></div>
-      <!-- <select ng-model="selection.runnerUp" ng-options='queen.name for queen in queens'></select> -->
-      </div>
-
-      <div class="col-md-3  subscribe-btn-container">
-        <h3>Bottom</h3>
-        <div id="bottom" class="dropBox droptrue droppable portfolio-item "></div>
-        <!-- <select ng-model="selection.bottom" ng-options='queen.name for queen in queens'></select> -->
-      </div>
-
-      <div class="col-md-3 subscribe-btn-container">
-        <h3>Eliminated</h3>
-        <div id="eliminated" class="dropBox droptrue droppable portfolio-item" ng-model='selection.yes'></div>
-        <!-- <select ng-model="selection.eliminated" ng-options='queen.name for queen in queens'></select> -->
-      </div>
-      </div>
-
+  <div class="scroll-holder">
+    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder-topThree draggable-topThree">
+    <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
+    
+        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+          <div class="details">
+            <h4>{{queen.name}}</h4>
+            <span>{{queen.hometown}}</span>
+            <span>{{queen.age}}</span>
+          </div>
+        </a>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-12 subscribe-btn-container menu-active">
+    <a href="#hero" class="subscribe-btn" ng-click="submitTopThree(window.jsSelectionTopThree)">Submit</a>
+  </div>
 </div>
 
-    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
+
+
+
+
+<!-- WEEKLY WINNERS == SECTION THREE -->
+
+
+
+
+<div ng-show="tab === 3"  class="container wow fadeInRight">
+  <div>
+    <h3 class="section-title">Winners and Lip-sync-ers: Week One</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Make your selections and then submit before the episode airs!</p>
+  </div>
+  <div class="col-md-3  subscribe-btn-container">
+    <h3>Winner</h3>
+    <div id="winner"  class="dropBox droptrue droppable-weekly portfolio-item "></div>
+  </div>
+  <div class="col-md-3  subscribe-btn-container">
+    <h3>Runner-Up</h3>
+    <div id="runnerUp" class="dropBox droptrue droppable-weekly portfolio-item "></div>
+  </div>
+  <div class="col-md-3  subscribe-btn-container">
+    <h3>Bottom</h3>
+    <div id="bottom" class="dropBox droptrue droppable-weekly portfolio-item "></div>
+  </div>
+  <div class="col-md-3 subscribe-btn-container">
+    <h3>Eliminated</h3>
+    <div id="eliminated" class="dropBox droptrue droppable-weekly portfolio-item" ng-model='selection.yes'></div>
+  </div>
+  <div class="scroll-holder">
+    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder-weekly draggable-weekly">
+    <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
+    
+        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+          <div class="details">
+            <h4>{{queen.name}}</h4>
+            <span>{{queen.hometown}}</span>
+            <span>{{queen.age}}</span>
+          </div>
+        </a>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-12 subscribe-btn-container menu-active">
+    <a href="#hero" class="subscribe-btn" ng-click="submitWeeklySelection(window.jsSelectionWeekly)">Submit</a>
+  </div>
+</div>
+
+
+
+
+  <!-- TOOT AND BOOT == SECTION FOUR -->
+
+
+
+
+    <div ng-show="tab === 4"  class="container wow fadeInRight">
+
+      <div>
+        <h3 class="section-title">Toot and Boot: Week One</h3>
+        <div class="section-title-divider"></div>
+      </div>
+      <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
       <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
       
           <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
@@ -109,13 +242,14 @@ $(() => {
               <span>{{queen.age}}</span>
             </div>
           </a>
+          <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[!tootBoot[$index]]">Toot</a>
+          <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[tootBoot[$index]]">Boot</a>
+
       </div>
     </div>
     
-    <div class="col-md-12 subscribe-btn-container">
-      <a  class="subscribe-btn" ng-click="submitSelection(window.jsSelection)">Submit</a>
+    <div class="col-md-12 subscribe-btn-container menu-active">
+      <a href="#hero" class="subscribe-btn" ng-click="">Submit</a>
     </div>
-
-
-  </div>
+    </div>
 </section>

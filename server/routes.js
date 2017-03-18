@@ -6,7 +6,9 @@ const resultController = require('./controllers/resultController.js');
 router.post('/api/signup', authController.signup);
 router.post('/api/login', authController.login);
 
-router.post('/api/selection', selectionController.submitSelection);
+router.post('/api/weeklySelection', selectionController.submitWeeklySelection);
+router.post('/api/topThreeSelection', selectionController.submitTopThreeSelection);
+router.post('/api/tootBootSelection', selectionController.submitTootBootSelection);
 router.post('/api/resultSubmission', resultController.submitResult);
 
 router.get('/home', authController.checkUser);
