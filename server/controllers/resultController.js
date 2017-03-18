@@ -1,8 +1,8 @@
 const db = require('../database/db.js');
-const points = 5;
+const weeklyPoints = 25;
 const weeks = 13;
 
-function getResult(weekID) {
+function getWeeklyResult(weekID) {
   return db.Results.findOne({
     where: {
       weekID,
@@ -10,7 +10,7 @@ function getResult(weekID) {
   });
 }
 
-function createResult(weekID, winnerID, runnerUpID, bottomID, eliminatedID) {
+function createWeeklyResult(weekID, winnerID, runnerUpID, bottomID, eliminatedID) {
   return db.Results.create({
     weekID,
     winnerID,
@@ -20,7 +20,7 @@ function createResult(weekID, winnerID, runnerUpID, bottomID, eliminatedID) {
   });
 }
 
-function formatTotals(totalArr) {
+function formatWeeklyTotals(totalArr) {
   const formatedTotals = [];
   for (let i = 0; i < weeks; i++) {
     if (totalArr[i] === undefined) {
@@ -32,7 +32,7 @@ function formatTotals(totalArr) {
   return formatedTotals;
 }
 
-function createTotal(username, totalArr, sumTotal) {
+function createWeeklyTotal(username, totalArr, sumTotal) {
   return db.Totals.create({
     username,
     totals: totalArr,
@@ -45,7 +45,7 @@ function getUsers() {
   });
 }
 
-function getUserSelection(username) {
+function getUserWeeklySelection(username) {
   return db.Selection.findAll({
     where: {
       username,
@@ -53,7 +53,7 @@ function getUserSelection(username) {
   });
 }
 
-function getResults() {
+function getWeeklyResults() {
   return db.Results.findAll();
 }
 
@@ -70,30 +70,30 @@ function getTotal(username) {
 }
 
 function updateTotals() {
-  getResults()
+  getWeeklyResults()
   .then((results) => {
     getUsers() // get every user
     .then((users) => {
       users.forEach((user, index) => { // iterate over each user
         const userValue = user.dataValues.username;
         const total = [];
-        getUserSelection(userValue)
+        getUserWeeklySelection(userValue)
         .then((selections) => {
           results.forEach((weekResult) => {
             selections.forEach((weekUserSelection) => {
               let weeklyTotal = 0;
               if (weekResult.dataValues.weekID === weekUserSelection.dataValues.weekID) {
                 if (weekResult.dataValues.winnerID === weekUserSelection.dataValues.winnerID) {
-                  weeklyTotal = weeklyTotal + points;
+                  weeklyTotal = weeklyTotal + weeklyPoints;
                 }
                 if (weekResult.dataValues.runnerUpID === weekUserSelection.dataValues.runnerUpID) {
-                  weeklyTotal = weeklyTotal + points;
+                  weeklyTotal = weeklyTotal + weeklyPoints;
                 }
                 if (weekResult.dataValues.bottomID === weekUserSelection.dataValues.bottomID) {
-                  weeklyTotal = weeklyTotal + points;
+                  weeklyTotal = weeklyTotal + weeklyPoints;
                 }
                 if (weekResult.dataValues.eliminatedID === weekUserSelection.dataValues.eliminatedID) {
-                  weeklyTotal = weeklyTotal + points;
+                  weeklyTotal = weeklyTotal + weeklyPoints;
                 }
               }
               total.push(weeklyTotal);
@@ -106,10 +106,10 @@ function updateTotals() {
             return a + b;
           }, 0);
           if (entry === null) {
-            createTotal(userValue, formatTotals(total), sumTotal);
+            createWeeklyTotal(userValue, formatWeeklyTotals(total), sumTotal);
           } else {
             entry.updateAttributes({
-              totals: formatTotals(total),
+              totals: formatWeeklyTotals(total),
               sumTotal,
             });
           }
@@ -119,11 +119,11 @@ function updateTotals() {
   });
 }
 
-function submitResult(req, res) {
-  getResult(req.body.weekID)
+function submitWeeklyResult(req, res) {
+  getWeeklyResult(req.body.weekID)
   .then((entry) => {
     if (entry === null) {
-      createResult(req.body.weekID, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID);
+      createWeeklyResult(req.body.weekID, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID);
     } else {
       entry.updateAttributes({
         winnerID: req.body.winnerID,
@@ -145,6 +145,6 @@ function sendRanking(req, res) {
 }
 
 module.exports = {
-  submitResult,
+  submitWeeklyResult,
   sendRanking,
 };

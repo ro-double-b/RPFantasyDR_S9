@@ -53,6 +53,18 @@ const Results = db.define('results', {
   eliminatedID: Sequelize.INTEGER,
 });
 
+const TopThreeResults = db.define('results', {
+  weekID: Sequelize.INTEGER,
+  winnerTopThreeID: Sequelize.INTEGER,
+  runnerUpTopThreeID: Sequelize.INTEGER,
+  TopThreeID: Sequelize.INTEGER,
+});
+
+const TootBootResults = db.define('results', {
+  weekID: Sequelize.INTEGER,
+  selectionRaven: Sequelize.INTEGER,
+  selectionRaja: Sequelize.INTEGER,
+});
 const Totals = db.define('totals', {
   username: Sequelize.STRING,
   totals: Sequelize.ARRAY(Sequelize.INTEGER),
@@ -64,6 +76,8 @@ Selection.sync();
 TopThree.sync();
 TootBoot.sync();
 Results.sync();
+TopThreeResults.sync();
+TootBootResults.sync();
 Totals.sync();
 
 module.exports = {
@@ -72,5 +86,7 @@ module.exports = {
   TopThree,
   TootBoot,
   Results,
+  TopThreeResults,
+  TootBootResults,
   Totals,
 };

@@ -1,7 +1,7 @@
 angular.module('fantasyDragRace')
 .controller('ResultsController', function($scope, $window, $http) {
 
-  $scope.submitResult = function(resultObj) {
+  $scope.submitWeeklyResult = function(resultObj) {
     const selection = {
       weekID: resultObj.week,
       winnerID: resultObj.winner.queenID,
@@ -11,10 +11,38 @@ angular.module('fantasyDragRace')
     };
     return $http({
       method: 'POST',
-      url: 'api/resultSubmission',
+      url: 'api/resultWeeklySubmission',
       type: 'application/json',
       data: selection,
-    })
+    });
+  };
+
+  $scope.submitTopThreeResult = function(resultObj) {
+    const selection = {
+      winnerID: resultObj.winner.queenID,
+      runnerUpID: resultObj.runnerUp.queenID,
+      bottomID: resultObj.topThree.queenID,
+    };
+    return $http({
+      method: 'POST',
+      url: 'api/resultTopThreeSubmission',
+      type: 'application/json',
+      data: selection,
+    });
+  };
+
+  $scope.submitTootResult = function(resultObj) {
+    const selection = {
+      weekID: resultObj.week,
+      selectionRaven: resultObj.raven,
+      selectionRaja: resultObj.raja,
+    };
+    return $http({
+      method: 'POST',
+      url: 'api/resultTootSubmission',
+      type: 'application/json',
+      data: selection,
+    });
   };
 
   $scope.queens = [

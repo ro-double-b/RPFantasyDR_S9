@@ -9,7 +9,10 @@ router.post('/api/login', authController.login);
 router.post('/api/weeklySelection', selectionController.submitWeeklySelection);
 router.post('/api/topThreeSelection', selectionController.submitTopThreeSelection);
 router.post('/api/tootBootSelection', selectionController.submitTootBootSelection);
-router.post('/api/resultSubmission', resultController.submitResult);
+
+router.post('/api/resultWeeklySubmission', resultController.submitWeeklyResult);
+router.post('/api/resultTopThreeSubmission', resultController.submitTopThreeResult);
+router.post('/api/resultTootSubmission', resultController.submitTootResult);
 
 router.get('/home', authController.checkUser);
 router.get('/api/ranking', resultController.sendRanking);
