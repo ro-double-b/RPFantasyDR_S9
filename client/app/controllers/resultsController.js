@@ -32,10 +32,11 @@ angular.module('fantasyDragRace')
   };
 
   $scope.submitTootResult = function(resultObj) {
+
     const selection = {
       weekID: resultObj.week,
-      selectionRaven: resultObj.raven,
-      selectionRaja: resultObj.raja,
+      selectionRaven: JSON.parse(resultObj.raven),
+      selectionRaja: JSON.parse(resultObj.raja),
     };
     return $http({
       method: 'POST',

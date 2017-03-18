@@ -23,7 +23,10 @@ function getTootResult(weekID) {
 }
 
 function getTopThreeResult() {
-  return db.User.findAll({
+  return db.TopThreeResults.findOne({
+    where: {
+      topThreeInit: 1,
+    },
   });
 }
 
@@ -38,7 +41,8 @@ function createWeeklyResult(weekID, winnerID, runnerUpID, bottomID, eliminatedID
 }
 
 function createTopThreeResult(winnerTopThreeID, runnerUpTopThreeID, topThreeID) {
-  return db.Results.create({
+  return db.TopThreeResults.create({
+    topThreeInit: 1,
     winnerTopThreeID,
     runnerUpTopThreeID,
     topThreeID,
@@ -46,7 +50,7 @@ function createTopThreeResult(winnerTopThreeID, runnerUpTopThreeID, topThreeID) 
 }
 
 function createTootResult(weekID, selectionRaven, selectionRaja) {
-  return db.Results.create({
+  return db.TootBootResults.create({
     weekID,
     selectionRaven,
     selectionRaja,
@@ -326,6 +330,7 @@ function submitWeeklyResult(req, res) {
 }
 
 function submitTootResult(req, res) {
+  console.log(req.body)
   getTootResult(req.body.weekID)
   .then((entry) => {
     if (entry === null) {
@@ -345,12 +350,12 @@ function submitTopThreeResult(req, res) {
   getTopThreeResult()
   .then((entry) => {
     if (entry === null) {
-      createTopThreeResult(req.body.weekID, req.body.selectionRaven, req.body.selectionRaja);
+      createTopThreeResult(req.body.winnerID, req.body.runnerUpID, req.body.topThreeID);
     } else {
       entry.updateAttributes({
         winnerTopThreeID: req.body.winnerID,
         runnerUpTopThreeID: req.body.runnerUpID,
-        TopThreeID: req.body.topThreeID,
+        topThreeID: req.body.topThreeID,
       });
     }
     updateTopThreeTotals();

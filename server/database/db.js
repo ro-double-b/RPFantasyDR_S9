@@ -54,6 +54,7 @@ const Results = db.define('results', {
 });
 
 const TopThreeResults = db.define('topresults', {
+  topThreeInit: Sequelize.INTEGER,
   winnerTopThreeID: Sequelize.INTEGER,
   runnerUpTopThreeID: Sequelize.INTEGER,
   topThreeID: Sequelize.INTEGER,
@@ -61,8 +62,8 @@ const TopThreeResults = db.define('topresults', {
 
 const TootBootResults = db.define('tootresults', {
   weekID: Sequelize.INTEGER,
-  selectionRaven: Sequelize.INTEGER,
-  selectionRaja: Sequelize.INTEGER,
+  selectionRaven: Sequelize.ARRAY(Sequelize.BOOLEAN),
+  selectionRaja: Sequelize.ARRAY(Sequelize.BOOLEAN),
 });
 const Totals = db.define('totals', {
   username: Sequelize.STRING,
