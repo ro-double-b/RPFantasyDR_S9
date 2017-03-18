@@ -46,7 +46,10 @@ Minor updates
 [x] get heroku psql server working
 [x] move heroku address to actual domain
 [x] table display properly working
+[x] rankings scroll feature if window is too small
+[x] pick top three
 
+[ ] update for toot and boot additional points
 [ ] restrict various characters in username and password
 [ ] logout functionality not working
 [ ] change bootstrap based on various size windows
@@ -56,7 +59,6 @@ Minor updates
 [ ] express session is not working currently
 [ ] error when autopopulate starts, still getting errors but wont time out
 [ ] have 'sign in to play' scroll you to top of page!
-[ ] rankings scroll feature if window is too small
 [ ] add buttions for scroll of queens
 [ ] limit how many rankings are shown on screen
 [ ] update heroku naming
@@ -67,10 +69,8 @@ Minor updates
 === > SATURDAY
 [ ] user profiles
 [ ] have profile of who you picked and how they did
-[ ] pick top three when signup
 [ ] change top three after first three episodes
 === > SUNDAY
-[ ] update for toot and boot additional points
 [ ] display video of toot and boot
 [ ] ability to click on user and see their profile and who they picked
 [ ] bugg when you keep on selecting a category over and over again
