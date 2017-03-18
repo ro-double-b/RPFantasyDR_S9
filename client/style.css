@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #header {
   background: #111;
-  padding: 40px 0;
+  padding: 20px 0;
   height: 90px;
 }
 
@@ -1038,9 +1038,10 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   margin-top: -80px;
 }
 
-.test222 {
-  padding: 0;
+#header-profile {
+  background: #111;
+  padding: 40px 0;
+  height: 90px;
 }
-
 
 
