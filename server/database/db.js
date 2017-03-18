@@ -32,14 +32,14 @@ const Selection = db.define('selection', {
   eliminatedID: Sequelize.INTEGER,
 });
 
-const TopThree = db.define('selection', {
+const TopThree = db.define('topthreeselection', {
   username: Sequelize.STRING,
   winnerTopThreeID: Sequelize.INTEGER,
   runnerUpTopThreeID: Sequelize.INTEGER,
   topThreeID: Sequelize.INTEGER,
 });
 
-const TootBoot = db.define('selection', {
+const TootBoot = db.define('tootselection', {
   username: Sequelize.STRING,
   weekID: Sequelize.INTEGER,
   selection: Sequelize.ARRAY(Sequelize.BOOLEAN),
@@ -53,14 +53,13 @@ const Results = db.define('results', {
   eliminatedID: Sequelize.INTEGER,
 });
 
-const TopThreeResults = db.define('results', {
-  weekID: Sequelize.INTEGER,
+const TopThreeResults = db.define('topresults', {
   winnerTopThreeID: Sequelize.INTEGER,
   runnerUpTopThreeID: Sequelize.INTEGER,
-  TopThreeID: Sequelize.INTEGER,
+  topThreeID: Sequelize.INTEGER,
 });
 
-const TootBootResults = db.define('results', {
+const TootBootResults = db.define('tootresults', {
   weekID: Sequelize.INTEGER,
   selectionRaven: Sequelize.INTEGER,
   selectionRaja: Sequelize.INTEGER,
@@ -68,6 +67,8 @@ const TootBootResults = db.define('results', {
 const Totals = db.define('totals', {
   username: Sequelize.STRING,
   totals: Sequelize.ARRAY(Sequelize.INTEGER),
+  tootTotals: Sequelize.ARRAY(Sequelize.INTEGER),
+  finalTotals: Sequelize.ARRAY(Sequelize.INTEGER),
   sumTotal: Sequelize.INTEGER,
 });
 

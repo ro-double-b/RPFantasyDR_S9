@@ -21,7 +21,7 @@ angular.module('fantasyDragRace')
     const selection = {
       winnerID: resultObj.winner.queenID,
       runnerUpID: resultObj.runnerUp.queenID,
-      bottomID: resultObj.topThree.queenID,
+      topThreeID: resultObj.topThree.queenID,
     };
     return $http({
       method: 'POST',

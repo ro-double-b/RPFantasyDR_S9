@@ -2,7 +2,7 @@ angular.module('fantasyDragRace')
 .controller('RankingController', function($scope, $window, $http, $rootScope) {
 
   $scope.weeks = 13;
-  $scope.createHeading = function() {
+  $scope.createHeading = () => {
     const heading = ['Rank', 'User'];
     for (let i = 1; i <= $scope.weeks; i++) {
       heading.push(`${i}`);
@@ -12,8 +12,9 @@ angular.module('fantasyDragRace')
   };
 
   $scope.heading = $scope.createHeading();
-  $scope.init = function() {
+  $scope.init = () => {
     return $http({
+      dataSrc: 'Data',
       method: 'GET',
       url: 'api/ranking',
     })

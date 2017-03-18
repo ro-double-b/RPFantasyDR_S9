@@ -79,6 +79,8 @@ angular.module('fantasyDragRace')
     $scope.tootBoot[index] = !$scope.tootBoot[index];
   };
 
+  $scope.weeklyPick = ['Winner', 'RunnerUp', 'Lip-sync', 'Eliminated'];
+
   $scope.queens = [
     { queenID: 1,
       name: "Aja",

@@ -26,17 +26,15 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
-      console.log(res)
       $modalInstance.close();
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
+        $rootScope.user = user.username;
+        $rootScope.userInfo = res.data;
         Auth.isLoggedIn = true;
         $scope.authorized = true;
         Authorization.go('private');
-        $rootScope.user = user.username;
-        $rootScope.userInfo = res.data
-        console.log(res.data)
       }
     });
   };
@@ -47,13 +45,15 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
+      console.log(res)
       $modalInstance.close();
       if (res.data === 'incorrect') {
         $scope.invalidLogin('invalidSignup');
       } else {
-        Auth.isLoggedIn = true;
-        Authorization.go('private');
         $rootScope.user = user.username;
+        Auth.isLoggedIn = true;
+        $scope.authorized = true;
+        Authorization.go('private');
       }
     });
   };

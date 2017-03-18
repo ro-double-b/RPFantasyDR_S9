@@ -14,7 +14,7 @@ router.post('/api/resultWeeklySubmission', resultController.submitWeeklyResult);
 router.post('/api/resultTopThreeSubmission', resultController.submitTopThreeResult);
 router.post('/api/resultTootSubmission', resultController.submitTootResult);
 
-router.get('/home', authController.checkUser);
+// router.get('/home', authController.checkUser);
 router.get('/api/ranking', resultController.sendRanking);
 
 module.exports = router;

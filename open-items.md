@@ -43,39 +43,42 @@ Minor updates
 [x] add name after logged in
 [x] bigger border on bottom
 [x] deploy
+[x] queens not loading after you login
 [x] get heroku psql server working
 [x] move heroku address to actual domain
 [x] table display properly working
 [x] rankings scroll feature if window is too small
 [x] pick top three
+[x] update heroku naming
+[x] change top three after first three episodes
 
-[ ] update for toot and boot additional points
-[ ] restrict various characters in username and password
-[ ] logout functionality not working
-[ ] change bootstrap based on various size windows
-[ ] queen pictures need to stay consistent when window is sized down
-[ ] test out on mobile phone
-[ ] queens not loading after you login
-[ ] express session is not working currently
-[ ] error when autopopulate starts, still getting errors but wont time out
-[ ] have 'sign in to play' scroll you to top of page!
-[ ] add buttions for scroll of queens
-[ ] limit how many rankings are shown on screen
-[ ] update heroku naming
-[ ] update fadeLeft/Right annimate css depending on where you are clicking
 
 // stretch features
 
 === > SATURDAY
+[ ] remove express sessions as it is crashing application
+[ ] express session is not working currently
+[ ] update for toot and boot additional points
+[ ] restrict various characters in username and password
+[ ] logout functionality not working
+[ ] add results
+
+[ ] change bootstrap based on various size windows
+[ ] queen pictures need to stay consistent when window is sized down
+[ ] test out on mobile phone
+[ ] error when autopopulate starts, still getting errors but wont time out
+[ ] have 'sign in to play' scroll you to top of page!
+[ ] add buttions for scroll of queens
+[ ] limit how many rankings are shown on screen
+[ ] update fadeLeft/Right annimate css depending on where you are clicking
 [ ] user profiles
 [ ] have profile of who you picked and how they did
-[ ] change top three after first three episodes
+[ ] when you login you dont get update ranking, etc...
 === > SUNDAY
 [ ] display video of toot and boot
 [ ] ability to click on user and see their profile and who they picked
 [ ] bugg when you keep on selecting a category over and over again
 [ ] add profiles
-[ ] add results
 
 // refactoring
 [ ] update for ESLint
