@@ -739,7 +739,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 #testimonials .profile .pic {
   border-radius: 50%;
-  border: 6px solid #fff;
+  /*border: 6px solid #fff;*/
   margin-bottom: 15px;
   overflow: hidden;
   height: 260px;
@@ -764,7 +764,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 #testimonials .quote {
   position: relative;
-  background: #f6f6f6;
+  background: #fff;
   padding: 60px;
   margin-top: 40px;
   font-size: 16px;
@@ -1013,16 +1013,14 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 }
 
 .aboutMe {
-  background-color: rgb(102, 102, 102)
+  background-color: rgb(102, 102, 102);
 }
+
 
 .table {
   margin-bottom: 100px;
 }
 
-#testimonials {
-  margin-bottom: 100px;
-}
 
 @media (min-width: 1200px) {
 .container {
@@ -1087,6 +1085,19 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   background: #03C4EB;
 }
 
+.ranking-header {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.aboutme-header {
+ margin-top: 40px;
+ background-color: #f0f0f0;
+ padding: 40px 0 80px 0; 
+}
+.rules-exception {
+  margin-left: 13em;
+}
 
 
 
