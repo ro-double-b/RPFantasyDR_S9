@@ -1112,5 +1112,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   margin-left: 13em;
 }
 
-
+.ranking-header-2 {
+  margin-top: 40em;
+}
 
