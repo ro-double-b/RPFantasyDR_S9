@@ -60,6 +60,7 @@ Minor updates
 [ ] add buttions for scroll of queens
 [ ] limit how many rankings are shown on screen
 [ ] update heroku naming
+[ ] update fadeLeft/Right annimate css depending on where you are clicking
 
 // stretch features
 
@@ -72,6 +73,9 @@ Minor updates
 [ ] update for toot and boot additional points
 [ ] display video of toot and boot
 [ ] ability to click on user and see their profile and who they picked
+[ ] bugg when you keep on selecting a category over and over again
+[ ] add profiles
+[ ] add results
 
 // refactoring
 [ ] update for ESLint

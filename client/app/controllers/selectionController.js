@@ -31,6 +31,12 @@ angular.module('fantasyDragRace')
     }
   };
 
+  $scope.tootBoot = [true, true, true, true, true, true, true, true, true, true, true, true, true];
+  $scope.toggleTootBoot = function(index) {
+    $scope.tootBoot[index] = !$scope.tootBoot[index]
+    // console.log($scope.tootBoot)
+  }
+
   $scope.queens = [
     { queenID: 1,
       name: "Aja",
