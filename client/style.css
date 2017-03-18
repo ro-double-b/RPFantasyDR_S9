@@ -1052,8 +1052,41 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   /*margin-top: -80px;*/
 }
 
-.profile-click {
-  /*margin-top: -30px;*/
+.scroll-holder {
+  display: inline-grid;
 }
+
+.top-three { 
+  padding: 0 0 0 16em;
+ }
+
+ .tootboot-btn-container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.tootboot-btn {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #03C4EB;
+  color: #03C4EB;
+  background: none;
+}
+
+.tootboot-btn:hover {
+  border: 2px solid #03C4EB;
+  color: #fff;
+  background: #03C4EB;
+}
+
+
 
 
