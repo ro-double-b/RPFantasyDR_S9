@@ -1038,10 +1038,22 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   margin-top: -80px;
 }
 
+.header-profile {
+  background: #111;
+  /*padding: 40px 0;*/
+  /*height: 90px;*/
+  margin-top: -80px;
+}
+
 #header-profile {
   background: #111;
   padding: 40px 0;
   height: 90px;
+  /*margin-top: -80px;*/
+}
+
+.profile-click {
+  /*margin-top: -30px;*/
 }
 
 
