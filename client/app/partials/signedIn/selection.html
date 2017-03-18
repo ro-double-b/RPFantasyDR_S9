@@ -40,6 +40,21 @@ $(() => {
 
 </script>
 
+<header id="header">
+  
+      
+    <nav id="nav-menu-container">
+      <ul ng-init="tab = 1" class="nav-menu">
+        <li ng-class="{active:tab===1}"><a href ng-click="tab = 1">Profile</a></li>
+        <li ng-class="{active:tab===2}"><a href ng-click="tab = 2">Season Winners</a></li>
+        <li ng-class="{active:tab===3}"><a href ng-click="tab = 3">Weekly Winners</a></li>
+        <li ng-class="{active:tab===4}"><a  href ng-click="tab = 4">Toot and Boot</a></li>
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
 
 <section id="portfolio">
   <div class="container wow fadeInUp">

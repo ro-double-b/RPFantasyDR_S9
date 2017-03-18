@@ -1,6 +1,7 @@
 angular.module('fantasyDragRace', [
   'ui.router',
   'ui.bootstrap',
+  
 ])
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
