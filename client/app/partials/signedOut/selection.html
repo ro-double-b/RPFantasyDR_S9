@@ -197,8 +197,9 @@ $(() => {
               <span>{{queen.age}}</span>
             </div>
           </a>
-          <a href="#hero" class="tootboot-btn" ng-click="">Toot</a>
-          <a href="#hero" class="tootboot-btn" ng-click="">Boot</a>
+          <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[!tootBoot[$index]]">Toot</a>
+          <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[tootBoot[$index]]">Boot</a>
+
       </div>
     </div>
     
