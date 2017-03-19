@@ -7,6 +7,7 @@ angular.module('fantasyDragRace')
     for (let i = 1; i <= $scope.weeks; i++) {
       heading.push(`${i}`);
     }
+    heading.push('Final')
     heading.push('Total');
     return heading;
   };
