@@ -76,8 +76,13 @@ Minor updates
 [ ] bugg when you keep on selecting a category over and over again
 
 
+[ ] update signup function to let users know that other users can see their username
+[ ] toot boot buttons not centered
+[ ] update modal for submission bc right now it is just for one day
 
 
+COMMENTS ON PLAYING
+// make sure that the selection controller is update for week
 
 // refactoring
 [ ] update for ESLint
