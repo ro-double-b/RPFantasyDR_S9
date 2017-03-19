@@ -28,8 +28,23 @@
         <tr ng-repeat="userData in ranking | orderBy:sortType | filter:searchUser">
           <td>{{$index + 1}}</td>
           <td>{{userData.username}}</td>
-          <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td>
-          <td >{{userData.sumTotal}}</td> 
+          <!-- <td ng-repeat='weekTotal in userData.totals track by $index'>{{weekTotal}}</td> -->
+          <td>{{userData.tootTotals[0] + userData.totals[0]}}</td>
+          <td>{{userData.tootTotals[1] + userData.totals[1]}}</td>
+          <td>{{userData.tootTotals[2] + userData.totals[2]}}</td>
+          <td>{{userData.tootTotals[3] + userData.totals[3]}}</td>
+          <td>{{userData.tootTotals[4] + userData.totals[4]}}</td>
+          <td>{{userData.tootTotals[5] + userData.totals[5]}}</td>
+          <td>{{userData.tootTotals[6] + userData.totals[6]}}</td>
+          <td>{{userData.tootTotals[7] + userData.totals[7]}}</td>
+          <td>{{userData.tootTotals[8] + userData.totals[8]}}</td>
+          <td>{{userData.tootTotals[9] + userData.totals[9]}}</td>
+          <td>{{userData.tootTotals[10] + userData.totals[10]}}</td>
+          <td>{{userData.tootTotals[11] + userData.totals[11]}}</td>
+          <td>{{userData.tootTotals[12] + userData.totals[12]}}</td>
+
+          <td>{{userData.finalTotals}}
+          <td >{{userData.sumTotal + userData.finalTotals + userData.tootsumTotals}}</td> 
         </tr>
       </table>
     </div>

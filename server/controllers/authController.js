@@ -20,25 +20,24 @@ function getUser(username) {
   });
 }
 
-function createSession(req, res, user) {
-  return req.session.regenerate(() => {
-    req.session.user = user;
-    res.send(user);
-  });
-}
+// function createSession(req, res, user) {
+//   return req.session.regenerate(() => {
+//     req.session.user = user;
+//     res.send(user);
+//   });
+// }
 
-function hasSession(req) {
-  return req.session ? !req.session.user : false;
-}
+// function hasSession(req) {
+//   return req.session ? !req.session.user : false;
+// }
 
-function checkUser(req, res) {
-  console.log('req');
-  if (!hasSession(req)) {
-    res.redirect('/');
-  } else {
-    res.redirect('/');
-  }
-}
+// function checkUser(req, res) {
+//   if (!hasSession(req)) {
+//     res.redirect('/');
+//   } else {
+//     res.redirect('/');
+//   }
+// }
 
 function signup(req, res) {
   getUser(req.body.username)
@@ -46,15 +45,15 @@ function signup(req, res) {
     if (user === null) { // username not taken
       bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
         if (err) {
-          throw err;
+          res.redirect('/');
         } else {
           createUser(req.body.name, req.body.username, hash, req.body.email)
-          .then((userObj) => {
-            createSession(req, res, userObj);
+          .then(() => {
+            res.send(req.body);
           });
         }
       });
-      res.send('correct');
+      // res.send('correct');
     } else { // username is taken
       res.send('incorrect');
     }
@@ -69,7 +68,8 @@ function login(req, res) {
         if (err) {
           throw err;
         } else if (result) {
-          createSession(req, res, user);
+          res.send(user);
+          // createSession(req, res, user);
         } else {
           res.send('incorrect');
         }
@@ -81,14 +81,14 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-  req.session.regenerate((err) => {
-    res.send('/');
-  });
+  // req.session.regenerate((err) => {
+  res.send('/');
+  // });
 }
 
 module.exports = {
   signup,
   login,
-  checkUser,
+  // checkUser,
   logout,
 };

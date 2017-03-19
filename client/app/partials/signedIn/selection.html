@@ -79,41 +79,16 @@ $(() => {
 </script>
 
   <ul ng-init="tab = 2" class="nav-menu header-profile">
-<!--     <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Profile</a></li> -->
     <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 2">Season Winners</a></li>
     <li ng-class="{active:tab===3}" class="profile-click"><a href ng-click="tab = 3">Weekly Winners</a></li>
     <li ng-class="{active:tab===4}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
+    <!-- <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Results</a></li> -->
   </ul>
     
     
 <header id="header-profile">
 
 <section id="portfolio">
-
-
-
-
-<!-- PROFILE == SECTION ONE -->
-
-
-
-
-<!-- <div ng-show="tab === 1"  class="container wow fadeInRight">
-  <div>
-    <h3 class="section-title">Your Profile</h3>
-    <div class="section-title-divider"></div>
-  </div>
-  <div class="col-md-12">
-    <p class="section-description">Check and see how you scored!</p>
-  </div>
-
-  
-
-  <div class="scroll-holder">
-
-  </div>
-
-</div> -->
 
 
 
@@ -249,7 +224,32 @@ $(() => {
     </div>
     
     <div class="col-md-12 subscribe-btn-container menu-active">
-      <a href="#hero" class="subscribe-btn" ng-click="">Submit</a>
+      <a href="#hero" class="subscribe-btn" ng-click="submitTootBootSelection()">Submit</a>
     </div>
     </div>
 </section>
+
+<!-- RESULTS == SECTION ONE -->
+
+
+
+
+<!-- <div ng-show="tab === 1"  class="container wow fadeInRight">
+  <div>
+    <h3 class="section-title">Results</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Check and see how you scored!</p>
+  </div>
+
+  
+
+  <div class="scroll-holder">
+
+  </div>
+
+</div> -->
+
+
+
