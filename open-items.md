@@ -57,16 +57,16 @@ Minor updates
 [x] when you login you dont get update ranking, etc...
 [x] express session is not working currently
 [x] check to make sure that you dont get logged out after submitting a selection
+[x] logout functionality not working
+[x] when you go to a random site it does not work, wont redirect
 
 
 
 
-[ ] logout functionality not working
 
 
 === > SUNDAY
 [ ] try to stay where you are at on the page too
-[ ] when you go to a random site it does not work, wont redirect
 [ ] seems to not persist if you change browsers!
 [ ] restrict various characters in username and password
 [ ] change bootstrap based on various browser sizes

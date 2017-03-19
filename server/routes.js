@@ -19,6 +19,6 @@ router.post('/api/resultWeeklySubmission', resultController.submitWeeklyResult);
 router.post('/api/resultTopThreeSubmission', resultController.submitTopThreeResult);
 router.post('/api/resultTootSubmission', resultController.submitTootResult);
 
-
+router.get('/*', authController.checkUser)
 
 module.exports = router;
