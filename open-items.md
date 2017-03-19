@@ -36,8 +36,6 @@ Minor updates
 [x] show how you rank with others on ranking
 [x] update color and frame for about me section -- results overspilling
 [x] add the email to list of contact
-
-=== > FRIDAY
 [x] update header for ranking along with user
 [x] filter features on ranking
 [x] add name after logged in
@@ -51,35 +49,35 @@ Minor updates
 [x] pick top three
 [x] update heroku naming
 [x] change top three after first three episodes
+[x] remove express sessions as it is crashing application
+[x] update for toot and boot additional points
+[x] check promises for all async calls!
+[x] error when autopopulate starts, still getting errors but wont time out
+[x] add buttions for scroll of queens
+[x] when you login you dont get update ranking, etc...
 
-
-// stretch features
-
-=== > SATURDAY
-[ ] remove express sessions as it is crashing application
-[ ] express session is not working currently
-[ ] update for toot and boot additional points
-[ ] restrict various characters in username and password
+=== > SUNDAY
+[ ] check to make sure that you dont get logged out after submitting a selection
 [ ] logout functionality not working
-[ ] add results
-[ ] check promises for all async calls!
-
-[ ] change bootstrap based on various size windows
+[ ] restrict various characters in username and password
+[ ] change bootstrap based on various browser sizes
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] test out on mobile phone
-[ ] error when autopopulate starts, still getting errors but wont time out
-[ ] have 'sign in to play' scroll you to top of page!
-[ ] add buttions for scroll of queens
+[ ] express session is not working currently
+[ ] update ranking secion description
 [ ] limit how many rankings are shown on screen
 [ ] update fadeLeft/Right annimate css depending on where you are clicking
+[ ] update selection to display 'update choice', if already submitted!
+[ ] add results
 [ ] user profiles
+[ ] have 'sign in to play' scroll you to top of page!
 [ ] have profile of who you picked and how they did
-[ ] when you login you dont get update ranking, etc...
-=== > SUNDAY
-[ ] display video of toot and boot
 [ ] ability to click on user and see their profile and who they picked
 [ ] bugg when you keep on selecting a category over and over again
-[ ] add profiles
+
+
+
+
 
 // refactoring
 [ ] update for ESLint

@@ -40,7 +40,7 @@ angular.module('fantasyDragRace')
         }, 0);
         $scope.userInfo = `Here is how you rank ${$rootScope.userInfo.name}.  
                            You have earned a total of ${$scope.userSumTotal} 
-                           points and rank ${$scope.userRanking} out of 
+                           points and rank ${$scope.userRanking + 1} out of 
                            ${$scope.ranking.length}.`;
       }
     });

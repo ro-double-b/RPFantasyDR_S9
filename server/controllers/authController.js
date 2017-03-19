@@ -47,11 +47,10 @@ function signup(req, res) {
         if (err) {
           res.redirect('/');
         } else {
-          createUser(req.body.name, req.body.username, hash, req.body.email);
-          res.send(req.body);
-          // .then((userObj) => {
-            // createSession(req, res, userObj);
-          // });
+          createUser(req.body.name, req.body.username, hash, req.body.email)
+          .then(() => {
+            res.send(req.body);
+          });
         }
       });
       // res.send('correct');
