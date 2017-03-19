@@ -83,7 +83,6 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-  console.log('hello there')
   req.session.destroy((err) => {
     res.send('/login');
   });

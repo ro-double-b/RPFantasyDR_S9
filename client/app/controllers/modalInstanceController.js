@@ -30,12 +30,7 @@ angular.module('fantasyDragRace')
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
-        // if ($rootScope.user === undefined || !res.data.username) {
-        //   $rootScope.userInfo = res.data;
-        //   // $rootScope.user = res.data.username
-        // }
-        // Auth.isLoggedIn = true;
-        // $scope.authorized = true;
+        angular.element(document).find('#logout').removeClass('hideLogout');
         Authorization.go('private');
       }
     });
@@ -50,18 +45,9 @@ angular.module('fantasyDragRace')
       console.log(res)
       $modalInstance.close();
       if (res.data === 'incorrect') {
-      //   $scope.invalidLogin('invalidSignup');
-      // } else {
-      //   if ($rootScope.user === undefined || !res.data.username) {
-      //     $rootScope.userInfo = res.data;
-      //   }
-      //   Auth.isLoggedIn = true;
-      //   $scope.authorized = true;
         Authorization.go('private');
       }
     });
   };
-  $scope.logout = function() {
-    console.log('yes')
-  }
+
 });
