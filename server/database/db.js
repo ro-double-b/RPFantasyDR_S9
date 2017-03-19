@@ -69,8 +69,10 @@ const Totals = db.define('totals', {
   username: Sequelize.STRING,
   totals: Sequelize.ARRAY(Sequelize.INTEGER),
   tootTotals: Sequelize.ARRAY(Sequelize.INTEGER),
-  finalTotals: Sequelize.ARRAY(Sequelize.INTEGER),
+  finalTotals: Sequelize.INTEGER,
   sumTotal: Sequelize.INTEGER,
+  tootsumTotals: Sequelize.INTEGER,
+  finalsumTotals: Sequelize.INTEGER,
 });
 
 User.sync();

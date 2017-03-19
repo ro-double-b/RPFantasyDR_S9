@@ -160,7 +160,7 @@ function getTotal(username) {
   });
 }
 
-function updateWeeklyTotals() {
+function updateWeeklyTotals(res) {
   getWeeklyResults()
   .then((results) => {
     getUsers() // get every user
@@ -170,7 +170,7 @@ function updateWeeklyTotals() {
         const total = [];
         getUserWeeklySelection(userValue)
         .then((selections) => {
-          results.forEach((weekResult) => {
+          results.forEach((weekResult, weeklyIndex) => {
             selections.forEach((weekUserSelection) => {
               let weeklyTotal = 0;
               if (weekResult.dataValues.weekID === weekUserSelection.dataValues.weekID) {
@@ -187,7 +187,7 @@ function updateWeeklyTotals() {
                   weeklyTotal = weeklyTotal + weeklyPoints;
                 }
               }
-              total.push(weeklyTotal);
+              total[weeklyIndex + 1] = weeklyTotal;
             });
           });
         });
@@ -197,12 +197,17 @@ function updateWeeklyTotals() {
             return a + b;
           }, 0);
           if (entry === null) {
-            createWeeklyTotal(userValue, formatWeeklyTotals(total), newSumTotal);
+            createWeeklyTotal(userValue, formatWeeklyTotals(total), newSumTotal)
+            .then(() => {
+              res.send('submitted');
+            });
           } else {
-            const totalSumTotal = entry.dataValues.sumTotal + newSumTotal;
             entry.updateAttributes({
               totals: formatWeeklyTotals(total),
-              sumTotal: totalSumTotal,
+              sumTotal: newSumTotal,
+            })
+            .then(() => {
+              res.send('submitted');
             });
           }
         });
@@ -211,7 +216,7 @@ function updateWeeklyTotals() {
   });
 }
 
-function updateTopThreeTotals() {
+function updateTopThreeTotals(res) {
   getTopThreeResults()
   .then((results) => {
     getUsers() // get every user
@@ -221,33 +226,40 @@ function updateTopThreeTotals() {
         getUserTopThreeSelection(userValue)
         .then((selection) => {
           let total = 0;
-          if (selection.dataValue.winnerTopThreeID === results.dataValue.winnerTopThreeID) {
+          const selectionObj = selection[0].dataValues;
+          const resultObj = results[0].dataValues;
+          if (selectionObj.winnerTopThreeID === resultObj.winnerTopThreeID) {
             total = total + winnerPoints;
           }
-          if (selection.dataValue.winnerTopThreeID === results.dataValue.winnerTopThreeID ||
-              selection.dataValue.winnerTopThreeID === results.dataValue.runnerUpID ||
-              selection.dataValue.winnerTopThreeID === results.dataValue.topThreeID) {
+          if (selectionObj.winnerTopThreeID === resultObj.winnerTopThreeID ||
+              selectionObj.winnerTopThreeID === resultObj.runnerUpTopThreeID ||
+              selectionObj.winnerTopThreeID === resultObj.topThreeID) {
             total = total + topThreePoints;
           }
-          if (selection.dataValue.runnerUpTopThreeID === results.dataValue.winnerTopThreeID ||
-              selection.dataValue.runnerUpTopThreeID === results.dataValue.runnerUpID ||
-              selection.dataValue.runnerUpTopThreeID === results.dataValue.topThreeID) {
+          if (selectionObj.runnerUpTopThreeID === resultObj.winnerTopThreeID ||
+              selectionObj.runnerUpTopThreeID === resultObj.runnerUpTopThreeID ||
+              selectionObj.runnerUpTopThreeID === resultObj.topThreeID) {
             total = total + topThreePoints;
           }
-          if (selection.dataValue.topThreeID === results.dataValue.winnerTopThreeID ||
-              selection.dataValue.topThreeID === results.dataValue.runnerUpID ||
-              selection.dataValue.topThreeID === results.dataValue.topThreeID) {
+          if (selectionObj.topThreeID === resultObj.winnerTopThreeID ||
+              selectionObj.topThreeID === resultObj.runnerUpTopThreeID ||
+              selectionObj.topThreeID === resultObj.topThreeID) {
             total = total + topThreePoints;
           }
           getTotal(userValue)
           .then((entry) => {
             if (entry === null) {
-              createTopThreeTotal(userValue, total);
+              createTopThreeTotal(userValue, total)
+              .then(() => {
+                res.send('submitted');
+              });
             } else {
-              const totalSumTotal = entry.dataValues.sumTotal + total;
               entry.updateAttributes({
                 finalTotals: total,
-                sumTotal: totalSumTotal,
+                finalsumTotals: total,
+              })
+              .then(() => {
+                res.send('submitted');
               });
             }
           });
@@ -257,38 +269,34 @@ function updateTopThreeTotals() {
   });
 }
 
-function updateTootTotals() {
+function updateTootTotals(res) {
   getTootResults()
   .then((results) => {
     getUsers() // get every user
     .then((users) => {
-      users.forEach((user, index) => { // iterate over each user
+      users.forEach((user) => { // iterate over each user
         const userValue = user.dataValues.username;
         const total = [];
         getUserTootSelection(userValue)
         .then((selections) => {
-          results.forEach((weekResult) => {
+          results.forEach((weekResult, tootIndex) => {
+            let weeklyTotal = 0;
             selections.forEach((weekUserSelection) => {
-              let weeklyTotal = 0;
               // check to see if weeks match
               if (weekResult.dataValues.weekID === weekUserSelection.dataValues.weekID) {
-                weekUserSelection.forEach((singleUserToot, indexWeek) => {
+                weekUserSelection.dataValues.selection.forEach((singleUserToot, indexWeek) => {
                   if (!eliminated[indexWeek]) {
-                    weekResult.selectionRaven.forEach((singleRavenToot) => {
-                      if (singleUserToot === singleRavenToot) {
-                        weeklyTotal = weeklyTotal + tootPoints;
-                      }
-                    });
-                    weekResult.selectionRaja.forEach((singleRajaToot) => {
-                      if (singleUserToot === singleRajaToot) {
-                        weeklyTotal = weeklyTotal + tootPoints;
-                      }
-                    });
+                    if (singleUserToot === weekResult.selectionRaven[indexWeek]) {
+                      weeklyTotal = weeklyTotal + tootPoints;
+                    }
+                    if (singleUserToot === weekResult.selectionRaja[indexWeek]) {
+                      weeklyTotal = weeklyTotal + tootPoints;
+                    }
                   }
                 });
               }
-              total.push(weeklyTotal);
             });
+            total[tootIndex + 1] = weeklyTotal;
           });
         });
         getTotal(userValue)
@@ -297,12 +305,17 @@ function updateTootTotals() {
             return a + b;
           }, 0);
           if (entry === null) {
-            createTootTotal(userValue, formatTootTotals(total), newSumTotal);
+            createTootTotal(userValue, formatTootTotals(total), newSumTotal)
+            .then(() => {
+              res.send('submitted');
+            });
           } else {
-            const totalSumTotal = entry.dataValues.sumTotal + newSumTotal;
             entry.updateAttributes({
               tootTotals: formatTootTotals(total),
-              sumTotal: totalSumTotal,
+              tootsumTotals: newSumTotal,
+            })
+            .then(() => {
+              res.send('submitted');
             });
           }
         });
@@ -315,34 +328,41 @@ function submitWeeklyResult(req, res) {
   getWeeklyResult(req.body.weekID)
   .then((entry) => {
     if (entry === null) {
-      createWeeklyResult(req.body.weekID, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID);
+      createWeeklyResult(req.body.weekID, req.body.winnerID, req.body.runnerUpID, req.body.bottomID, req.body.eliminatedID)
+      .then(() => {
+        updateWeeklyTotals(res);
+      });
     } else {
       entry.updateAttributes({
         winnerID: req.body.winnerID,
         runnerUpID: req.body.runnerUpID,
         bottomID: req.body.bottomID,
         eliminatedID: req.body.eliminatedID,
+      })
+      .then(() => {
+        updateWeeklyTotals(res);
       });
     }
-    updateWeeklyTotals();
-    res.send('submitted');
   });
 }
 
 function submitTootResult(req, res) {
-  console.log(req.body)
   getTootResult(req.body.weekID)
   .then((entry) => {
     if (entry === null) {
-      createTootResult(req.body.weekID, req.body.selectionRaven, req.body.selectionRaja);
+      createTootResult(req.body.weekID, req.body.selectionRaven, req.body.selectionRaja)
+      .then(() => {
+        updateTootTotals(res);
+      });
     } else {
       entry.updateAttributes({
         selectionRaven: req.body.selectionRaven,
         selectionRaja: req.body.selectionRaja,
+      })
+      .then(() => {
+        updateTootTotals(res);
       });
     }
-    updateTootTotals();
-    res.send('submitted');
   });
 }
 
@@ -350,16 +370,20 @@ function submitTopThreeResult(req, res) {
   getTopThreeResult()
   .then((entry) => {
     if (entry === null) {
-      createTopThreeResult(req.body.winnerID, req.body.runnerUpID, req.body.topThreeID);
+      createTopThreeResult(req.body.winnerID, req.body.runnerUpID, req.body.topThreeID)
+      .then(() => {
+        updateTopThreeTotals(res);
+      });
     } else {
       entry.updateAttributes({
         winnerTopThreeID: req.body.winnerID,
         runnerUpTopThreeID: req.body.runnerUpID,
         topThreeID: req.body.topThreeID,
+      })
+      .then(() => {
+        updateTopThreeTotals(res);
       });
     }
-    updateTopThreeTotals();
-    res.send('submitted');
   });
 }
 

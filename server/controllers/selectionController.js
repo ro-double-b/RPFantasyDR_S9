@@ -7,7 +7,7 @@ function getSubmissionWeekly(username) {
   return db.Selection.findOne({
     where: {
       username,
-      weekWeekID,
+      weekID: weekWeekID
     },
   });
 }
@@ -24,7 +24,7 @@ function getSubmissionTootBoot(username) {
   return db.TootBoot.findOne({
     where: {
       username,
-      tootWeekID,
+      weekID: tootWeekID,
     },
   });
 }
@@ -32,7 +32,7 @@ function getSubmissionTootBoot(username) {
 function createWeeklySubmission(username, winnerID, runnerUpID, bottomID, eliminatedID) {
   return db.Selection.create({
     username,
-    weekWeekID,
+    weekID: weekWeekID,
     winnerID,
     runnerUpID,
     bottomID,
@@ -52,7 +52,7 @@ function createTopThreeSubmission(username, winnerTopThreeID, runnerUpTopThreeID
 function createTootBootSubmission(username, selection) {
   return db.TootBoot.create({
     username,
-    tootWeekID,
+    weekID: tootWeekID,
     selection,
   });
 }
@@ -108,5 +108,6 @@ module.exports = {
   submitWeeklySelection,
   submitTopThreeSelection,
   submitTootBootSelection,
-
+  tootWeekID,
+  weekWeekID
 };

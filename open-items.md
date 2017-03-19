@@ -62,6 +62,7 @@ Minor updates
 [ ] restrict various characters in username and password
 [ ] logout functionality not working
 [ ] add results
+[ ] check promises for all async calls!
 
 [ ] change bootstrap based on various size windows
 [ ] queen pictures need to stay consistent when window is sized down
