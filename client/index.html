@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="fantasyDragRace">
 <head>
 
   <meta charset="utf-8">
@@ -45,7 +45,7 @@
 </head>
 
 
-<body ng-app="fantasyDragRace">
+<body>
 
 <header id="header">
   <div class="container">
@@ -57,12 +57,10 @@
     <nav id="nav-menu-container">
       <ul class="nav-menu">
         <li class="menu-active"><a href="#hero">Home</a></li>
-
         <li><a href="#services">Rules</a></li>
         <li><a href="#portfolio">Select Your Queens</a></li>
         <li><a href="#team"=>Rankings</a></li>
-        <li><a href="#testimonials">Logout</a></li>
-
+        <li><a onclick='logout()'>Logout</a></li>
       </ul>
     </nav>
     

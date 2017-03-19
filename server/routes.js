@@ -9,7 +9,7 @@ router.get('/api/ranking', resultController.sendRanking);
 
 router.post('/api/signup', authController.signup);
 router.post('/api/login', authController.login);
-router.post('/api/logout', authController.logout);
+router.get('/api/logout', authController.logout);
 
 router.post('/api/weeklySelection', selectionController.submitWeeklySelection);
 router.post('/api/topThreeSelection', selectionController.submitTopThreeSelection);

@@ -56,22 +56,22 @@ Minor updates
 [x] add buttions for scroll of queens
 [x] when you login you dont get update ranking, etc...
 [x] express session is not working currently
+[x] check to make sure that you dont get logged out after submitting a selection
 
 
 
 
-
-[ ] check to make sure that you dont get logged out after submitting a selection
-[ ] try to stay where you are at on the page too
 [ ] logout functionality not working
 
 
 === > SUNDAY
+[ ] try to stay where you are at on the page too
 [ ] when you go to a random site it does not work, wont redirect
 [ ] seems to not persist if you change browsers!
 [ ] restrict various characters in username and password
 [ ] change bootstrap based on various browser sizes
 [ ] queen pictures need to stay consistent when window is sized down
+[ ] read this article and add security features to my server: https://glebbahmutov.com/blog/solid-expressjs-server/
 [ ] test out on mobile phone
 [ ] update ranking secion description
 [ ] limit how many rankings are shown on screen
@@ -93,7 +93,9 @@ Minor updates
 COMMENTS ON PLAYING
 // make sure that the selection controller is update for week
 
+
 // refactoring
+[ ] remove the directives in the app.js file
 [ ] update for ESLint
 [ ] remove duplicate script/link files in html index file
 [ ] go through and refactor to ES6 where necessary

@@ -28,6 +28,7 @@ angular.module('fantasyDragRace')
       })
       .then((res) => {
         $scope.submitModal('submitSuccess');
+        
       });
     }
   };

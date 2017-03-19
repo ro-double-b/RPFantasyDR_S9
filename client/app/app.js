@@ -14,13 +14,14 @@ angular.module('fantasyDragRace', [
       },
       views: {
         '': { templateUrl: './app/views/index.html',
-      },
+        },
         'landing@login': {
           templateUrl: './app/partials/signedOut/landing.html',
           controller: 'AuthController',
         },
         'navbar@login': {
           templateUrl: './app/partials/signedOut/navbar.html',
+          controller: 'AuthController',
         },
         'about@login': {
           templateUrl: './app/partials/about.html',
@@ -48,7 +49,7 @@ angular.module('fantasyDragRace', [
       },
       views: {
         '': { templateUrl: './app/views/index.html',
-      },
+        },
         'landing@private': {
           templateUrl: './app/partials/signedIn/landing.html',
           controller: 'AuthController',

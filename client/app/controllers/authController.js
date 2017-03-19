@@ -8,14 +8,10 @@ angular.module('fantasyDragRace')
     });
   };
   $rootScope.logout = function () {
-    const selection = {
-      test: 'hi'
-    }
     return $http({
       method: 'POST',
       url: 'api/logout',
       type: 'application/json',
-      data: selection,
     })
     .then((res) => {
       Auth.isLoggedIn = false;

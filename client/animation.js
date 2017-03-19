@@ -101,3 +101,13 @@ jQuery(document).ready(($) => {
     return false;
   });
 });
+
+const logout = () => {
+  $.ajax({
+    type: "GET",
+    url: "/api/logout",
+    success: (response) => {
+      window.location.href = response;
+    },
+  });
+};
