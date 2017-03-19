@@ -3,12 +3,12 @@ angular.module('fantasyDragRace', [
   'ui.bootstrap',
   
 ])
-  .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
 
     .state('login', {
-      url: '/',
+      url: '/login',
       data: {
         requireLogin: false,
       },
@@ -44,7 +44,7 @@ angular.module('fantasyDragRace', [
     .state('private', {
       url: '/home',
       data: {
-        requireLogin: true,
+        requireLogin: false,
       },
       views: {
         '': { templateUrl: './app/views/index.html',
@@ -89,6 +89,7 @@ angular.module('fantasyDragRace', [
         },
       },
     });
+    $locationProvider.html5Mode(true)
   })
 
 .factory('Auth', function() {

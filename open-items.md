@@ -55,15 +55,24 @@ Minor updates
 [x] error when autopopulate starts, still getting errors but wont time out
 [x] add buttions for scroll of queens
 [x] when you login you dont get update ranking, etc...
+[x] express session is not working currently
+
+
+
+
+
+[ ] check to make sure that you dont get logged out after submitting a selection
+[ ] try to stay where you are at on the page too
+[ ] logout functionality not working
+
 
 === > SUNDAY
-[ ] check to make sure that you dont get logged out after submitting a selection
-[ ] logout functionality not working
+[ ] when you go to a random site it does not work, wont redirect
+[ ] seems to not persist if you change browsers!
 [ ] restrict various characters in username and password
 [ ] change bootstrap based on various browser sizes
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] test out on mobile phone
-[ ] express session is not working currently
 [ ] update ranking secion description
 [ ] limit how many rankings are shown on screen
 [ ] update fadeLeft/Right annimate css depending on where you are clicking

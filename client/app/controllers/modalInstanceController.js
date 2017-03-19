@@ -30,8 +30,9 @@ angular.module('fantasyDragRace')
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
-        if ($rootScope.user === undefined) {
+        if ($rootScope.user === undefined || !res.data.username) {
           $rootScope.userInfo = res.data;
+          $rootScope.user = res.data.username
         }
         Auth.isLoggedIn = true;
         $scope.authorized = true;
@@ -51,7 +52,7 @@ angular.module('fantasyDragRace')
       if (res.data === 'incorrect') {
         $scope.invalidLogin('invalidSignup');
       } else {
-        if ($rootScope.user === undefined) {
+        if ($rootScope.user === undefined || !res.data.username) {
           $rootScope.userInfo = res.data;
         }
         Auth.isLoggedIn = true;

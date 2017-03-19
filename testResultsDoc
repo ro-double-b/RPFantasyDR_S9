@@ -15,7 +15,11 @@ week1toot = all false
 
 
 
-// wee
+// week 1
+==> test to make sure everything is ok
+input:
+  test1, top123, week1234, toot-alltrue
+  test2, top123, week2345, toot-allfalse
 
 
 

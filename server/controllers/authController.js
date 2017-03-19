@@ -20,24 +20,28 @@ function getUser(username) {
   });
 }
 
-// function createSession(req, res, user) {
-//   return req.session.regenerate(() => {
-//     req.session.user = user;
-//     res.send(user);
-//   });
-// }
+function createSession(req, res, user) {
+  return req.session.regenerate(() => {
+    req.session.user = user;
+    res.send(user);
+  });
+}
 
-// function hasSession(req) {
-//   return req.session ? !req.session.user : false;
-// }
+function hasSession(req) {
+  if (req.session.user === undefined) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
-// function checkUser(req, res) {
-//   if (!hasSession(req)) {
-//     res.redirect('/');
-//   } else {
-//     res.redirect('/');
-//   }
-// }
+function checkUser(req, res) {
+  if (!hasSession(req)) {
+    res.redirect('/#/login');
+  } else {
+    res.redirect('/#/home');
+  }
+}
 
 function signup(req, res) {
   getUser(req.body.username)
@@ -49,11 +53,10 @@ function signup(req, res) {
         } else {
           createUser(req.body.name, req.body.username, hash, req.body.email)
           .then(() => {
-            res.send(req.body);
+            createSession(res, res, user);
           });
         }
       });
-      // res.send('correct');
     } else { // username is taken
       res.send('incorrect');
     }
@@ -68,8 +71,7 @@ function login(req, res) {
         if (err) {
           throw err;
         } else if (result) {
-          res.send(user);
-          // createSession(req, res, user);
+          createSession(req, res, user);
         } else {
           res.send('incorrect');
         }
@@ -81,14 +83,14 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-  // req.session.regenerate((err) => {
-  res.send('/');
-  // });
+  req.session.destroy((err) => {
+    res.redirect('/#/login');
+  });
 }
 
 module.exports = {
   signup,
   login,
-  // checkUser,
+  checkUser,
   logout,
 };

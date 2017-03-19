@@ -187,7 +187,7 @@ function updateWeeklyTotals(res) {
                   weeklyTotal = weeklyTotal + weeklyPoints;
                 }
               }
-              total[weeklyIndex + 1] = weeklyTotal;
+              total[weeklyIndex] = weeklyTotal;
             });
           });
         });
@@ -226,6 +226,7 @@ function updateTopThreeTotals(res) {
         getUserTopThreeSelection(userValue)
         .then((selection) => {
           let total = 0;
+          // console.log(selection)
           const selectionObj = selection[0].dataValues;
           const resultObj = results[0].dataValues;
           if (selectionObj.winnerTopThreeID === resultObj.winnerTopThreeID) {
@@ -296,7 +297,7 @@ function updateTootTotals(res) {
                 });
               }
             });
-            total[tootIndex + 1] = weeklyTotal;
+            total[tootIndex] = weeklyTotal;
           });
         });
         getTotal(userValue)
