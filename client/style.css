@@ -1199,7 +1199,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   #portfolio .portfolio-item .details {
     height: 180px;
     font: 12px;
-    width: 180;
+    width: 180px;
   }
   #portfolio .portfolio-item .details h4 {
     font-size: 12px;
