@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('AuthController', function($scope, $modal, $rootScope, $http, Auth, Authorization) {
+.controller('AuthController', function($scope, $modal, $rootScope, $http, $state) {
   $scope.selectedLanguages = [];
   $scope.showForm = function(type) {
     const modalInstance = $modal.open({
@@ -7,6 +7,11 @@ angular.module('fantasyDragRace')
       controller: 'ModalInstanceController',
     });
   };
+  $scope.mobileDetection = function (bool) {
+    if (bool) {
+      $state.go('mobile');
+    }
+  }
   $rootScope.logout = function () {
     return $http({
       method: 'POST',
@@ -14,28 +19,27 @@ angular.module('fantasyDragRace')
       type: 'application/json',
     })
     .then((res) => {
-      Auth.isLoggedIn = false;
       $scope.authorized = false;
-      Authorization.go('login');
+      $state.go('login');
     })
   }
 })
 
-.service('Authorization', function($state) {
-  this.authorized = false;
+// .service('Authorization', function($state) {
+//   // this.authorized = false;
 
-  const clear = () => {
-    this.authorized = false;
-  };
+//   // const clear = () => {
+//   //   this.authorized = false;
+//   // };
 
-  const go = (fallback) => {
-    this.authorized = true;
-    $state.go(fallback);
-  };
+//   const go = (fallback) => {
+//     this.authorized = true;
+//     $state.go(fallback);
+//   };
 
-  return {
-    authorized: this.authorized,
-    clear,
-    go,
-  };
-});
+//   return {
+//     // authorized: this.authorized,
+//     // clear,
+//     go,
+//   };
+// });

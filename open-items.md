@@ -65,6 +65,7 @@ Minor updates
 
 ===> SUNDAY MUST
 [ ] mobile redirect site
+[ ] logout disapears if you refersh homepage
 [ ] restrict various characters in username and password
 [ ] check functionality of toot and boot eliminations
 [ ] remove fade up items????
@@ -77,7 +78,6 @@ Minor updates
 [ ] update modal for submission bc right now it is just for one day
 
 
-
 ===> SUNDAY HOPEFULLY
 [ ] have chosen queens apear in box after selected
 [ ] update selection to display 'update choice', if already submitted!
@@ -88,6 +88,7 @@ Minor updates
 [ ] update signup function to let users know that other users can see their username
 [ ] name not displaying when you are logged in
 [ ] have 'sign in to play' scroll you to top of page!
+[ ] remove nav bar for mobile temp site
 
 
 ===> SUNDAY STRETCH

@@ -16,7 +16,6 @@ angular.module('fantasyDragRace', [
         },
         'landing@mobile': {
           templateUrl: './app/partials/mobile.html',
-          controller: 'AuthController',
         },
       },
     })
@@ -106,36 +105,36 @@ angular.module('fantasyDragRace', [
     $locationProvider.html5Mode(true)
   })
 
-.factory('Auth', function() {
-  return {
-    isLoggedIn: false,
-  };
-})
-.controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
-  $scope.auth = Auth;
-}])
+// .factory('Auth', function() {
+//   return {
+//     isLoggedIn: false,
+//   };
+// })
+// .controller('LoginCtrl', ['$scope', 'Auth', function($scope, Auth) {
+//   $scope.auth = Auth;
+// }])
 
-  .run(function ($rootScope, $state, $location, Auth) {
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
-      // not logged in yet
-      const shouldLogin = toState.data !== undefined
-        && toState.data.requireLogin
-        && !Auth.isLoggedIn;
-      if (shouldLogin) {
-        $state.go('login');
-        event.preventDefault();
-        return;
-      }
-      // logged in
-      if (Auth.isLoggedIn) {
-        const shouldGoToMain = fromState.name === ""
-          && toState.name === "private";
-        if (shouldGoToMain) {
-          $state.go('private');
-          event.preventDefault();
-        }
-        return;
-      }
-    });
-  });
+//   .run(function ($rootScope, $state, $location, Auth) {
+//     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+//       // not logged in yet
+//       const shouldLogin = toState.data !== undefined
+//         && toState.data.requireLogin
+//         && !Auth.isLoggedIn;
+//       if (shouldLogin) {
+//         $state.go('login');
+//         event.preventDefault();
+//         return;
+//       }
+//       // logged in
+//       if (Auth.isLoggedIn) {
+//         const shouldGoToMain = fromState.name === ""
+//           && toState.name === "private";
+//         if (shouldGoToMain) {
+//           $state.go('private');
+//           event.preventDefault();
+//         }
+//         return;
+//       }
+//     });
+//   });
 
