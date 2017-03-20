@@ -72,14 +72,15 @@ Minor updates
 [x] check functionality of toot and boot eliminations
 [x] if not entered before you are doubleing your sumtotals
 [x] make a page that can be displayed while server is running (night of episode and day of toot/boot)
+[x] queen pictures need to stay consistent when window is sized down
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES
-[ ] queen pictures need to stay consistent when window is sized down
 [ ] restrict various characters in username and password
 [ ] update modal for submission bc right now it is just for one day
 [ ] link mobile page to the rest of document now that is ready
 [ ] test out mobile site
+[ ] selection boxes need to stay consistent
 [ ] do a run though of the season, with what you expect/test cases
 [ ] ranking css descriptions should not be em, similar to others
 [ ] update ranking secion description

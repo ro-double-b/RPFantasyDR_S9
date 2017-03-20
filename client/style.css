@@ -749,6 +749,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 .horizontal-slide .item {
   display: inline-block;
   float: none;
+  width: 22em;
 }
 
 .item { 
@@ -1082,8 +1083,8 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   width: 100%;
 }
 
-.top-three { 
-  padding: 0 0 0 16em;
+/*.top-three { 
+  pad*/ding: 0 0 0 16em;
  }
 
  @media (max-width: 982px) {
@@ -1183,7 +1184,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   visibility: hidden;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     #portfolio .portfolio-item {
     height: 200px;
     width: 200px;
@@ -1191,13 +1192,17 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   #portfolio .portfolio-item .details {
     height: 200px;
     font: 12px;
-    width: 200;
+    /*width: 200;*/
   }
   #portfolio .portfolio-item .details h4 {
     font-size: 12px;
   }
   #portfolio .portfolio-item .details span {
 
+  }
+
+  .horizontal-slide .item {
+    width: 16em;
   }
 }
 
@@ -1217,6 +1222,8 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   #portfolio .portfolio-item .details span {
 
   }
+    .horizontal-slide .item {
+    width: 10em;
 }
 
 

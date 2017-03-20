@@ -4,7 +4,7 @@ angular.module('fantasyDragRace', [
   
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/processing');
+    $urlRouterProvider.otherwise('/login');
     $stateProvider
     .state('mobile', {
       url: '/mobile',
