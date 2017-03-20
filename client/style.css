@@ -686,9 +686,10 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   position: relative;
   height: 260px;
   width: 260px;
-  display: table;
+  display: inline-block;
   overflow: none;
   border-radius: 15px;
+  margin: auto;
 }
 
 
@@ -1192,13 +1193,13 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 @media (max-width: 1100px) {
     #portfolio .portfolio-item {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
   }
   #portfolio .portfolio-item .details {
-    height: 200px;
+    height: 180px;
     font: 12px;
-    /*width: 200;*/
+    width: 180;
   }
   #portfolio .portfolio-item .details h4 {
     font-size: 12px;
@@ -1214,12 +1215,12 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 @media (max-width: 800px) {
   #portfolio .portfolio-item {
-    height: 125px;
-    width: 125px;
+    height: 100px;
+    width: 100px;
   }
   #portfolio .portfolio-item .details {
-    height: 125px;
-    width: 125px;
+    height: 100px;
+    width: 100px;
     font: 12px;
   }
   #portfolio .portfolio-item .details h4 {
@@ -1230,6 +1231,14 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   }
     .horizontal-slide .item {
     width: 10em;
+}
+
+.droppable-topThree {
+  display: inline-block
+}
+
+.top-three-boxes {
+  width: 33%;
 }
 
 
