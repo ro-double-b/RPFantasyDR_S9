@@ -64,12 +64,12 @@ Minor updates
 [x] mobile redirect site
 [x] logout disapears if you refersh homepage
 [x] remove fade up items????
+[x] change bootstrap based on various browser sizes
+[x] remove twitter from about me section
 
 
 ===> SUNDAY MUST
-[ ] restrict various characters in username and password
 [ ] check functionality of toot and boot eliminations
-[ ] change bootstrap based on various browser sizes
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] toot boot buttons not centered
 [ ] make a page that can be displayed on mobile phone
@@ -84,15 +84,19 @@ Minor updates
 [ ] update selection to display 'update choice', if already submitted!
 [ ] ranking link does not work
 [ ] read this article and add security features to my server: https://glebbahmutov.com/blog/solid-expressjs-server/
+[ ] restrict various characters in username and password
+[ ] read this article and add security features to client side: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OTG-INPVAL-001) && https://www.owasp.org/index.php/Authentication_Cheat_Sheet
 [ ] test out on mobile phone
 [ ] update ranking secion description
 [ ] update signup function to let users know that other users can see their username
 [ ] name not displaying when you are logged in
 [ ] have 'sign in to play' scroll you to top of page!
 [ ] remove nav bar for mobile temp site
-
+[ ] add back mobile once done testing
+[ ] other updates to css
 
 ===> SUNDAY STRETCH
+[ ] re-do the pictures!
 [ ] add team feature
 [ ] limit how many rankings are shown on screen
 [ ] add results
@@ -103,6 +107,7 @@ Minor updates
 [ ] have profile of who you picked and how they did
 [ ] ability to click on user and see their profile and who they picked
 [ ] update fadeLeft/Right annimate css depending on where you are clicking
+[ ] longer names are not consistent on small screens, making it appear larger
 
 
 === > SUNDAY

@@ -14,9 +14,9 @@ angular.module('fantasyDragRace')
 
   $scope.heading = $scope.createHeading();
   $scope.init = () => {
-    if (window.innerWidth <= 800) {
-      $state.go('mobile');
-    }
+    // if (window.innerWidth <= 768) {
+    //   $state.go('mobile');
+    // }
     return $http({
       dataSrc: 'Data',
       method: 'GET',
