@@ -64,7 +64,6 @@ Minor updates
 
 
 ===> SUNDAY MUST
-[ ] have 'sign in to play' scroll you to top of page!
 [ ] restrict various characters in username and password
 [ ] check functionality of toot and boot eliminations
 [ ] remove fade up items????
@@ -86,6 +85,7 @@ Minor updates
 [ ] update ranking secion description
 [ ] update signup function to let users know that other users can see their username
 [ ] name not displaying when you are logged in
+[ ] have 'sign in to play' scroll you to top of page!
 
 
 ===> SUNDAY STRETCH
