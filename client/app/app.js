@@ -6,7 +6,20 @@ angular.module('fantasyDragRace', [
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/login');
     $stateProvider
-
+    .state('mobile', {
+      url: '/mobile',
+      data: {
+        requireLogin: false,
+      },
+      views: {
+        '': { templateUrl: './app/views/index.html',
+        },
+        'landing@mobile': {
+          templateUrl: './app/partials/mobile.html',
+          controller: 'AuthController',
+        },
+      },
+    })
     .state('login', {
       url: '/login',
       data: {

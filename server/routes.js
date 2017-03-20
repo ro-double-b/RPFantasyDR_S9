@@ -5,6 +5,7 @@ const resultController = require('./controllers/resultController.js');
 
 router.get('/home', authController.checkUser);
 router.get('/login', authController.checkUser);
+router.get('/mobile', authController.mobileView);
 router.get('/api/ranking', resultController.sendRanking);
 
 router.post('/api/signup', authController.signup);

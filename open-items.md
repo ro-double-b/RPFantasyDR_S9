@@ -64,6 +64,7 @@ Minor updates
 
 
 ===> SUNDAY MUST
+[ ] mobile redirect site
 [ ] restrict various characters in username and password
 [ ] check functionality of toot and boot eliminations
 [ ] remove fade up items????
@@ -74,6 +75,7 @@ Minor updates
 [ ] make a page that can be displayed on mobile phone
 [ ] make a page that can be displayed while server is running
 [ ] update modal for submission bc right now it is just for one day
+
 
 
 ===> SUNDAY HOPEFULLY

@@ -14,6 +14,9 @@ angular.module('fantasyDragRace')
 
   $scope.heading = $scope.createHeading();
   $scope.init = () => {
+    if(screen.width > 1) {
+      console.log('test')
+    };
     return $http({
       dataSrc: 'Data',
       method: 'GET',
