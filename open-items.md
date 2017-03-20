@@ -61,21 +61,22 @@ Minor updates
 [x] when you go to a random site it does not work, wont redirect
 [x] try to stay where you are at on the page too
 [x] clear out console.logs for when you select queens
+[x] mobile redirect site
+[x] logout disapears if you refersh homepage
+[x] remove fade up items????
 
 
 ===> SUNDAY MUST
-[ ] mobile redirect site
-[ ] logout disapears if you refersh homepage
 [ ] restrict various characters in username and password
 [ ] check functionality of toot and boot eliminations
-[ ] remove fade up items????
-[ ] update fadeLeft/Right annimate css depending on where you are clicking
 [ ] change bootstrap based on various browser sizes
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] toot boot buttons not centered
 [ ] make a page that can be displayed on mobile phone
 [ ] make a page that can be displayed while server is running
 [ ] update modal for submission bc right now it is just for one day
+[ ] test out mobile site
+[ ] do a run though of the season, with what you expect/test cases
 
 
 ===> SUNDAY HOPEFULLY
@@ -101,6 +102,7 @@ Minor updates
 [ ] when making selection, revers too low, 2nd nav bar is not there
 [ ] have profile of who you picked and how they did
 [ ] ability to click on user and see their profile and who they picked
+[ ] update fadeLeft/Right annimate css depending on where you are clicking
 
 
 === > SUNDAY
