@@ -113,7 +113,7 @@ Minor updates
 [ ] update selection to display 'update choice', if already submitted!
 [ ] have chosen queens apear in box after selected
 [ ] have access to select stuff on mobile
-
+[ ] test to make sure selection css property is update when logged in
 
 === > SUNDAY
 
