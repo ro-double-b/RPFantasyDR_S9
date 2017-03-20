@@ -93,7 +93,6 @@ function createTootTotal(username, totalArr, sumTotal) {
   return db.Totals.create({
     username,
     tootTotals: totalArr,
-    sumTotal,
   });
 }
 

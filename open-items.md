@@ -73,7 +73,7 @@ Minor updates
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES
-
+[ ] if not entered before you are doubleing your sumtotals
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] restrict various characters in username and password
 [ ] make a page that can be displayed while server is running (night of episode and day of toot/boot)
@@ -116,7 +116,8 @@ Minor updates
 [ ] have chosen queens apear in box after selected
 [ ] have access to select stuff on mobile
 [ ] test to make sure selection css property is update when logged in
-
+[ ] button  in #/results to calculate and sort rankings
+[ ] button in #/resutls to add rank into database
 
 
 [ ] table font-size property not small enough makes site scrollable
