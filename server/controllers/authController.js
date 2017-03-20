@@ -43,6 +43,10 @@ function checkUser(req, res) {
   }
 }
 
+function porcessing(req, res) {
+  res.redirect('/#/processing')
+}
+
 function signup(req, res) {
   getUser(req.body.username)
   .then((user) => {
@@ -99,4 +103,5 @@ module.exports = {
   checkUser,
   logout,
   mobileView,
+  porcessing,
 };

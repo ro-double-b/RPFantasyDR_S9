@@ -70,13 +70,13 @@ Minor updates
 [x] make a page that can be displayed on mobile phone
 [x] link to rankings is not wokring!
 [x] check functionality of toot and boot eliminations
+[x] if not entered before you are doubleing your sumtotals
+[x] make a page that can be displayed while server is running (night of episode and day of toot/boot)
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES
-[ ] if not entered before you are doubleing your sumtotals
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] restrict various characters in username and password
-[ ] make a page that can be displayed while server is running (night of episode and day of toot/boot)
 [ ] update modal for submission bc right now it is just for one day
 [ ] link mobile page to the rest of document now that is ready
 [ ] test out mobile site
@@ -103,7 +103,8 @@ Minor updates
 [ ] use cookie parser
 [ ] contact go-daddy to make site not have heroku in it
 [ ] totals are not populating correctly
-
+[ ] update finalsumtotal in database
+[ ] update a rranking table in database
 
 ===> STRETCH BEFORE DEPLOYMENT
 
@@ -118,6 +119,7 @@ Minor updates
 [ ] test to make sure selection css property is update when logged in
 [ ] button  in #/results to calculate and sort rankings
 [ ] button in #/resutls to add rank into database
+[ ] add an error modal if you dont have the correct user to add to the database
 
 
 [ ] table font-size property not small enough makes site scrollable
@@ -128,6 +130,7 @@ Minor updates
 [ ] updat since the totals is currently empty
 [ ] update favicon image
 [ ] wont update data if you refresh page
+[ ] displaying wrong modal when you sign up a new user
 
 === > SUNDAY
 

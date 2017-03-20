@@ -685,11 +685,12 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   background-repeat: no-repeat;
   position: relative;
   height: 260px;
-  width: 100%;
+  width: 260px;
   display: table;
   overflow: none;
   border-radius: 15px;
 }
+
 
 #portfolio .portfolio-item .details {
   height: 260px;
@@ -753,6 +754,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 .item { 
   display: inline-block;
 }
+
 
 /* Testimonials Section
 --------------------------------*/
@@ -1077,6 +1079,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 .scroll-holder {
   display: inline-grid;
+  width: 100%;
 }
 
 .top-three { 
@@ -1179,4 +1182,41 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 .hideLogout {
   visibility: hidden;
 }
+
+@media (max-width: 1000px) {
+    #portfolio .portfolio-item {
+    height: 200px;
+    width: 200px;
+  }
+  #portfolio .portfolio-item .details {
+    height: 200px;
+    font: 12px;
+    width: 200;
+  }
+  #portfolio .portfolio-item .details h4 {
+    font-size: 12px;
+  }
+  #portfolio .portfolio-item .details span {
+
+  }
+}
+
+@media (max-width: 800px) {
+  #portfolio .portfolio-item {
+    height: 125px;
+    width: 125px;
+  }
+  #portfolio .portfolio-item .details {
+    height: 125px;
+    width: 125px;
+    font: 12px;
+  }
+  #portfolio .portfolio-item .details h4 {
+    font-size: 12px;
+  }
+  #portfolio .portfolio-item .details span {
+
+  }
+}
+
 

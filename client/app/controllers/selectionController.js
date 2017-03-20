@@ -19,6 +19,8 @@ angular.module('fantasyDragRace')
         selection.runnerUpTopThreeID === null ||
         selection.topThreeID === null) {
       $scope.submitModal('invalidSubmit');
+    } else if (selection.user === undefined) {
+      $scope.submitModal('errorSubmit')
     } else {
       return $http({
         method: 'POST',
@@ -27,7 +29,7 @@ angular.module('fantasyDragRace')
         data: selection,
       })
       .then((res) => {
-        $scope.submitModal('submitSuccess');
+        $scope.submitModal('submitTop');
         $window.location.href = '#portfolio';
       });
     }
@@ -46,6 +48,8 @@ angular.module('fantasyDragRace')
         selection.bottomID === null ||
         selection.eliminatedID === null) {
       $scope.submitModal('invalidSubmit');
+    } else if (selection.user === undefined) {
+      $scope.submitModal('errorSubmit');
     } else {
       return $http({
         method: 'POST',
@@ -54,7 +58,7 @@ angular.module('fantasyDragRace')
         data: selection,
       })
       .then((res) => {
-        $scope.submitModal('submitSuccess');
+        $scope.submitModal('submitWeekly');
         $window.location.href = '#portfolio';
       });
     }
@@ -65,16 +69,20 @@ angular.module('fantasyDragRace')
       user: $rootScope.userinfo.username,
       selection: $scope.tootBoot,
     };
-    return $http({
-      method: 'POST',
-      url: 'api/tootBootSelection',
-      type: 'application/json',
-      data: selection,
-    })
-    .then((res) => {
-      $scope.submitModal('submitSuccess');
-      $window.location.href = '#portfolio'
-    });
+    if (selection.user === undefined) {
+      $scope.submitModal('errorSubmit');
+    } else {
+      return $http({
+        method: 'POST',
+        url: 'api/tootBootSelection',
+        type: 'application/json',
+        data: selection,
+      })
+      .then((res) => {
+        $scope.submitModal('submitToot');
+        $window.location.href = '#portfolio';
+      });
+    }
   };
 
   $scope.tootBoot = [true, true, true, true, true, true, true, true, true, true, true, true, true];

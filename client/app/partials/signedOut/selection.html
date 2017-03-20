@@ -197,9 +197,9 @@ $(() => {
     <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
     <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
     
-        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default drag-small-image" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
           <div class="details">
-            <h4>{{queen.name}}</h4>
+            <h4 class="queens-name-small">{{queen.name}}</h4>
             <span>{{queen.hometown}}</span>
             <span>{{queen.age}}</span>
           </div>
@@ -229,19 +229,19 @@ $(() => {
   <div class="col-md-12">
     <p class="section-description">Make your selections and then submit before the episode airs!</p>
   </div>
-  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+  <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
     <h3 class='weekly-titles'>Winner</h3>
     <div id="winner"  class="dropBox droptrue droppable portfolio-item "></div>
   </div>
-  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+  <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
     <h3 class='weekly-titles'>Runner-Up</h3>
     <div id="runnerUp" class="dropBox droptrue droppable portfolio-item "></div>
   </div>
-  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+  <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
     <h3 class='weekly-titles'>Bottom</h3>
     <div id="bottom" class="dropBox droptrue droppable portfolio-item "></div>
   </div>
-  <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
+  <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
     <h3 class='weekly-titles'>Eliminated</h3>
     <div id="eliminated" class="dropBox droptrue droppable portfolio-item" ng-model='selection.yes'></div>
   </div>
