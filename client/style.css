@@ -1241,4 +1241,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   width: 33%;
 }
 
+.col-md-3.col-sm-3.col-xs-3.subscribe-btn-container.top-three-boxes {
+  width: 33%;
+}
 
