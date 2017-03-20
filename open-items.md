@@ -100,7 +100,8 @@ Minor updates
 [ ] user profiles
 [ ] have profile of who you picked and how they did
 [?] when making selection, revers too low, 2nd nav bar is not there
-
+[ ] use cookie parser
+[ ] contact go-daddy to make site not have heroku in it
 
 ===> STRETCH BEFORE DEPLOYMENT
 
