@@ -10,11 +10,11 @@ angular.module('fantasyDragRace')
 
   $scope.submitTopThree = function(selectionObj) {
     console.log($rootScope.userinfo)
-    if ($rootScope.userinfo === undefined) {
+    if ($rootScope.user === undefined) {
       $scope.submitModal('errorSubmit')
     } else {
       const selection = {
-        user: $rootScope.userinfo.username,
+        user: $rootScope.user,
         winnerTopThreeID: selectionObj.winner,
         runnerUpTopThreeID: selectionObj.runnerUp,
         topThreeID: selectionObj.topThree,
@@ -39,11 +39,11 @@ angular.module('fantasyDragRace')
   };
 
   $scope.submitWeeklySelection = function(selectionObj) {
-    if ($rootScope.userinfo === undefined) {
+    if ($rootScope.user === undefined) {
       $scope.submitModal('errorSubmit')
     } else {
       const selection = {
-        user: $rootScope.userinfo.username,
+        user: $rootScope.user,
         winnerID: selectionObj.winner,
         runnerUpID: selectionObj.runnerUp,
         bottomID: selectionObj.bottom,
@@ -75,7 +75,7 @@ angular.module('fantasyDragRace')
       $scope.submitModal('errorSubmit');
     } else {
       const selection = {
-        user: $rootScope.userinfo.username,
+        user: $rootScope.user,
         selection: $scope.tootBoot,
       };
       return $http({
