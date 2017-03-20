@@ -21,6 +21,7 @@ const User = db.define('user', {
   username: Sequelize.STRING,
   email: Sequelize.STRING,
   password: Sequelize.STRING,
+  groups: Sequelize.ARRAY(Sequelize.STRING),
 });
 
 const Selection = db.define('selection', {
@@ -73,6 +74,7 @@ const Totals = db.define('totals', {
   sumTotal: Sequelize.INTEGER,
   tootsumTotals: Sequelize.INTEGER,
   finalsumTotals: Sequelize.INTEGER,
+  ranking: Sequelize.INTEGER,
 });
 
 User.sync();

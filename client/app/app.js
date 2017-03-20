@@ -17,6 +17,23 @@ angular.module('fantasyDragRace', [
         'landing@mobile': {
           templateUrl: './app/partials/mobile.html',
         },
+        'about@mobile': {
+          templateUrl: './app/partials/about.html',
+        },
+        'rules@mobile': {
+          templateUrl: './app/partials/rules.html',
+        },
+        'selection@mobile': {
+          templateUrl: './app/partials/signedOut/selection.html',
+          controller: 'SelectionController',
+        },
+        'rankings@mobile': {
+          templateUrl: './app/partials/rankings.html',
+          controller: 'RankingController',
+        },
+        'aboutme@mobile': {
+          templateUrl: './app/partials/aboutme.html',
+        },
       },
     })
     // .state('processing', {
