@@ -27,11 +27,11 @@ angular.module('fantasyDragRace')
       data: user,
     }).then((res) => {
       $modalInstance.close();
-      console.log(res.data.username)
       if (res.data === "incorrect") {
         $scope.invalidLogin('invalidLogin');
       } else {
-        $rootScope.userinfo = res.data
+        console.log(res)
+        // $rootScope.user = res.data;
         angular.element(document).find('#logout').removeClass('hideLogout');
         $state.go('private');
       }
@@ -45,14 +45,13 @@ angular.module('fantasyDragRace')
       data: user,
     }).then((res) => {
       $modalInstance.close();
-      if (res.data === 'incorrect') { 
-        $scope.invalidLogin('invalidSignup')
+      if (res.data === 'incorrect') {
+        $scope.invalidLogin('invalidSignup');
       } else {
-        $rootScope.userinfo = res.data
+        // $rootScope.user = res.data;
         angular.element(document).find('#logout').removeClass('hideLogout');
         $state.go('private');
       }
     });
   };
-
 });

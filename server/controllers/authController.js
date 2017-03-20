@@ -23,7 +23,7 @@ function getUser(username) {
 function createSession(req, res, user) {
   return req.session.regenerate(() => {
     req.session.user = user;
-    res.send(user);
+    res.redirect('/#/home');
   });
 }
 
@@ -44,7 +44,7 @@ function checkUser(req, res) {
 }
 
 function porcessing(req, res) {
-  res.redirect('/#/processing')
+  res.redirect('/#/processing');
 }
 
 function signup(req, res) {
@@ -57,7 +57,7 @@ function signup(req, res) {
         } else {
           createUser(req.body.name, req.body.username, hash, req.body.email)
           .then(() => {
-            createSession(res, res, user);
+            createSession(req, res, req.body.username);
           });
         }
       });
@@ -75,7 +75,7 @@ function login(req, res) {
         if (err) {
           throw err;
         } else if (result) {
-          createSession(req, res, user);
+          createSession(req, res, req.body.username);
         } else {
           res.send('incorrect');
         }
@@ -93,7 +93,6 @@ function logout(req, res) {
 }
 
 function mobileView(req, res) {
-  console.log('test')
   res.redirect('/#/mobile')
 }
 

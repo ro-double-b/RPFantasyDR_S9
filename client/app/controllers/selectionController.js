@@ -9,6 +9,7 @@ angular.module('fantasyDragRace')
   };
 
   $scope.submitTopThree = function(selectionObj) {
+    console.log($rootScope.userinfo)
     if ($rootScope.userinfo === undefined) {
       $scope.submitModal('errorSubmit')
     } else {
