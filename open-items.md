@@ -66,18 +66,20 @@ Minor updates
 [x] remove fade up items????
 [x] change bootstrap based on various browser sizes
 [x] remove twitter from about me section
+[x] toot boot buttons not centered
+[x] make a page that can be displayed on mobile phone
+[x] link to rankings is not wokring!
 
 
 ===> SUNDAY MUST
 [ ] check functionality of toot and boot eliminations
 [ ] queen pictures need to stay consistent when window is sized down
-[ ] toot boot buttons not centered
-[ ] make a page that can be displayed on mobile phone
 [ ] make a page that can be displayed while server is running
 [ ] update modal for submission bc right now it is just for one day
+[ ] link mobile page to the rest of document now that is ready
 [ ] test out mobile site
 [ ] do a run though of the season, with what you expect/test cases
-
+[ ] ranking css descriptions should not be em, similar to others
 
 ===> SUNDAY HOPEFULLY
 [ ] have chosen queens apear in box after selected
@@ -108,6 +110,8 @@ Minor updates
 [ ] ability to click on user and see their profile and who they picked
 [ ] update fadeLeft/Right annimate css depending on where you are clicking
 [ ] longer names are not consistent on small screens, making it appear larger
+
+
 
 
 === > SUNDAY
