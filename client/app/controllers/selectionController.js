@@ -28,7 +28,7 @@ angular.module('fantasyDragRace')
       })
       .then((res) => {
         $scope.submitModal('submitSuccess');
-        
+        $window.location.href = '#portfolio'
       });
     }
   };
@@ -55,6 +55,7 @@ angular.module('fantasyDragRace')
       })
       .then((res) => {
         $scope.submitModal('submitSuccess');
+        $window.location.href = '#portfolio'
       });
     }
   };
@@ -72,6 +73,7 @@ angular.module('fantasyDragRace')
     })
     .then((res) => {
       $scope.submitModal('submitSuccess');
+      $window.location.href = '#portfolio'
     });
   };
 

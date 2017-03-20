@@ -226,7 +226,6 @@ function updateTopThreeTotals(res) {
         getUserTopThreeSelection(userValue)
         .then((selection) => {
           let total = 0;
-          // console.log(selection)
           const selectionObj = selection[0].dataValues;
           const resultObj = results[0].dataValues;
           if (selectionObj.winnerTopThreeID === resultObj.winnerTopThreeID) {

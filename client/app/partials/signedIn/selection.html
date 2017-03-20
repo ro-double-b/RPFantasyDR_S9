@@ -62,7 +62,6 @@ $(() => {
       ui.draggable.addClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
       jsSelectionTopThree[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
-      console.log(jsSelectionTopThree)
     },
   });
   $(".droppableHolder-topThree").droppable({
@@ -71,7 +70,6 @@ $(() => {
       ui.draggable.removeClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
       jsSelectionTopThree[event.target.id] = null;
-      console.log(jsSelectionTopThree)
     },
   });
 });

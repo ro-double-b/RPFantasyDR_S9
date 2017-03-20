@@ -42,9 +42,9 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
-      console.log(res)
       $modalInstance.close();
       if (res.data === 'incorrect') {
+        angular.element(document).find('#logout').removeClass('hideLogout');
         Authorization.go('private');
       }
     });
