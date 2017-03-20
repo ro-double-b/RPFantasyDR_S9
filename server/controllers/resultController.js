@@ -2,7 +2,7 @@ const db = require('../database/db.js');
 const weeklyPoints = 25;
 const tootPoints = 5;
 const weeks = 13;
-const eliminated = [false, false, false, false, false, false, false, false, false, false, false, false, false];
+const eliminated = [true, false, false, false, false, false, false, false, false, false, false, false, false];
 const topThreePoints = 100;
 const winnerPoints = 100;
 

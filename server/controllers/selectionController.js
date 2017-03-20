@@ -1,7 +1,7 @@
 const db = require('../database/db.js');
 
-const weekWeekID = 1;
-const tootWeekID = 1;
+const weekWeekID = 2;
+const tootWeekID = 2;
 
 function getSubmissionWeekly(username) {
   return db.Selection.findOne({
