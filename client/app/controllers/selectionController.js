@@ -62,7 +62,7 @@ angular.module('fantasyDragRace')
 
   $scope.submitTootBootSelection = function() {
     const selection = {
-      user: $rootScope.user,
+      user: $rootScope.userinfo.username,
       selection: $scope.tootBoot,
     };
     return $http({
