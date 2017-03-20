@@ -100,11 +100,10 @@ jQuery(document).ready(($) => {
     }, 1500, 'easeInOutExpo');
     return false;
   });
-  if (window.location.pathname === '/login') {
-    $('#logout').addClass('hideLogout');
-  } else {
-    $('#logout').removeClass('hideLogout');
+  if (window.location.pathname === '/home') {
+    $('#logout').removeClass('hideLogout')
   }
+
 });
 
 const logout = () => {

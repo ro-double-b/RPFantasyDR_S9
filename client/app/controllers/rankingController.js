@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('RankingController', function($scope, $window, $http, $rootScope) {
+.controller('RankingController', function($scope, $window, $http, $rootScope, $state) {
 
   $scope.weeks = 13;
   $scope.createHeading = () => {
@@ -14,6 +14,9 @@ angular.module('fantasyDragRace')
 
   $scope.heading = $scope.createHeading();
   $scope.init = () => {
+    // if (window.innerWidth <= 768) {
+    //   $state.go('mobile');
+    // }
     return $http({
       dataSrc: 'Data',
       method: 'GET',

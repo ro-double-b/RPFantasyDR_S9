@@ -482,6 +482,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 150px 0 150px;
 }
 
+@media (max-width: 982px) {
+  .section-description {
+    margin: 0 0 0 0;
+  }
+}
+
 .section-title-divider {
   width: 50px;
   height: 3px;
@@ -493,6 +499,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-text {
   text-align: center;
   margin: 0 150px 0 150px;
+}
+
+@media (max-width: 982px) {
+  .section-text {
+    margin: 0 0 0 0;
+  }
 }
 
 /* Get Started Section
@@ -580,6 +592,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 24px;
 }
 
+@media (max-width: 982px) {
+  .service-description {
+    margin: 0 0 0 0;
+  }
+}
+
+
 /* Subscribe Section
 --------------------------------*/
 
@@ -638,9 +657,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: none;
   border: 2px solid #03C4EB;
   color: #03C4EB;
+}
 
 
-
+ @media (max-width: 650px) {
+  .weekly-titles {
+    font-size: 17px;
+  }
+}
+ @media (max-width: 475px) {
+  .weekly-titles {
+    font-size: 14px;
+  }
 }
 
 /* Portfolio Section
@@ -739,7 +767,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 
 #testimonials .profile .pic {
   border-radius: 50%;
-  /*border: 6px solid #fff;*/
+  display: inline-block;
   margin-bottom: 15px;
   overflow: hidden;
   height: 260px;
@@ -1055,9 +1083,20 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   padding: 0 0 0 16em;
  }
 
+ @media (max-width: 982px) {
+  .top-three {
+    padding: 0 0 0 0;
+    width: 100%;
+  }
+}
+
  .tootboot-btn-container {
   text-align: center;
   padding-top: 20px;
+}
+
+.toot-holder {
+  display: grid;
 }
 
 .tootboot-btn {
@@ -1074,6 +1113,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   border: 2px solid #03C4EB;
   color: #03C4EB;
   background: none;
+  text-align: center;
 }
 
 .tootboot-btn-alt {
@@ -1090,6 +1130,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   border: 2px solid #03C4EB;
   color: #fff;
   background: #03C4EB;
+  text-align: center;
 }
 
 .tootboot-btn:hover {
@@ -1103,6 +1144,19 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   margin-top: 40px;
 }
 
+@media (max-width: 892px) {
+  .ranking-header {
+    margin-top: 300px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .ranking-header {
+    font-size: .5em;
+  }
+}
+
 .aboutme-header {
  margin-top: 40px;
  background-color: #f0f0f0;
@@ -1111,10 +1165,16 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 .rules-exception {
   margin-left: 13em;
 }
+@media (max-width: 982px) {
+  .rules-exception {
+    margin: 0;
+  }
+}
 
 .ranking-header-2 {
   margin-top: 40em;
 }
+
 
 .hideLogout {
   visibility: hidden;

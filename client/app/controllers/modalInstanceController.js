@@ -1,5 +1,5 @@
 angular.module('fantasyDragRace')
-.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, Auth, Authorization, $state, $rootScope) {
+.controller('ModalInstanceController', function($scope, $modalInstance, $http, $modal, $state, $rootScope) {
   $scope.selectedLanguages = [];
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
@@ -31,7 +31,7 @@ angular.module('fantasyDragRace')
         $scope.invalidLogin('invalidLogin');
       } else {
         angular.element(document).find('#logout').removeClass('hideLogout');
-        Authorization.go('private');
+        $state.go('private');
       }
     });
   };
@@ -42,10 +42,10 @@ angular.module('fantasyDragRace')
       type: 'application/json',
       data: user,
     }).then((res) => {
-      console.log(res)
       $modalInstance.close();
       if (res.data === 'incorrect') {
-        Authorization.go('private');
+        angular.element(document).find('#logout').removeClass('hideLogout');
+        $state.go('private');
       }
     });
   };

@@ -62,7 +62,6 @@ $(() => {
       ui.draggable.addClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
       jsSelectionTopThree[event.target.id] = ui.draggable.children()[0].className.split(' ')[0];
-      console.log(jsSelectionTopThree)
     },
   });
   $(".droppableHolder-topThree").droppable({
@@ -71,7 +70,6 @@ $(() => {
       ui.draggable.removeClass('selected-drag-drop');
       $(ui.draggable).parent().removeClass('taken');
       jsSelectionTopThree[event.target.id] = null;
-      console.log(jsSelectionTopThree)
     },
   });
 });
@@ -108,16 +106,16 @@ $(() => {
   </div>
 
   <section class="row top-three">
-    <div class="col-md-3  subscribe-btn-container">
-      <h3>Winner</h3>
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
+      <h3 class="weekly-titles">Winner</h3>
       <div id="winner"  class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
-    <div class="col-md-3  subscribe-btn-container">
-      <h3>Runner Up</h3>
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
+      <h3 class="weekly-titles">Runner Up</h3>
       <div id="runnerUp" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
-    <div class="col-md-3  subscribe-btn-container">
-      <h3>Top Three</h3>
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
+      <h3 class="weekly-titles">Top Three</h3>
       <div id="topThree" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
   </section>
@@ -158,20 +156,20 @@ $(() => {
   <div class="col-md-12">
     <p class="section-description">Make your selections and then submit before the episode airs!</p>
   </div>
-  <div class="col-md-3  subscribe-btn-container">
-    <h3>Winner</h3>
+  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+    <h3 class="weekly-titles">Winner</h3>
     <div id="winner"  class="dropBox droptrue droppable-weekly portfolio-item "></div>
   </div>
-  <div class="col-md-3  subscribe-btn-container">
-    <h3>Runner-Up</h3>
+  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+    <h3 class="weekly-titles">Runner-Up</h3>
     <div id="runnerUp" class="dropBox droptrue droppable-weekly portfolio-item "></div>
   </div>
-  <div class="col-md-3  subscribe-btn-container">
-    <h3>Bottom</h3>
+  <div class="col-md-3 col-sm-3 col-xs-3  subscribe-btn-container">
+    <h3 class="weekly-titles">Bottom</h3>
     <div id="bottom" class="dropBox droptrue droppable-weekly portfolio-item "></div>
   </div>
-  <div class="col-md-3 subscribe-btn-container">
-    <h3>Eliminated</h3>
+  <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container">
+    <h3 class="weekly-titles">Eliminated</h3>
     <div id="eliminated" class="dropBox droptrue droppable-weekly portfolio-item" ng-model='selection.yes'></div>
   </div>
   <div class="scroll-holder">
@@ -217,9 +215,10 @@ $(() => {
               <span>{{queen.age}}</span>
             </div>
           </a>
+        <div class='toot-holder'>
           <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[!tootBoot[$index]]">Toot</a>
           <a ng-click="toggleTootBoot($index)" ng-class="{true: 'tootboot-btn', false: 'tootboot-btn-alt'}[tootBoot[$index]]">Boot</a>
-
+          </div>
       </div>
     </div>
     

@@ -57,42 +57,64 @@ Minor updates
 [x] when you login you dont get update ranking, etc...
 [x] express session is not working currently
 [x] check to make sure that you dont get logged out after submitting a selection
+[x] logout functionality not working
+[x] when you go to a random site it does not work, wont redirect
+[x] try to stay where you are at on the page too
+[x] clear out console.logs for when you select queens
+[x] mobile redirect site
+[x] logout disapears if you refersh homepage
+[x] remove fade up items????
+[x] change bootstrap based on various browser sizes
+[x] remove twitter from about me section
+[x] toot boot buttons not centered
+[x] make a page that can be displayed on mobile phone
+[x] link to rankings is not wokring!
 
 
+===> BEFORE DEPLOYMENT MUST HAVES
+
+[ ] check functionality of toot and boot eliminations
+[ ] queen pictures need to stay consistent when window is sized down
+[ ] restrict various characters in username and password
+[ ] make a page that can be displayed while server is running (night of episode and day of toot/boot)
+[ ] update modal for submission bc right now it is just for one day
+[ ] link mobile page to the rest of document now that is ready
+[ ] test out mobile site
+[ ] do a run though of the season, with what you expect/test cases
+[ ] ranking css descriptions should not be em, similar to others
+[ ] update ranking secion description
+[ ] add a ranking on the database
+[ ] update signup function to let users know that other users can see their username
+[ ] re-do the pictures!
+[ ] other updates to css
+[ ] name not displaying when you are logged in
+[ ] test out on mobile phone
+[ ] add team feature
+[ ] longer names are not consistent on small screens, making it appear larger
+[ ] add back mobile once done testing
+[ ] read this article and add security features to my server: https://glebbahmutov.com/blog/solid-expressjs-server/
+[ ] read this article and add security features to client side: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OTG-INPVAL-001) && https://www.owasp.org/index.php/Authentication_Cheat_Sheet
+[ ] have 'sign in to play' scroll you to top of page!
+[ ] limit how many rankings are shown on screen
+[ ] add results
+[ ] user profiles
+[ ] have profile of who you picked and how they did
+[?] when making selection, revers too low, 2nd nav bar is not there
 
 
-[ ] logout functionality not working
+===> STRETCH BEFORE DEPLOYMENT
+
+[ ] update fadeLeft/Right annimate css depending on where you are clicking
+[ ] ability to click on user and see their profile and who they picked
+[ ] seems to not persist if you change browsers!
+[ ] bugg when you keep on selecting a category over and over again
+[ ] ranking link does not work
+[ ] update selection to display 'update choice', if already submitted!
+[ ] have chosen queens apear in box after selected
+[ ] have access to select stuff on mobile
 
 
 === > SUNDAY
-[ ] try to stay where you are at on the page too
-[ ] when you go to a random site it does not work, wont redirect
-[ ] seems to not persist if you change browsers!
-[ ] restrict various characters in username and password
-[ ] change bootstrap based on various browser sizes
-[ ] queen pictures need to stay consistent when window is sized down
-[ ] read this article and add security features to my server: https://glebbahmutov.com/blog/solid-expressjs-server/
-[ ] test out on mobile phone
-[ ] update ranking secion description
-[ ] limit how many rankings are shown on screen
-[ ] update fadeLeft/Right annimate css depending on where you are clicking
-[ ] update selection to display 'update choice', if already submitted!
-[ ] add results
-[ ] user profiles
-[ ] have 'sign in to play' scroll you to top of page!
-[ ] have profile of who you picked and how they did
-[ ] ability to click on user and see their profile and who they picked
-[ ] bugg when you keep on selecting a category over and over again
-
-
-[ ] update signup function to let users know that other users can see their username
-[ ] toot boot buttons not centered
-[ ] update modal for submission bc right now it is just for one day
-
-
-COMMENTS ON PLAYING
-// make sure that the selection controller is update for week
-
 
 // refactoring
 [ ] remove the directives in the app.js file

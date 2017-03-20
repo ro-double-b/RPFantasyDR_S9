@@ -88,9 +88,15 @@ function logout(req, res) {
   });
 }
 
+function mobileView(req, res) {
+  console.log('test')
+  res.redirect('/#/mobile')
+}
+
 module.exports = {
   signup,
   login,
   checkUser,
   logout,
+  mobileView,
 };
