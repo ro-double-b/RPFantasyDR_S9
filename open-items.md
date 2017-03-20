@@ -69,11 +69,11 @@ Minor updates
 [x] toot boot buttons not centered
 [x] make a page that can be displayed on mobile phone
 [x] link to rankings is not wokring!
+[x] check functionality of toot and boot eliminations
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES
 
-[ ] check functionality of toot and boot eliminations
 [ ] queen pictures need to stay consistent when window is sized down
 [ ] restrict various characters in username and password
 [ ] make a page that can be displayed while server is running (night of episode and day of toot/boot)
@@ -102,6 +102,8 @@ Minor updates
 [?] when making selection, revers too low, 2nd nav bar is not there
 [ ] use cookie parser
 [ ] contact go-daddy to make site not have heroku in it
+[ ] totals are not populating correctly
+
 
 ===> STRETCH BEFORE DEPLOYMENT
 

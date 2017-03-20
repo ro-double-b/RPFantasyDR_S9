@@ -31,7 +31,7 @@ angular.module('fantasyDragRace')
       if ($rootScope.userInfo !== undefined) {
         $scope.ranking.forEach((user) => {
           if ($rootScope.userInfo.username === user.username) {
-            $scope.userSumTotal = user.sumTotal;
+            $scope.userSumTotal = user.sumTotal + user.tootsumTotals + finalsTotal;
           }
         });
         $scope.userRanking = $scope.ranking.reduce((acc, user) => {
