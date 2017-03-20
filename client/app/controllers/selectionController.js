@@ -9,69 +9,73 @@ angular.module('fantasyDragRace')
   };
 
   $scope.submitTopThree = function(selectionObj) {
-    const selection = {
-      user: $rootScope.userinfo.username,
-      winnerTopThreeID: selectionObj.winner,
-      runnerUpTopThreeID: selectionObj.runnerUp,
-      topThreeID: selectionObj.topThree,
-    };
-    if (selection.winnerID === null ||
-        selection.runnerUpTopThreeID === null ||
-        selection.topThreeID === null) {
-      $scope.submitModal('invalidSubmit');
-    } else if (selection.user === undefined) {
+    if ($rootScope.userinfo === undefined) {
       $scope.submitModal('errorSubmit')
     } else {
-      return $http({
-        method: 'POST',
-        url: 'api/topThreeSelection',
-        type: 'application/json',
-        data: selection,
-      })
-      .then((res) => {
-        $scope.submitModal('submitTop');
-        $window.location.href = '#portfolio';
-      });
+      const selection = {
+        user: $rootScope.userinfo.username,
+        winnerTopThreeID: selectionObj.winner,
+        runnerUpTopThreeID: selectionObj.runnerUp,
+        topThreeID: selectionObj.topThree,
+      };
+      if (selection.winnerID === null ||
+          selection.runnerUpTopThreeID === null ||
+          selection.topThreeID === null) {
+        $scope.submitModal('invalidSubmit');
+      } else {
+        return $http({
+          method: 'POST',
+          url: 'api/topThreeSelection',
+          type: 'application/json',
+          data: selection,
+        })
+        .then((res) => {
+          $scope.submitModal('submitTop');
+          $window.location.href = '#portfolio';
+        });
+      }
     }
   };
 
   $scope.submitWeeklySelection = function(selectionObj) {
-    const selection = {
-      user: $rootScope.userinfo.username,
-      winnerID: selectionObj.winner,
-      runnerUpID: selectionObj.runnerUp,
-      bottomID: selectionObj.bottom,
-      eliminatedID: selectionObj.eliminated,
-    };
-    if (selection.winnerID === null ||
-        selection.wrunnerUpID === null ||
-        selection.bottomID === null ||
-        selection.eliminatedID === null) {
-      $scope.submitModal('invalidSubmit');
-    } else if (selection.user === undefined) {
-      $scope.submitModal('errorSubmit');
+    if ($rootScope.userinfo === undefined) {
     } else {
-      return $http({
-        method: 'POST',
-        url: 'api/weeklySelection',
-        type: 'application/json',
-        data: selection,
-      })
-      .then((res) => {
-        $scope.submitModal('submitWeekly');
-        $window.location.href = '#portfolio';
-      });
+      const selection = {
+        user: $rootScope.userinfo.username,
+        winnerID: selectionObj.winner,
+        runnerUpID: selectionObj.runnerUp,
+        bottomID: selectionObj.bottom,
+        eliminatedID: selectionObj.eliminated,
+      };
+      if (selection.winnerID === null ||
+          selection.wrunnerUpID === null ||
+          selection.bottomID === null ||
+          selection.eliminatedID === null) {
+        $scope.submitModal('invalidSubmit');
+      } else {
+        return $http({
+          method: 'POST',
+          url: 'api/weeklySelection',
+          type: 'application/json',
+          data: selection,
+        })
+        .then((res) => {
+          $scope.submitModal('submitWeekly');
+          $window.location.href = '#portfolio';
+        });
+      }
+      
     }
   };
 
   $scope.submitTootBootSelection = function() {
-    const selection = {
-      user: $rootScope.userinfo.username,
-      selection: $scope.tootBoot,
-    };
-    if (selection.user === undefined) {
+    if ($rootScope.user === undefined) {
       $scope.submitModal('errorSubmit');
     } else {
+      const selection = {
+        user: $rootScope.userinfo.username,
+        selection: $scope.tootBoot,
+      };
       return $http({
         method: 'POST',
         url: 'api/tootBootSelection',

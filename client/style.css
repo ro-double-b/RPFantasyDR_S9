@@ -662,12 +662,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
  @media (max-width: 650px) {
   .weekly-titles {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
  @media (max-width: 475px) {
   .weekly-titles {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -1155,9 +1155,15 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   }
 }
 
+.ranking-header-2 {
+  margin-top: 40em;
+}
 @media (max-width: 600px) {
   .ranking-header {
-    font-size: .5em;
+    font-size: .4em;
+  }
+  .ranking-header-2 {
+    margin-top: 20em;
   }
 }
 
@@ -1175,8 +1181,8 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   }
 }
 
-.ranking-header-2 {
-  margin-top: 40em;
+.weekly-selection {
+  margin: 0 0 0 5.5em;
 }
 
 

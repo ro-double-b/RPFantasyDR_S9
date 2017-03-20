@@ -73,11 +73,17 @@ Minor updates
 [x] if not entered before you are doubleing your sumtotals
 [x] make a page that can be displayed while server is running (night of episode and day of toot/boot)
 [x] queen pictures need to stay consistent when window is sized down
+[x] update modal for submission bc right now it is just for one day
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES
+[ ] UPDATE DATABASE
+[ ] SECURITY
+[ ] GET USER OUT OF SCOPE
+
+
+[ ] test modals
 [ ] restrict various characters in username and password
-[ ] update modal for submission bc right now it is just for one day
 [ ] link mobile page to the rest of document now that is ready
 [ ] test out mobile site
 [ ] selection boxes need to stay consistent
@@ -121,6 +127,7 @@ Minor updates
 [ ] button  in #/results to calculate and sort rankings
 [ ] button in #/resutls to add rank into database
 [ ] add an error modal if you dont have the correct user to add to the database
+[ ] wheen there is a small window the login navbar will not work
 
 
 [ ] table font-size property not small enough makes site scrollable
