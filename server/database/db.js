@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 const config = require('./config');
-const db = new Sequelize(config.database, config.username, config.password, {
+const db = new Sequelize(config.database, {
   protocol: 'postgres',
   dialect: 'postgres',
   host: config.host,
   logging: false,
 });
 
-// 
+// , config.username, config.password
 
 // uncomment below to test the connection
 db.authenticate().then((err) => {

@@ -74,23 +74,23 @@ Minor updates
 [x] make a page that can be displayed while server is running (night of episode and day of toot/boot)
 [x] queen pictures need to stay consistent when window is sized down
 [x] update modal for submission bc right now it is just for one day
-
+[x] UPDATE FOR MOBILE WARNING
+[x] UPDATE DATABASE
+[x] link mobile page to the rest of document now that is ready
+[x] add a ranking on the database
 
 ===> BEFORE DEPLOYMENT MUST HAVES
-[ ] UPDATE DATABASE
 [ ] SECURITY
+[ ] restrict various characters in username and password
 [ ] GET USER OUT OF SCOPE
 
-
 [ ] test modals
-[ ] restrict various characters in username and password
-[ ] link mobile page to the rest of document now that is ready
 [ ] test out mobile site
-[ ] selection boxes need to stay consistent
+[ ] check to make sure new tables are in database
+
 [ ] do a run though of the season, with what you expect/test cases
 [ ] ranking css descriptions should not be em, similar to others
 [ ] update ranking secion description
-[ ] add a ranking on the database
 [ ] update signup function to let users know that other users can see their username
 [ ] re-do the pictures!
 [ ] other updates to css
@@ -111,7 +111,10 @@ Minor updates
 [ ] contact go-daddy to make site not have heroku in it
 [ ] totals are not populating correctly
 [ ] update finalsumtotal in database
+[ ] add logic for ranking to database
+[ ] add logic for groups to db
 [ ] update a rranking table in database
+[ ] selection boxes need to stay consistent
 
 ===> STRETCH BEFORE DEPLOYMENT
 
