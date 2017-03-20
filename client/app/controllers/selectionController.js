@@ -10,7 +10,7 @@ angular.module('fantasyDragRace')
 
   $scope.submitTopThree = function(selectionObj) {
     const selection = {
-      user: $rootScope.user,
+      user: $rootScope.userinfo.username,
       winnerTopThreeID: selectionObj.winner,
       runnerUpTopThreeID: selectionObj.runnerUp,
       topThreeID: selectionObj.topThree,
@@ -35,7 +35,7 @@ angular.module('fantasyDragRace')
 
   $scope.submitWeeklySelection = function(selectionObj) {
     const selection = {
-      user: $rootScope.user,
+      user: $rootScope.userinfo.username,
       winnerID: selectionObj.winner,
       runnerUpID: selectionObj.runnerUp,
       bottomID: selectionObj.bottom,

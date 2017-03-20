@@ -115,6 +115,17 @@ Minor updates
 [ ] have access to select stuff on mobile
 [ ] test to make sure selection css property is update when logged in
 
+
+
+[ ] table font-size property not small enough makes site scrollable
+[ ] ranking not displaying correctly on my phone!
+[ ] add description for toot and boot
+[ ] change results to something more discrete
+[ ] make form validation for when i submit the results
+[ ] updat since the totals is currently empty
+[ ] update favicon image
+[ ] wont update data if you refresh page
+
 === > SUNDAY
 
 // refactoring
