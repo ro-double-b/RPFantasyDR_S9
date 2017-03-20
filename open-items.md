@@ -1,4 +1,4 @@
-Sprints
+git Sprints
 [x] refactor to Angular
 [x] add authentication
 [x] add basic DB for auth
@@ -78,15 +78,15 @@ Minor updates
 [x] UPDATE DATABASE
 [x] link mobile page to the rest of document now that is ready
 [x] add a ranking on the database
+[x] check to make sure new tables are in database
+[x] test out mobile site
+[x] test modals
 
 ===> BEFORE DEPLOYMENT MUST HAVES
 [ ] SECURITY
 [ ] restrict various characters in username and password
 [ ] GET USER OUT OF SCOPE
 
-[ ] test modals
-[ ] test out mobile site
-[ ] check to make sure new tables are in database
 
 [ ] do a run though of the season, with what you expect/test cases
 [ ] ranking css descriptions should not be em, similar to others

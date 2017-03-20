@@ -40,6 +40,7 @@ angular.module('fantasyDragRace')
 
   $scope.submitWeeklySelection = function(selectionObj) {
     if ($rootScope.userinfo === undefined) {
+      $scope.submitModal('errorSubmit')
     } else {
       const selection = {
         user: $rootScope.userinfo.username,
