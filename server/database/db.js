@@ -16,83 +16,147 @@ db.authenticate().then((err) => {
   console.log('undable to connect to the database', err);
 });
 
-const User = db.define('user', {
+const Users = db.define('users', {
   name: Sequelize.STRING,
   username: Sequelize.STRING,
   email: Sequelize.STRING,
   password: Sequelize.STRING,
-  groups: Sequelize.ARRAY(Sequelize.STRING),
 });
 
-const Selection = db.define('selection', {
+const Teams = db.define('teams', {
+  teamname: Sequelize.STRING,
+  teamPassword: Sequelize.STRING,
+
+});
+
+const UserSelections = db.define('selections', {
   username: Sequelize.STRING,
   weekID: Sequelize.INTEGER,
-  winnerID: Sequelize.INTEGER,
-  runnerUpID: Sequelize.INTEGER,
-  bottomID: Sequelize.INTEGER,
-  eliminatedID: Sequelize.INTEGER,
-});
-
-const TopThree = db.define('topthreeselection', {
-  username: Sequelize.STRING,
-  winnerTopThreeID: Sequelize.INTEGER,
-  runnerUpTopThreeID: Sequelize.INTEGER,
-  topThreeID: Sequelize.INTEGER,
-});
-
-const TootBoot = db.define('tootselection', {
-  username: Sequelize.STRING,
-  weekID: Sequelize.INTEGER,
-  selection: Sequelize.ARRAY(Sequelize.BOOLEAN),
+  weeklyWinnerID: Sequelize.INTEGER,
+  weeklyRunnerUpID: Sequelize.INTEGER,
+  weeklyBottomID: Sequelize.INTEGER,
+  weeklyEliminatedID: Sequelize.INTEGER,
+  tootSelectionArr: Sequelize.ARRAY(Sequelize.BOOLEAN),
+  finalWinnerID: Sequelize.INTEGER,
+  finalRunnerUpID: Sequelize.INTEGER,
+  finalTopThreeID: Sequelize.INTEGER,
+  finalConID: Sequelize.INTEGER,
 });
 
 const Results = db.define('results', {
   weekID: Sequelize.INTEGER,
-  winnerID: Sequelize.INTEGER,
-  runnerUpID: Sequelize.INTEGER,
-  bottomID: Sequelize.INTEGER,
-  eliminatedID: Sequelize.INTEGER,
+  weeklyWinnerID: Sequelize.INTEGER,
+  weeklyRunnerUpID: Sequelize.INTEGER,
+  weeklyBottomID: Sequelize.INTEGER,
+  weeklyEliminatedID: Sequelize.INTEGER,
+  tootRavenSelectionArr: Sequelize.ARRAY(Sequelize.BOOLEAN),
+  tootRajaSelectionArr: Sequelize.ARRAY(Sequelize.BOOLEAN),
+  finalWinnerID: Sequelize.INTEGER,
+  finalRunnerUpID: Sequelize.INTEGER,
+  finalTopThreeID: Sequelize.INTEGER,
+  finalConID: Sequelize.INTEGER,
 });
 
-const TopThreeResults = db.define('topresults', {
-  topThreeInit: Sequelize.INTEGER,
-  winnerTopThreeID: Sequelize.INTEGER,
-  runnerUpTopThreeID: Sequelize.INTEGER,
-  topThreeID: Sequelize.INTEGER,
-});
-
-const TootBootResults = db.define('tootresults', {
-  weekID: Sequelize.INTEGER,
-  selectionRaven: Sequelize.ARRAY(Sequelize.BOOLEAN),
-  selectionRaja: Sequelize.ARRAY(Sequelize.BOOLEAN),
-});
-const Totals = db.define('totals', {
+const UserTotals = db.define('userTotals', {
   username: Sequelize.STRING,
-  totals: Sequelize.ARRAY(Sequelize.INTEGER),
-  tootTotals: Sequelize.ARRAY(Sequelize.INTEGER),
-  finalTotals: Sequelize.INTEGER,
-  sumTotal: Sequelize.INTEGER,
-  tootsumTotals: Sequelize.INTEGER,
-  finalsumTotals: Sequelize.INTEGER,
+  weeklyTotalsArr: Sequelize.ARRAY(Sequelize.INTEGER),
+  tootTotalsArr: Sequelize.ARRAY(Sequelize.INTEGER),
+  finalTotalsArry: Sequelize.INTEGER,
+  totalPoints: Sequelize.INTEGER,
   ranking: Sequelize.INTEGER,
 });
 
-User.sync();
-Selection.sync();
-TopThree.sync();
-TootBoot.sync();
+const TeamTotals = db.define('teamTotals', {
+  teamname: Sequelize.STRING,
+  weeklyTotalsArr: Sequelize.ARRAY(Sequelize.INTEGER),
+  tootTotalsArr: Sequelize.ARRAY(Sequelize.INTEGER),
+  finalTotalsArr: Sequelize.INTEGER,
+  totalPoints: Sequelize.INTEGER,
+  ranking: Sequelize.INTEGER,
+});
+
+const TeamMessages = db.define('teamMessages', {
+  teamname: Sequelize.STRING,
+  username: Sequelize.STRING,
+  message: Sequelize.STRING,
+});
+
+const Messages = db.define('messages', {
+  username: Sequelize.STRING,
+  message: Sequelize.STRING,
+});
+
+Users.hasOne(UserTotals, {
+  // foreignKey: 'username',
+});
+
+Teams.hasOne(TeamTotals, {
+  // foreignKey: 'teamname',
+});
+
+Users.hasOne(Messages, {
+  // foreignKey: 'username',
+});
+
+
+Users.belongsToMany(Teams, {
+  as: 'UsersTeams',
+  through: 'user_teams',
+  // foreignKey: 'teamname',
+});
+
+Teams.belongsToMany(Users, {
+  as: 'TeamsUsers',
+  through: 'user_teams',
+  // foreignKey: 'username',
+});
+
+Users.belongsToMany(Teams, {
+  as: 'UsersTeams',
+  through: 'user_teams',
+  // foreignKey: 'teamname',
+});
+
+Teams.belongsToMany(Users, {
+  as: 'TeamsUsers',
+  through: 'user_teams',
+  // foreignKey: 'username',
+});
+
+
+Users.hasOne(UserSelections, {
+  // foreignKey: 'username',
+});
+
+Users.belongsToMany(Teams, {
+  as: 'TeamMessagesSent',
+  through: 'user_teams_messages',
+  // foreignKey: 'username',
+});
+
+Teams.belongsToMany(Users, {
+  as: 'TeamMessages',
+  through: 'user_teams_messages',
+  // foreignKey: 'username',
+});
+
+
+Users.sync();
+Teams.sync();
+UserSelections.sync();
 Results.sync();
-TopThreeResults.sync();
-TootBootResults.sync();
-Totals.sync();
+UserTotals.sync();
+TeamTotals.sync();
+TeamMessages.sync();
+Messages.sync();
 
 module.exports = {
-  User,
-  Selection,
-  TopThree,
-  TootBoot,
   Results,
-  TopThreeResults,
-  TootBootResults,
-  Totals,
+  UserSelections,
+  TeamMessages,
+  Teams,
+  UserTotals,
+  Users,
+  TeamTotals,
+  Messages,
 };

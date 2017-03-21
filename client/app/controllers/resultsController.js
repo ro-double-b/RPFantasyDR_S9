@@ -22,10 +22,11 @@ angular.module('fantasyDragRace')
       winnerID: resultObj.winner.queenID,
       runnerUpID: resultObj.runnerUp.queenID,
       topThreeID: resultObj.topThree.queenID,
+      conID: resultObj.con.queenID
     };
     return $http({
       method: 'POST',
-      url: 'api/resultTopThreeSubmission',
+      url: 'api/resultFinalSubmission',
       type: 'application/json',
       data: selection,
     });

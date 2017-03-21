@@ -82,10 +82,16 @@ Minor updates
 [x] test out mobile site
 [x] test modals
 
+
+OTHER
+[ ] make sure every http request is wrapped around a function to not let go if form is not filled out correctly
+
+
 ===> BEFORE DEPLOYMENT MUST HAVES
 [ ] SECURITY
 [ ] restrict various characters in username and password
 [ ] GET USER OUT OF SCOPE
+
 
 
 [ ] do a run though of the season, with what you expect/test cases

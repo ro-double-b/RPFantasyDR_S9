@@ -50,31 +50,31 @@ angular.module('fantasyDragRace', [
       views: {
         '': { templateUrl: './app/views/index.html',
         },
-        // 'landing@login': {
-        //   templateUrl: './app/partials/signedOut/landing.html',
-        //   controller: 'AuthController',
-        // },
-        // 'navbar@login': {
-        //   templateUrl: './app/partials/signedOut/navbar.html',
-        //   controller: 'AuthController',
-        // },
-        // 'about@login': {
-        //   templateUrl: './app/partials/about.html',
-        // },
-        // 'rules@login': {
-        //   templateUrl: './app/partials/rules.html',
-        // },
+        'landing@login': {
+          templateUrl: './app/partials/signedOut/landing.html',
+          controller: 'AuthController',
+        },
+        'navbar@login': {
+          templateUrl: './app/partials/signedOut/navbar.html',
+          controller: 'AuthController',
+        },
+        'about@login': {
+          templateUrl: './app/partials/about.html',
+        },
+        'rules@login': {
+          templateUrl: './app/partials/rules.html',
+        },
         'selection@login': {
           templateUrl: './app/partials/signedOut/selection.html',
           controller: 'SelectionController',
         },
-        // 'rankings@login': {
-        //   templateUrl: './app/partials/rankings.html',
-        //   controller: 'RankingController',
-        // },
-        // 'aboutme@login': {
-        //   templateUrl: './app/partials/aboutme.html',
-        // },
+        'rankings@login': {
+          templateUrl: './app/partials/rankings.html',
+          controller: 'RankingController',
+        },
+        'aboutme@login': {
+          templateUrl: './app/partials/aboutme.html',
+        },
       },
     })
     .state('private', {

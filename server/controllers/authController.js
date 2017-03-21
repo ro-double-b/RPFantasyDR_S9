@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 function createUser(name, username, password, email) {
-  return db.User.create({
+  return db.Users.create({
     name,
     username,
     password,
@@ -13,7 +13,7 @@ function createUser(name, username, password, email) {
 }
 
 function getUser(username) {
-  return db.User.findOne({
+  return db.Users.findOne({
     where: {
       username,
     },
