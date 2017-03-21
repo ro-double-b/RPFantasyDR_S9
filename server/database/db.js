@@ -86,6 +86,11 @@ const Messages = db.define('messages', {
   message: Sequelize.STRING,
 });
 
+const UsersTeams = db.define('user_teams', {
+  username: Sequelize.STRING,
+  teamname: Sequelize.STRING,
+});
+
 Users.hasOne(UserTotals, {
   // foreignKey: 'username',
 });
@@ -106,14 +111,14 @@ Users.belongsToMany(Teams, {
 });
 
 Teams.belongsToMany(Users, {
-  as: 'TeamsUsers',
-  through: 'user_teams',
+  through: 'UsersTeams',
+  // through: 'user_teams',
   // foreignKey: 'username',
 });
 
 Users.belongsToMany(Teams, {
-  as: 'UsersTeams',
-  through: 'user_teams',
+  through: 'UsersTeams',
+  // through: 'user_teams',
   // foreignKey: 'teamname',
 });
 
@@ -149,6 +154,7 @@ UserTotals.sync();
 TeamTotals.sync();
 TeamMessages.sync();
 Messages.sync();
+UsersTeams.sync();
 
 module.exports = {
   Results,
@@ -159,4 +165,5 @@ module.exports = {
   Users,
   TeamTotals,
   Messages,
+  UsersTeams,
 };

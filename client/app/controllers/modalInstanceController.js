@@ -58,11 +58,16 @@ angular.module('fantasyDragRace')
       $modalInstance.close();
       $scope.invalidLogin('invalidLogin');
     } else {
+      const selection = {
+        teamname: teamInfo.name,
+        password: teamInfo.password,
+        username: $rootScope.user,
+      };
       return $http({
         method: 'POST',
         url: 'api/createTeam',
         type: 'application/json',
-        data: teamInfo,
+        data: selection,
       })
       .then((res) => {
         $modalInstance.close();

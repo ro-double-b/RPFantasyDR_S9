@@ -15,7 +15,7 @@ function sendRanking(req, res) {
 }
 
 function getRanking() {
-  return db.Totals.findAll();
+  return db.UserTotals.findAll();
 }
 
 // submit weekly results
@@ -264,8 +264,6 @@ function createFinalTotal(username, total) {
     sumTotal: total,
   });
 }
-
-/////////////////////////////////////////////////////////////////
 
 function submitTootResult(req, res) {
   getTootResult(req.body.weekID)

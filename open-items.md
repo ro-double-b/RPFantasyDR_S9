@@ -83,6 +83,11 @@ Minor updates
 [x] test modals
 
 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+[ ] check to make sure all the routes actually save to the DB before going live
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
 OTHER
 [ ] make sure every http request is wrapped around a function to not let go if form is not filled out correctly
 [ ] the non-logged in version of the selection page is the only one that is updated.
@@ -92,7 +97,7 @@ OTHER
 [ ] SECURITY
 [ ] restrict various characters in username and password
 [ ] GET USER OUT OF SCOPE
-
+[ ] WHAT DOES THROW ERROR DO AND WILL IT DISTROY MY SITE?!?!?!?
 
 
 [ ] do a run though of the season, with what you expect/test cases
