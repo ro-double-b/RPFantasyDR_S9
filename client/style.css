@@ -696,7 +696,7 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
 #portfolio .portfolio-item .details {
   height: 260px;
   background: #fff;
-  display: table-cell;
+  /*display: table-cell;*/
   vertical-align: middle;
   opacity: 0;
   transition: 0.3s;
