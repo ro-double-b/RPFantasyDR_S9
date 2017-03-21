@@ -33,11 +33,12 @@ $(() => {
 
 </script>
 
-  <ul ng-init="tab = 2" class="nav-menu header-profile">
+  <ul ng-init="tab = 1" class="nav-menu header-profile">
     <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 2">Season Winners</a></li>
     <li ng-class="{active:tab===3}" class="profile-click"><a href ng-click="tab = 3">Weekly Winners</a></li>
     <li ng-class="{active:tab===4}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
-    <!-- <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Your Results</a></li> -->
+    <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Team</a></li>
+    <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 5">Results</a></li>
   </ul>
     
     
@@ -52,115 +53,33 @@ $(() => {
 
 
 
-
-<!-- <div ng-show="tab === 1"  class="container wow fadeInRight">
+<div ng-show="tab === 1"  class="container wow fadeInRight">
   <div>
-    <h3 class="section-title">Your Results</h3>
+    <h3 class="section-title">Teams</h3>
     <div class="section-title-divider"></div>
   </div>
-
-    <div class="col-md-12">
-    <p class="section-description">Scroll to see your results each week</p>
+  <div class="col-md-12">
+    <p class="section-description">Create teams to compete with your friends!</p>
   </div>
+  <div class="col-md-12 subscribe-btn-container menu-active">
+    <a href="#hero" class="subscribe-btn" ng-click="createTeam('createTeam')">Create a Team</a>
+    <a href="#hero" class="subscribe-btn" ng-click="joinTeam('joinTeam')">Join a Team</a>
 
-  <section class="row top-three">
-      <table class="table results">
-        <tr>
-          <th>Category</th>
-          <th>Selection</th>
-          <th>Result</th>
-          <th>Points</th>
-        </tr>
-        <tr>
-        <tr>
-          <td>Winner</td>
-          <td>Aja</td>
-          <td>Aja</td>
-          <td>25</td> 
-        </tr>
-        <tr>
-          <td>Runner Up</td>
-          <td>Aja</td>
-          <td>Aja</td>
-          <td>25</td> 
-        </tr>
-        <tr>
-          <td>Lip-Sync</td>
-          <td>Aja</td>
-          <td>Aja</td>
-          <td>25</td> 
-        </tr>
-        <tr>
-          <td>Eliminated</td>
-          <td>Aja</td>
-          <td>Aja</td>
-          <td>25</td> 
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Subtotal</td>
-          <td>100</td> 
-        </tr>
-      </table><
+      <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+          <input type="text" class="form-control" placeholder="Select your Team" ng-model="searchUser">
+        </div>      
+      </div>
+    </form>
+  </div>
+  
 
-      <table class="table results">
-        <tr>
-          <th>Queen</th>
-          <th>Toot/Boot</th>
-          <th>Raja</th>
-          <th>Raven</th>
-          <th>Points</th>
-        </tr>
-        <tr>
-        <tr>
-          <td>Aja</td>
-          <td>Boot</td>
-          <td>Toot</td>
-          <td>Boot</td>
-          <td>5</td> 
-        </tr>
-        <tr>
-          <td>Aja</td>
-          <td>Boot</td>
-          <td>Boot</td>
-          <td>Boot</td>
-          <td>10</td> 
-        </tr>
-        <tr>
-          <td>Aja</td>
-          <td>Boot</td>
-          <td>Toot</td>
-          <td>Toot</td>
-          <td>0</td> 
-        </tr>
-        <tr>
-          <td>Aja</td>
-          <td>Toot</td>
-          <td>Boot</td>
-          <td>Toot</td>
-          <td>5</td> 
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Subtotal</td>
-          <td>20</td> 
-        </tr>
-      </table>
+  
 
-      <table class="table results">
-        <tr>
-          <th colspan="4">TOTAL</th>
-          <th>120</th>
-        </tr>
-      </table>
 
-  </section>
-
-</div> -->
-
+</div>
 
 
 
@@ -299,4 +218,18 @@ $(() => {
       <a href="#hero" class="subscribe-btn" ng-click="">Sign in to Play!</a>
     </div>
     </div>
-</section>
+
+    <!-- SECTION 5 === this is just a placeholder for the the results -->
+
+
+
+
+<div ng-show="tab === 5"  class="container wow fadeInRight">
+  <div>
+    <h3 class="section-title">Results</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Individual results will be available after the first episode.</p>
+  </div>
+  </div>

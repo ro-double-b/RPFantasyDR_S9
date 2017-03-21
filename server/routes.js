@@ -9,6 +9,9 @@ router.get('/mobile', authController.mobileView);
 router.get('/processing', authController.porcessing);
 router.get('/api/ranking', resultController.sendRanking);
 
+// router.post('/api/createTeam', authController.createTeam);
+// router.post('/api/joinTeam', authController.joinTeam);
+
 router.post('/api/signup', authController.signup);
 router.post('/api/login', authController.login);
 router.get('/api/logout', authController.logout);
@@ -21,6 +24,6 @@ router.post('/api/resultWeeklySubmission', resultController.submitWeeklyResult);
 router.post('/api/resultTopThreeSubmission', resultController.submitTopThreeResult);
 router.post('/api/resultTootSubmission', resultController.submitTootResult);
 
-router.get('/*', authController.checkUser)
+router.get('/*', authController.checkUser);
 
 module.exports = router;

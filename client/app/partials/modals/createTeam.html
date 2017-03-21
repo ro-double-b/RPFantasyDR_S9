@@ -1,0 +1,32 @@
+<div id="login" class="modal-header">
+  <h3>Create a Team!</h3>
+</div>
+<form name="form.userForm" autocomplete="off">
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label>Team Name</label>
+      <input type="text" 
+             name="username" 
+             class="form-control" 
+             ng-model="team.name"
+             ng-pattern="/^[a-zA-Z0-9]*$/" 
+             required>
+    </div>
+
+    <div class="form-group">
+      <label>Team Password</label>
+      <input type="password" 
+             name="password" 
+             class="form-control" 
+             ng-model="team.password" 
+             ng-pattern="/^[a-zA-Z0-9]*$/"
+             required>
+    </div>
+
+  </div>
+  <div class="modal-footer modal-center">
+    <button type="submit" ng-disabled="form.userForm.$invalid" class="btn btn-get-started" ng-click="createTeam(team)">OK</button>
+    <button class="btn btn-get-started" ng-click="cancel()">Cancel</button>
+  </div>
+</form>

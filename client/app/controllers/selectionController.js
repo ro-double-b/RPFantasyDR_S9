@@ -91,6 +91,20 @@ angular.module('fantasyDragRace')
     }
   };
 
+  $scope.createTeam = function(type) {
+    const modalInstance = $modal.open({
+      templateUrl: `./app/partials/modals/${type}.html`,
+      controller: 'ModalInstanceController',
+    });
+  };
+
+  $scope.joinTeam = function(type) {
+    const modalInstance = $modal.open({
+      templateUrl: `./app/partials/modals/${type}.html`,
+      controller: 'ModalInstanceController',
+    });
+  };
+
   $scope.tootBoot = [true, true, true, true, true, true, true, true, true, true, true, true, true];
   $scope.toggleTootBoot = function(index) {
     $scope.tootBoot[index] = !$scope.tootBoot[index];

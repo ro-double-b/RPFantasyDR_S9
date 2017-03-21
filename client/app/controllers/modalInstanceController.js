@@ -53,4 +53,52 @@ angular.module('fantasyDragRace')
       }
     });
   };
-});
+  $scope.createTeam = function(teamInfo) {
+    if ($rootScope.user !== undefined) {
+      $modalInstance.close();
+      $scope.invalidLogin('invalidLogin');
+    } else {
+      return $http({
+        method: 'POST',
+        url: 'api/createTeam',
+        type: 'application/json',
+        data: teamInfo,
+      })
+      .then((res) => {
+        $modalInstance.close();
+        if (res.data === 'incorrect') {
+          $scope.invalidLogin('invalidTeam');
+        } else {
+          $modal.open({
+            templateUrl: `./app/partials/modals/teamCreated.html`,
+            controller: 'InvalidLogin',
+          });
+        }
+      });
+    }
+  };
+  $scope.joinTeam = function(teamInfo) {
+    if ($rootScope.user !== undefined) {
+      $modalInstance.close();
+      $scope.invalidLogin('invalidLogin');
+    } else {
+      return $http({
+        method: 'POST',
+        url: 'api/joinTeam',
+        type: 'application/json',
+        data: teamInfo,
+      })
+      .then((res) => {
+        $modalInstance.close();
+        if (res.data === 'incorrect') {
+          $scope.invalidLogin('invalidTeam');
+        } else {
+          $modal.open({
+            templateUrl: `./app/partials/modals/joinTeam.html`,
+            controller: 'InvalidLogin',
+          });
+        }
+      });
+    }
+  };
+})
