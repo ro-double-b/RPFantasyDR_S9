@@ -85,6 +85,7 @@ Minor updates
 
 OTHER
 [ ] make sure every http request is wrapped around a function to not let go if form is not filled out correctly
+[ ] the non-logged in version of the selection page is the only one that is updated.
 
 
 ===> BEFORE DEPLOYMENT MUST HAVES

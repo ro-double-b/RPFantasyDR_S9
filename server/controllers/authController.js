@@ -93,7 +93,7 @@ function logout(req, res) {
 }
 
 function mobileView(req, res) {
-  res.redirect('/#/mobile')
+  res.redirect('/#/mobile');
 }
 
 module.exports = {

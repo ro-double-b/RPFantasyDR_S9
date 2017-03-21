@@ -1,62 +1,51 @@
 const db = require('../database/db.js');
 
-const weekWeekID = 2;
-const tootWeekID = 2;
+const weekWeekID = 1;
+const tootWeekID = 1;
 
-function getSubmissionWeekly(username) {
-  return db.Selection.findOne({
+function submitFinalsResult(req, res) {
+  getSubmissionFinal(req.body.user)
+  .then((entry) => {
+    if (entry === null) { // entry has not been made for that users this week
+      createFinalSubmission(req.body.user, req.body.winnerTopThreeID, req.body.runnerUpTopThreeID, req.body.topThreeID, req.body.conID)
+      .then(() => {
+        res.send('submitted');
+      });
+    } else { // entry has already been made and will update
+      entry.updateAttributes({
+        finalWinnerID: req.body.winnerTopThreeID,
+        finalRunnerUpID: req.body.runnerUpTopThreeID,
+        finalTopThreeID: req.body.topThreeID,
+        finalConID: req.body.conID
+      })
+      .then(() => {
+        res.send('submitted');
+      });
+    }
+  });
+}
+
+function getSubmissionFinal(username) {
+  return db.UserSelection.findOne({
     where: {
       username,
-      weekID: weekWeekID
+      finalWinnerID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      finalRunnerUpID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      finalTopThreeID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      finalConID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
     },
   });
 }
 
-function getSubmissionTopThree(username) {
-  return db.TopThree.findOne({
-    where: {
-      username,
-    },
-  });
-}
-
-function getSubmissionTootBoot(username) {
-  return db.TootBoot.findOne({
-    where: {
-      username,
-      weekID: tootWeekID,
-    },
-  });
-}
-
-function createWeeklySubmission(username, winnerID, runnerUpID, bottomID, eliminatedID) {
-  return db.Selection.create({
+function createFinalSubmission(username, finalWinnerID, finalRunnerUpID, finalTopThreeID, finalConID) {
+  return db.UserSelections.create({
     username,
-    weekID: weekWeekID,
-    winnerID,
-    runnerUpID,
-    bottomID,
-    eliminatedID,
+    finalWinnerID,
+    finalRunnerUpID,
+    finalTopThreeID,
+    finalConID,
   });
 }
-
-function createTopThreeSubmission(username, winnerTopThreeID, runnerUpTopThreeID, topThreeID) {
-  return db.TopThree.create({
-    username,
-    winnerTopThreeID,
-    runnerUpTopThreeID,
-    topThreeID,
-  });
-}
-
-function createTootBootSubmission(username, selection) {
-  return db.TootBoot.create({
-    username,
-    weekID: tootWeekID,
-    selection,
-  });
-}
-
 function submitWeeklySelection(req, res) {
   getSubmissionWeekly(req.body.user, weekWeekID)
   .then((entry) => {
@@ -67,10 +56,10 @@ function submitWeeklySelection(req, res) {
       });
     } else { // entry has already been made and will update
       entry.updateAttributes({
-        winnerID: req.body.winnerID,
-        runnerUpID: req.body.runnerUpID,
-        bottomID: req.body.bottomID,
-        eliminatedID: req.body.eliminatedID,
+        weeklyWinnerID: req.body.winnerID,
+        weeklyRunnerUpID: req.body.runnerUpID,
+        weeklyBottomID: req.body.bottomID,
+        weeklyEliminatedID: req.body.eliminatedID,
       })
       .then(() => {
         res.send('submitted');
@@ -79,24 +68,27 @@ function submitWeeklySelection(req, res) {
   });
 }
 
-function submitTopThreeSelection(req, res) {
-  getSubmissionTopThree(req.body.user)
-  .then((entry) => {
-    if (entry === null) { // entry has not been made for that users this week
-      createTopThreeSubmission(req.body.user, req.body.winnerTopThreeID, req.body.runnerUpTopThreeID, req.body.topThreeID)
-      .then(() => {
-        res.send('submitted');
-      });
-    } else { // entry has already been made and will update
-      entry.updateAttributes({
-        winnerTopThreeID: req.body.winnerTopThreeID,
-        runnerUpTopThreeID: req.body.runnerUpTopThreeID,
-        topThreeID: req.body.topThreeID,
-      })
-      .then(() => {
-        res.send('submitted');
-      });
-    }
+function getSubmissionWeekly(username) {
+  return db.UserSelections.findOne({
+    where: {
+      username,
+      weekID: weekWeekID,
+      weeklyWinnerID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      weeklyRunnerUpID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      weeklyBottomID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      weeklyEliminatedID: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    },
+  });
+}
+
+function createWeeklySubmission(username, weeklyWinnerID, weeklyRunnerUpID, weeklyBottomID, weeklyEliminatedID) {
+  return db.UsersSelection.create({
+    username,
+    weekID: weekWeekID,
+    weeklyWinnerID,
+    weeklyRunnerUpID,
+    weeklyBottomID,
+    weeklyEliminatedID,
   });
 }
 
@@ -110,7 +102,7 @@ function submitTootBootSelection(req, res) {
       });
     } else { // entry has already been made and will update
       entry.updateAttributes({
-        selection: req.body.seclection,
+        tootSelectionArr: req.body.seclection,
       })
       .then(() => {
         res.send('submitted');
@@ -119,10 +111,25 @@ function submitTootBootSelection(req, res) {
   });
 }
 
+function getSubmissionTootBoot(username) {
+  return db.UsersSelections.findOne({
+    where: {
+      username,
+      weekID: tootWeekID,
+    },
+  });
+}
+
+function createTootBootSubmission(username, tootSelectionArr) {
+  return db.UserSelections.create({
+    username,
+    weekID: tootWeekID,
+    tootSelectionArr,
+  });
+}
+
 module.exports = {
   submitWeeklySelection,
-  submitTopThreeSelection,
+  submitFinalsResult,
   submitTootBootSelection,
-  tootWeekID,
-  weekWeekID
 };

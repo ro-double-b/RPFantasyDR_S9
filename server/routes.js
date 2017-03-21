@@ -14,7 +14,7 @@ router.post('/api/resultTootSubmission', resultController.submitTootResult);
 
 router.get('/api/ranking', resultController.sendRanking);
 
-// router.post('/api/topThreeSelection', selectionController.submitFinalsResult);
+router.post('/api/finalSelection', selectionController.submitFinalsResult);
 // router.post('/api/weeklySelection', selectionController.submitWeeklySelection);
 // router.post('/api/tootBootSelection', selectionController.submitTootBootSelection);
 

@@ -18,6 +18,7 @@ angular.module('fantasyDragRace')
         winnerTopThreeID: selectionObj.winner,
         runnerUpTopThreeID: selectionObj.runnerUp,
         topThreeID: selectionObj.topThree,
+        conID: selectionObj.con,
       };
       if (selection.winnerID === null ||
           selection.runnerUpTopThreeID === null ||
@@ -26,7 +27,7 @@ angular.module('fantasyDragRace')
       } else {
         return $http({
           method: 'POST',
-          url: 'api/topThreeSelection',
+          url: 'api/finalSelection',
           type: 'application/json',
           data: selection,
         })

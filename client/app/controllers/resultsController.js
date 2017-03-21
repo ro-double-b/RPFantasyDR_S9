@@ -47,6 +47,8 @@ angular.module('fantasyDragRace')
     });
   };
 
+
+
   $scope.queens = [
       { queenID: 1,
         name: "Aja",
