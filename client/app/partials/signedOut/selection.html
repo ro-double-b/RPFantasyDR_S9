@@ -33,7 +33,7 @@ $(() => {
 
 </script>
 
-  <ul ng-init="tab = 1" class="nav-menu header-profile">
+  <ul ng-init="tab = 2" class="nav-menu header-profile">
     <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 2">Season Winners</a></li>
     <li ng-class="{active:tab===3}" class="profile-click"><a href ng-click="tab = 3">Weekly Winners</a></li>
     <li ng-class="{active:tab===4}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
@@ -74,14 +74,6 @@ $(() => {
       </div>
     </form>
   </div>
-
-
-  
-  
-
-  
-
-
 </div>
 
 
@@ -91,7 +83,7 @@ $(() => {
 
 
 
-<div ng-show="tab === 2"  class="container wow">
+<div ng-show="tab === 2"  class="container wow zoomIn">
   <div>
     <h3 class="section-title">Select Your Top Three</h3>
     <div class="section-title-divider"></div>
@@ -99,34 +91,33 @@ $(() => {
   <div class="col-md-12">
     <p class="section-description">Make your selections before the fourth episode airs.</p>
   </div>
-  
+
   <section class="row top-three">
-    <div class="ccol-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
       <h3 class="weekly-titles">Winner</h3>
-      <div id="winner"  class="dropBox droptrue droppable portfolio-item droppable-topThree"></div>
+      <div id="winner"  class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
-    <div class="ccol-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
+      <h3 class="weekly-titles">Runner Up</h3>
+      <div id="runnerUp" class="dropBox droptrue droppable-topThree portfolio-item "></div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
       <h3 class="weekly-titles">Top Three</h3>
-      <div id="runnerUp" class="dropBox droptrue droppable portfolio-item droppable-topThree"></div>
+      <div id="topThree" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
-    <div class="ccol-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
-      <h3 class="weekly-titles">Top Three</h3>
-      <div id="bottom" class="dropBox droptrue droppable portfolio-item droppable-topThree"></div>
-    </div>
-    <div class="ccol-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
+    <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
       <h3 class="weekly-titles">Congeniality</h3>
-      <div id="con" class="dropBox droptrue droppable portfolio-item droppable-topThree"></div>
+      <div id="con" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
   </section>
-  
 
   <div class="scroll-holder">
-    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder draggable">
-    <div ng-repeat="queen in queens track by $index" class="col-lg-3 col-md-3 item">
+    <div id="repeatQueen" class="horizontal-slide droptrue droppableHolder-topThree draggable-topThree">
+    <div ng-repeat="queen in queens track by $index" class="col-md-3 item">
     
-        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default drag-small-image" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
+        <a draggable="true" class="{{queen.queenID}} portfolio-item ui-state-default" style="background-image: url(img/{{queen.name.split(' ')[0]}}.jpg);" href="">
           <div class="details">
-            <h4 class="queens-name-small">{{queen.name}}</h4>
+            <h4>{{queen.name}}</h4>
             <span>{{queen.hometown}}</span>
             <span>{{queen.age}}</span>
           </div>
@@ -135,7 +126,7 @@ $(() => {
   </div>
   </div>
   <div class="col-md-12 subscribe-btn-container menu-active">
-    <a href="#hero" class="subscribe-btn" ng-click="">Sign in to Play!</a>
+    <a href="#hero" class="subscribe-btn" ng-click="">Sign in to play!</a>
   </div>
 </div>
 

@@ -79,9 +79,9 @@ $(() => {
   <ul ng-init="tab = 2" class="nav-menu header-profile">
     <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 2">Season Winners</a></li>
     <li ng-class="{active:tab===3}" class="profile-click"><a href ng-click="tab = 3">Weekly Winners</a></li>
-    <li ng-class="{active:tab===2}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
-    <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Teams</a></li>
-        <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Results</a></li>
+    <li ng-class="{active:tab===4}" class="profile-click"><a href ng-click="tab = 4">Toot and Boot</a></li>
+    <li ng-class="{active:tab===5}" class="profile-click"><a href ng-click="tab = 5">Team</a></li>
+    <li ng-class="{active:tab===1}" class="profile-click"><a href ng-click="tab = 1">Results</a></li>
   </ul>
     
     
@@ -89,6 +89,31 @@ $(() => {
 
 <section id="portfolio">
 
+<!-- PROFILE == SECTION ONE -->
+
+
+<div ng-show="tab === 5"  class="container wow">
+  <div>
+    <h3 class="section-title">Teams</h3>
+    <div class="section-title-divider"></div>
+  </div>
+  <div class="col-md-12">
+    <p class="section-description">Create teams to compete with your friends!</p>
+  </div>
+  <div class="col-md-12 subscribe-btn-container menu-active">
+    <a href="#hero" class="subscribe-btn" ng-click="createTeam('createTeam')">Create a Team</a>
+    <a href="#hero" class="subscribe-btn" ng-click="joinTeam('joinTeam')">Join a Team</a>
+
+      <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+          <input type="text" class="form-control" placeholder="Select your Team" ng-model="searchUser">
+        </div>      
+      </div>
+    </form>
+  </div>
+</div>
 
 
 
@@ -120,7 +145,7 @@ $(() => {
       <div id="topThree" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3 subscribe-btn-container top-three-boxes">
-      <h3 class="weekly-titles">congeniality</h3>
+      <h3 class="weekly-titles">Congeniality</h3>
       <div id="con" class="dropBox droptrue droppable-topThree portfolio-item "></div>
     </div>
   </section>
@@ -237,23 +262,14 @@ $(() => {
 
 
 
-
-<!-- <div ng-show="tab === 1"  class="container wow fadeInRight">
+<div ng-show="tab === 1"  class="container wow ">
   <div>
     <h3 class="section-title">Results</h3>
     <div class="section-title-divider"></div>
   </div>
   <div class="col-md-12">
-    <p class="section-description">Check and see how you scored!</p>
+    <p class="section-description">Individual results will be available after the first episode.</p>
   </div>
-
-  
-
-  <div class="scroll-holder">
-
   </div>
-
-</div> -->
-
 
 

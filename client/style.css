@@ -1144,34 +1144,13 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   background: #03C4EB;
 }
 
-.ranking-header {
-  display: inline-block;
-  margin-top: 40px;
-}
 
-@media (max-width: 892px) {
-  .ranking-header {
-    margin-top: 300px;
-    padding: 0;
-  }
-}
 
-.ranking-header-2 {
-  margin-top: 40em;
-}
-@media (max-width: 600px) {
-  .ranking-header {
-    font-size: .4em;
-  }
-  .ranking-header-2 {
-    margin-top: 20em;
-  }
-}
 
 .aboutme-header {
  margin-top: 40px;
  background-color: #f0f0f0;
- padding: 40px 0 80px 0; 
+ padding: 80px 0 80px 0; 
 }
 .rules-exception {
   margin-left: 13em;
@@ -1211,6 +1190,11 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   .horizontal-slide .item {
     width: 16em;
   }
+
+}
+
+#portfolio {
+  height: 65em;
 }
 
 @media (max-width: 800px) {
@@ -1231,17 +1215,28 @@ background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
   }
     .horizontal-slide .item {
     width: 10em;
+  }
+
+  .droppable-topThree {
+    display: inline-block
+  }
+
+  .top-three-boxes {
+    width: 25%;
+  }
+
+  .col-md-3.col-sm-3.col-xs-3.subscribe-btn-container.top-three-boxes {
+    width: 25%;
+  }
+  .section-description {
+    font-size: 23px;
+  }
+  #portfolio { 
+    height: 50em;
+   }
+
 }
 
-.droppable-topThree {
-  display: inline-block
-}
 
-.top-three-boxes {
-  width: 33%;
-}
 
-.col-md-3.col-sm-3.col-xs-3.subscribe-btn-container.top-three-boxes {
-  width: 33%;
-}
 
